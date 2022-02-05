@@ -4,7 +4,6 @@ import org.junit.Assert;
 import org.junit.Test;
 
 public class FarmvilleTests {
-    //TODO: TEST ALL THE FUNCTIONALITY OF THE PROVIDED CLASS Farm
 
     //Everything works fine.
     @Test

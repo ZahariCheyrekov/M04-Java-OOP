@@ -1,7 +1,7 @@
 package M04_JavaOOP.ExamPreparation.Exam10April2021.aquarium.entities.aquariums;
 
 import M04_JavaOOP.ExamPreparation.Exam10April2021.aquarium.entities.decorations.Decoration;
-import M04_JavaOOP.ExamPreparation.Exam10April2021.aquarium.fish.Fish;
+import M04_JavaOOP.ExamPreparation.Exam10April2021.aquarium.entities.fish.Fish;
 
 import java.util.ArrayList;
 import java.util.Collection;

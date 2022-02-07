@@ -20,6 +20,5 @@ public abstract class BasePeripheral extends BaseProduct implements Peripheral {
     public String toString() {
         return "Overall Performance: {overall performance}. Price: {price} - {product type}: " +
                 "{manufacturer} {model} (Id: {id}) Connection Type: {connection type}";
-        //TODO
     }
 }

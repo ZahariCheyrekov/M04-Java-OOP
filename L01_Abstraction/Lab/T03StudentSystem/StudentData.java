@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class StudentData {
+  
     private Map<String, Student> students;
 
     public StudentData() {

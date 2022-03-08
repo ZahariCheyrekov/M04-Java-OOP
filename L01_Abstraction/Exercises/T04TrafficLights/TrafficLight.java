@@ -8,6 +8,7 @@ public class TrafficLight {
     }
 
     public void changeColor() {
+      
         switch (this.color) {
             case RED:
                 this.color = Color.GREEN;

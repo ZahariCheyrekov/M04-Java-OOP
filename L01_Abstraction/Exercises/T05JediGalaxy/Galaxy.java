@@ -1,6 +1,7 @@
 package M04_JavaOOP.L01_Abstraction.Exercises.T05JediGalaxy;
 
 public class Galaxy {
+
     private Field field;
 
     public Galaxy(Field field) {

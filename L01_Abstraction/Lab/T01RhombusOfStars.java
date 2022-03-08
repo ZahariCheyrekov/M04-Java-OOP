@@ -1,21 +1,19 @@
-package M04_JavaOOP.L01_Abstraction.Lab;
-
 import java.util.Scanner;
 
 public class T01RhombusOfStars {
-    public static StringBuilder output = new StringBuilder();
+    private static final StringBuilder output=new StringBuilder();
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        int n = Integer.parseInt(scanner.nextLine());
+        int size = Integer.parseInt(scanner.nextLine());
 
-        printFigure(n);
+        printFigure(size);
     }
 
-    private static void printFigure(int n) {
-        getTop(n);
-        getMiddle(n);
-        getBottom(n);
+    private static void printFigure(int size) {
+        getTop(size);
+        getMiddle(size);
+        getBottom(size);
 
         System.out.print(output);
     }
@@ -29,15 +27,11 @@ public class T01RhombusOfStars {
     }
 
     private static void appendSpaces(int size) {
-        for (int j = 0; j < size; j++) {
-            output.append(" ");
-        }
+        output.append(" ".repeat(Math.max(0, size)));
     }
 
     private static void appendStars(int size) {
-        for (int j = 0; j < size; j++) {
-            output.append("* ");
-        }
+        output.append("* ".repeat(Math.max(0, size)));
     }
 
     private static void getMiddle(int n) {

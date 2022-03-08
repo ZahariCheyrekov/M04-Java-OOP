@@ -1,8 +1,8 @@
-package M04_JavaOOP.L01_Abstraction.Lab.T02PointInRectangle;
+package pointInRectangle;
 
 public class Point {
-    private final int x;
-    private final int y;
+    private int x;
+    private int y;
 
     public Point(int x, int y) {
         this.x = x;

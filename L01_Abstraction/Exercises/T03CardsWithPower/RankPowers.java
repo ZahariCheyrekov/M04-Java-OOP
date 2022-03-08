@@ -22,6 +22,6 @@ public enum RankPowers {
     }
 
     public int getRankPower() {
-        return power;
+        return this.power;
     }
 }

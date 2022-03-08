@@ -1,6 +1,7 @@
 package M04_JavaOOP.L01_Abstraction.Exercises.T05JediGalaxy;
 
 public class Player {
+  
     private Galaxy galaxy;
     private long points;
 

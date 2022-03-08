@@ -10,6 +10,7 @@ public class Player {
     }
 
     public void collectStars(int row, int col) {
+      
         while (row >= 0 && col < this.galaxy.getInnerLength(1)) {
             if (row < this.galaxy.getLength()
                     && col >= 0 && col < this.galaxy.getInnerLength(0)) {

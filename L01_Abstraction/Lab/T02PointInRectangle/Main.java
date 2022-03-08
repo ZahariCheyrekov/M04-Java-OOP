@@ -21,6 +21,7 @@ public class Main {
         Rectangle rectangle = new Rectangle(pointA, pointB);
 
         int count = Integer.parseInt(scanner.nextLine());
+        
         while (count-- > 0) {
             int[] coordinatesPoints = readData(scanner);
 

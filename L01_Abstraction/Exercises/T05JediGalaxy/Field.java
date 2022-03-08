@@ -10,6 +10,7 @@ public class Field {
 
     private void setFieldValues() {
         int value = 0;
+      
         for (int r = 0; r < this.matrix.length; r++) {
             for (int c = 0; c < this.matrix[r].length; c++) {
                 matrix[r][c] = value++;

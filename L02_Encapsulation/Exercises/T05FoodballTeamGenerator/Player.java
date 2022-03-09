@@ -28,4 +28,9 @@ public class Player {
         checkIfInRange(endurance, "Endurance");
         this.endurance = endurance;
    }
+    
+   private void setSprint(int sprint) {
+        checkIfInRange(sprint, "Sprint");
+        this.sprint = sprint;
+   }
 }

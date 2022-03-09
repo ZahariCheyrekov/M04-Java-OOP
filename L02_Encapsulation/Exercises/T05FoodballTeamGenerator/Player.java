@@ -58,4 +58,8 @@ public class Player {
    public double overallSkillLevel() {
         return (this.endurance + this.dribble + this.passing + this.shooting + this.sprint) / 5.0;
    }
+    
+   public String getName() {
+        return name;
+   }
 }

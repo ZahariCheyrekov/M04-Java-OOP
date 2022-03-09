@@ -33,4 +33,9 @@ public class Player {
         checkIfInRange(sprint, "Sprint");
         this.sprint = sprint;
    }
+    
+    private void setDribble(int dribble) {
+        checkIfInRange(dribble, "Dribble");
+        this.dribble = dribble;
+   }
 }

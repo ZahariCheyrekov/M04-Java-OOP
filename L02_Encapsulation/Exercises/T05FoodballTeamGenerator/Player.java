@@ -8,5 +8,14 @@ public class Player {
     private int passing;
     private int shooting;
     
+    public Player(String name, int endurance, int sprint, int dribble, int passing, int shooting) {
+        this.setName(name);
+        this.setEndurance(endurance);
+        this.setSprint(sprint);
+        this.setDribble(dribble);
+        this.setPassing(passing);
+        this.setShooting(shooting);
+    }
+    
     
 }

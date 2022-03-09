@@ -42,7 +42,8 @@ public class Person {
     }
 
     public void buyProduct(Product product) {
-        if (this.money < product.getCost()) {
+       
+       if (this.money < product.getCost()) {
 
             String message = String.format("%s can't afford %s", this.getName(), product.getName());
             throw new IllegalArgumentException(message);

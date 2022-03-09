@@ -38,4 +38,9 @@ public class Player {
         checkIfInRange(dribble, "Dribble");
         this.dribble = dribble;
    }
+    
+    private void setPassing(int passing) {
+        checkIfInRange(passing, "Passing");
+        this.passing = passing;
+   }
 }

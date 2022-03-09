@@ -48,4 +48,11 @@ public class Player {
         checkIfInRange(shooting, "Shooting");
         this.shooting = shooting;
    }
+    
+   private void checkIfInRange(int statValue, String statName) {
+        if (statValue < 0 || statValue > 100) {
+            throw new IllegalArgumentException(statName + " should be between 0 and 100.");
+        }
+   }
+
 }

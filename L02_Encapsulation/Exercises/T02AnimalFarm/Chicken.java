@@ -1,6 +1,7 @@
 package M04_JavaOOP.L02_Encapsulation.Exercises.T02AnimalFarm;
 
 public class Chicken {
+  
     private String name;
     private int age;
 

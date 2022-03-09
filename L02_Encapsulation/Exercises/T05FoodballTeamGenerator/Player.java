@@ -43,4 +43,9 @@ public class Player {
         checkIfInRange(passing, "Passing");
         this.passing = passing;
    }
+    
+   private void setShooting(int shooting) {
+        checkIfInRange(shooting, "Shooting");
+        this.shooting = shooting;
+   }
 }

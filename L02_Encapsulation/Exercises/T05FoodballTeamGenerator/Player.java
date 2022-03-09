@@ -17,5 +17,10 @@ public class Player {
         this.setShooting(shooting);
     }
     
-    
+    private void setName(String name) {
+        if (name.trim().isEmpty()) {
+            throw new IllegalArgumentException("A name should not be empty.");
+        }
+        this.name = name;
+    }
 }

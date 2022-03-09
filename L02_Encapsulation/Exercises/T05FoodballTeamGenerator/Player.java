@@ -15,12 +15,17 @@ public class Player {
         this.setDribble(dribble);
         this.setPassing(passing);
         this.setShooting(shooting);
-    }
+   }
     
-    private void setName(String name) {
+   private void setName(String name) {
         if (name.trim().isEmpty()) {
             throw new IllegalArgumentException("A name should not be empty.");
         }
         this.name = name;
-    }
+   }
+    
+   private void setEndurance(int endurance) {
+        checkIfInRange(endurance, "Endurance");
+        this.endurance = endurance;
+   }
 }

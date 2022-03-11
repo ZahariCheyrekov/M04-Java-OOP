@@ -15,7 +15,8 @@ public abstract class VehicleImpl implements Vehicle {
     @Override
     public String drive(double distance) {
         double fuelNeeded = distance * this.getFuelConsumption();
-        if (fuelNeeded > this.fuelQuantity) {
+        
+       if (fuelNeeded > this.fuelQuantity) {
             return this.getClass().getSimpleName() + " needs refueling";
         }
         this.fuelQuantity -= fuelNeeded;

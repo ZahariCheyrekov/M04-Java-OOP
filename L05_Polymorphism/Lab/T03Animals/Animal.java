@@ -1,6 +1,7 @@
 package M04_JavaOOP.L05_Polymorphism.Lab.T03Animals;
 
 public abstract class Animal {
+  
     private String name;
     private String favouriteFood;
 

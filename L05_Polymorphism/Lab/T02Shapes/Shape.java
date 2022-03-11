@@ -29,6 +29,7 @@ public abstract class Shape {
         if (area == null) {
             calculateArea();
         }
+      
         return area;
     }
 }

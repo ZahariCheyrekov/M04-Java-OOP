@@ -21,6 +21,7 @@ public abstract class Shape {
         if (perimeter == null) {
             calculatePerimeter();
         }
+      
         return perimeter;
     }
 

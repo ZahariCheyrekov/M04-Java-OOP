@@ -3,6 +3,7 @@ package M04_JavaOOP.L05_Polymorphism.Exercises.T01Vehicles;
 import java.text.DecimalFormat;
 
 public abstract class VehicleImpl implements Vehicle {
+   
     private double fuelQuantity;
     private double fuelConsumption;
 

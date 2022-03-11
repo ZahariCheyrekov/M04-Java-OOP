@@ -46,6 +46,7 @@ public class Main {
                     throw new IllegalArgumentException("No such command");
             }
         }
+        
         vehicles.values().forEach(System.out::println);
     }
 }

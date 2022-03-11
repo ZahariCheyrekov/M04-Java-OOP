@@ -1,6 +1,7 @@
 package M04_JavaOOP.L05_Polymorphism.Exercises.T01Vehicles;
 
 public class Truck extends VehicleImpl {
+   
     private static final double AC_ADDITIONAL_CONSUMPTION = 1.6;
     private static final double REFILL_PERCENTAGE = 0.95;
 

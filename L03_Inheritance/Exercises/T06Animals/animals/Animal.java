@@ -1,6 +1,7 @@
 package M04_JavaOOP.L03_Inheritance.Exercises.T06Animals.animals;
 
 public class Animal {
+  
     private String name;
     private int age;
     private String gender;

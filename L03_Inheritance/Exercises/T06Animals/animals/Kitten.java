@@ -1,6 +1,7 @@
 package M04_JavaOOP.L03_Inheritance.Exercises.T06Animals.animals;
 
 public class Kitten extends Cat {
+   
     private static final String GENDER = "Female";
 
     public Kitten(String name, int age) {

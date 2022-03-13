@@ -1,6 +1,7 @@
 package M04_JavaOOP.L04InterfacesAndAbstraction.Lab.T06Ferrari;
 
 public class Ferrari implements Car {
+
     private String driverName;
     private String model;
 

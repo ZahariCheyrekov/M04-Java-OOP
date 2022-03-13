@@ -1,6 +1,7 @@
 package M04_JavaOOP.L04InterfacesAndAbstraction.Exercises.T01DefineAnInterfacePerson;
 
 public class Citizen implements Person {
+ 
     private String name;
     private int age;
 

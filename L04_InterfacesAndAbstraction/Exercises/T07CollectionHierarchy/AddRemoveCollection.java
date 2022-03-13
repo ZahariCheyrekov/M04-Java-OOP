@@ -5,7 +5,8 @@ public class AddRemoveCollection extends Collection implements AddRemovable {
     @Override
     public String remove() {
         int lastElementIndex = super.getItems().size() - 1;
-        return super.getItems().remove(lastElementIndex);
+
+      return super.getItems().remove(lastElementIndex);
     }
 
     @Override

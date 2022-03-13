@@ -27,6 +27,7 @@ public class Main {
 
             System.out.println(methods.length);
             System.out.println(methods[0].getReturnType().getSimpleName());
+         
             System.out.println(methods1.length);
             System.out.println(methods1[0].getReturnType().getSimpleName());
         }

@@ -1,6 +1,7 @@
 package M04_JavaOOP.L04InterfacesAndAbstraction.Exercises.T03BirthdayCelebrations;
 
 public class Robot implements Identifiable {
+    
     private String id;
     private String model;
 

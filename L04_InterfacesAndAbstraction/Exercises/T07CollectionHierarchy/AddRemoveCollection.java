@@ -12,6 +12,7 @@ public class AddRemoveCollection extends Collection implements AddRemovable {
     @Override
     public int add(String item) {
         super.getItems().add(0, item);
-        return 0;
+        
+      return 0;
     }
 }

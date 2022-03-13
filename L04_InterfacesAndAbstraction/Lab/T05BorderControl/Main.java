@@ -13,6 +13,7 @@ public class Main {
 
         String command = scanner.nextLine();
         while (!command.equals("End")) {
+         
             String[] info = command.split("[\\s]+");
 
             Identifiable identifiable;

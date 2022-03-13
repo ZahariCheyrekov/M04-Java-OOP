@@ -1,6 +1,7 @@
 package M04_JavaOOP.L04InterfacesAndAbstraction.Lab.T05BorderControl;
 
 public class Robot implements Identifiable {
+  
     private String model;
     private String id;
 

@@ -1,6 +1,7 @@
 package M04_JavaOOP.L04InterfacesAndAbstraction.Lab.T05BorderControl;
 
 public class Citizen implements Identifiable {
+  
     private String name;
     private int age;
     private String id;

@@ -1,6 +1,7 @@
 package M04_JavaOOP.L04InterfacesAndAbstraction.Exercises.T03BirthdayCelebrations;
 
 public class Citizen implements Person, Birthable, Identifiable {
+  
     private String name;
     private int age;
     private String id;

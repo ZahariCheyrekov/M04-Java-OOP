@@ -6,6 +6,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+      
         Class[] citizenInterfaces = Citizen.class.getInterfaces();
 
         if (Arrays.asList(citizenInterfaces).contains(Birthable.class)

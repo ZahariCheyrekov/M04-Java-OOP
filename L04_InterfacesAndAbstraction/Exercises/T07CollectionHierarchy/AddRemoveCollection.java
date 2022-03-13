@@ -1,6 +1,7 @@
 package M04_JavaOOP.L04InterfacesAndAbstraction.Exercises.T07CollectionHierarchy;
 
 public class AddRemoveCollection extends Collection implements AddRemovable {
+  
     @Override
     public String remove() {
         int lastElementIndex = super.getItems().size() - 1;

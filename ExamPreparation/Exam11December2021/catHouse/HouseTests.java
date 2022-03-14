@@ -8,13 +8,6 @@ import org.junit.Test;
 public class HouseTests {
     private House house;
     private Cat cat;
-    
-
-    @Test
-    public void testShouldReturnCorrectNumberOfCats() {
-        int catsCount = this.house.getCount();
-        assertEquals(1, catsCount);
-    }
 
     @Test(expected = IllegalArgumentException.class)
     public void testShouldThrowExceptionForNoSpaceInTheHouse() {

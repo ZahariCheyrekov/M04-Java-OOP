@@ -10,12 +10,6 @@ public class HouseTests {
     private Cat cat;
 
     @Test(expected = IllegalArgumentException.class)
-    public void testShouldThrowExceptionForNoSpaceInTheHouse() {
-        this.house.addCat(cat);
-        this.house.addCat(cat);
-    }
-
-    @Test(expected = IllegalArgumentException.class)
     public void testShouldFailForNoExistingCatWithGivenName() {
         this.house.removeCat("Jeff");
     }

@@ -36,9 +36,11 @@ public class ControllerImpl implements Controller {
             case "ShortHouse":
                 house = new ShortHouse(name);
                 break;
+          
             case "LongHouse":
                 house = new LongHouse(name);
                 break;
+           
             default:
                 throw new NullPointerException(INVALID_HOUSE_TYPE);
         }

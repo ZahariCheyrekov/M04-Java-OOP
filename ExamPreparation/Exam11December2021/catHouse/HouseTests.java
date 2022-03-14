@@ -8,20 +8,7 @@ import org.junit.Test;
 public class HouseTests {
     private House house;
     private Cat cat;
-
-
-
-
-
-    @Test
-    public void testShouldGetNameAndCapacityOfTheHouseCorrectly() {
-        int houseCapacity = this.house.getCapacity();
-        assertEquals(2, houseCapacity);
-
-        String houseName = this.house.getName();
-        assertEquals("Java", houseName);
-    }
-
+    
     @Test(expected = IllegalArgumentException.class)
     public void testShouldThrowExceptionForInvalidHouseCapacity() {
         new House("home", -10);

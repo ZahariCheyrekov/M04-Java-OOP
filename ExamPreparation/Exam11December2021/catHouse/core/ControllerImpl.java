@@ -94,9 +94,11 @@ public class ControllerImpl implements Controller {
             case "LonghairCat":
                 cat = new LonghairCat(catName, catBreed, price);
                 break;
+         
             case "ShorthairCat":
                 cat = new ShorthairCat(catName, catBreed, price);
                 break;
+            
             default:
                 throw new IllegalArgumentException(INVALID_CAT_TYPE);
         }

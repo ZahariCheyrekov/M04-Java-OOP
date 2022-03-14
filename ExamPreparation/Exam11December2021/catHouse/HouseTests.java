@@ -65,11 +65,7 @@ public class HouseTests {
         this.house.catForSale("Jess");
     }
 
-    @Test
-    public void testShouldSaleCorrectlyTheGivenCatByName() {
-        this.house.catForSale("Garfield");
-        assertFalse(this.cat.isHungry());
-    }
+
 
     @Test
     public void testShouldReturnStatisticsForTheHouseAndTheCatsInIt() {

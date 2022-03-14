@@ -56,9 +56,11 @@ public class ControllerImpl implements Controller {
         switch (type) {
             case "Ball":
                 toy = new Ball();
+           
                 break;
             case "Mouse":
                 toy = new Mouse();
+          
                 break;
             default:
                 throw new IllegalArgumentException(INVALID_TOY_TYPE);

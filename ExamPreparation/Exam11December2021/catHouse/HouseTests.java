@@ -9,10 +9,6 @@ public class HouseTests {
     private House house;
     private Cat cat;
     
-    @Test(expected = IllegalArgumentException.class)
-    public void testShouldThrowExceptionForInvalidHouseCapacity() {
-        new House("home", -10);
-    }
 
     @Test
     public void testShouldReturnCorrectNumberOfCats() {

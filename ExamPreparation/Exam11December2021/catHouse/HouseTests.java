@@ -9,12 +9,7 @@ public class HouseTests {
     private House house;
     private Cat cat;
 
-    @Before
-    public void setUp() {
-        this.house = new House("Java", 2);
-        this.cat = new Cat("Garfield");
-        this.house.addCat(cat);
-    }
+
 
     @Test(expected = NullPointerException.class)
     public void testShouldThrowExceptionForNullName() {

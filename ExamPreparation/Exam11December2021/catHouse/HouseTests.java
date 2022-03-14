@@ -9,11 +9,6 @@ public class HouseTests {
     private House house;
     private Cat cat;
 
-    @Test(expected = IllegalArgumentException.class)
-    public void testShouldFailForNoExistingCatWithGivenName() {
-        this.house.removeCat("Jeff");
-    }
-
     @Test
     public void testShouldRemoveCorrectlyTheGivenCatByName() {
         this.house.removeCat("Garfield");

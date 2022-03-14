@@ -184,6 +184,7 @@ public class ControllerImpl implements Controller {
                         for (Cat cat : cats) {
                             stats.append(" ").append(cat.getName());
                         }
+                     
                         stats.append(System.lineSeparator());
                     }
 

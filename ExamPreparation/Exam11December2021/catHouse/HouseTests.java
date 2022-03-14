@@ -11,10 +11,7 @@ public class HouseTests {
 
 
 
-    @Test(expected = NullPointerException.class)
-    public void testShouldThrowExceptionForNullName() {
-        new House(null, 10);
-    }
+
 
     @Test
     public void testShouldGetNameAndCapacityOfTheHouseCorrectly() {

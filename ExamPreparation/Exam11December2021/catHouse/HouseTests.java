@@ -9,11 +9,6 @@ public class HouseTests {
     private House house;
     private Cat cat;
 
-    @Test(expected = IllegalArgumentException.class)
-    public void testShouldFailForNoSuchCatForSaleInTheHouse() {
-        this.house.catForSale("Jess");
-    }
-
 
 
     @Test

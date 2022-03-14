@@ -9,12 +9,4 @@ public class HouseTests {
     private House house;
     private Cat cat;
 
-
-
-    @Test
-    public void testShouldReturnStatisticsForTheHouseAndTheCatsInIt() {
-        String expectedStats = "The cat Garfield is in the house Java!";
-        String actualStats = this.house.statistics();
-        assertEquals(expectedStats, actualStats);
-    }
 }

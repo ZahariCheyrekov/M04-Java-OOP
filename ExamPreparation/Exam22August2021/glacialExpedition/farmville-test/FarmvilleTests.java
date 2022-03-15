@@ -49,4 +49,9 @@ public class FarmvilleTests {
     public void testShouldThroeExceptionForInvalidFarmCapacity() {
         new Farm("New Duck", -10);
     }
+   
+   @Test(expected = NullPointerException.class)
+    public void testShouldThrowExceptionForNullFarmName() {
+        new Farm(null, 10);
+    }
 }

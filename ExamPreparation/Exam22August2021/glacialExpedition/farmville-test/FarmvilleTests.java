@@ -45,4 +45,8 @@ public class FarmvilleTests {
         assertTrue(removed);
     }
    
+    @Test(expected = IllegalArgumentException.class)
+    public void testShouldThroeExceptionForInvalidFarmCapacity() {
+        new Farm("New Duck", -10);
+    }
 }

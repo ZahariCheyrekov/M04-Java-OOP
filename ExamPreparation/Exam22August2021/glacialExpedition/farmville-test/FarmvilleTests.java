@@ -5,15 +5,6 @@ import org.junit.Test;
 
 public class FarmvilleTests {
 
-    @Test
-    public void constructorShouldCreateFarm() {
-        String name = "Cow farm";
-        int capacity = 5;
-        Farm farm = new Farm(name, capacity);
-
-        Assert.assertEquals(name, farm.getName());
-        Assert.assertEquals(capacity, farm.getCapacity());
-    }
 
     @Test(expected = NullPointerException.class)
     public void constructorShouldThrowExceptionBecauseNameIsNull() {

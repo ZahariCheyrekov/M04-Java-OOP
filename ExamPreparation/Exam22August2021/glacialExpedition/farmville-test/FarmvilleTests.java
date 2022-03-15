@@ -28,11 +28,14 @@ public class FarmvilleTests {
         assertEquals(expectedName, actualName);
     }
    
-   @Test(expected = IllegalArgumentException.class)
+    @Test(expected = IllegalArgumentException.class)
     public void testShouldThrowExceptionForFullCapacityInFarm() {
         farm.add(new Animal("Eagle", 50));
         farm.add(new Animal("Gorilla", 75));
     }
    
-   
+    @Test(expected = IllegalArgumentException.class)
+    public void testShouldThrowExceptionForAlreadyExistingAnimalInTheFarm() {
+        farm.add(animal);
+    }
 }

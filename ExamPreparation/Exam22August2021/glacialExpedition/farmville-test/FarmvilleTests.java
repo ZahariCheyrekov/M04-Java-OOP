@@ -38,4 +38,11 @@ public class FarmvilleTests {
     public void testShouldThrowExceptionForAlreadyExistingAnimalInTheFarm() {
         farm.add(animal);
     }
+   
+    @Test
+    public void testShouldRemoveAnimalByGivenAnimalType() {
+        boolean removed = farm.remove("Lion");
+        assertTrue(removed);
+    }
+   
 }

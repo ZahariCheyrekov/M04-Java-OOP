@@ -5,14 +5,6 @@ import org.junit.Test;
 
 public class FarmvilleTests {
 
-  
-
-    @Test(expected = IllegalArgumentException.class)
-    public void addMethodShouldThrowBecauseFarmIsFull() {
-        Farm farm = new Farm("Cow Farm", 0);
-        farm.add(new Animal("Cow", 5));
-    }
-
     @Test(expected = IllegalArgumentException.class)
     public void addMethodShouldThrowBecauseAnimalExists() {
         Farm farm = new Farm("Cow Farm", 5);

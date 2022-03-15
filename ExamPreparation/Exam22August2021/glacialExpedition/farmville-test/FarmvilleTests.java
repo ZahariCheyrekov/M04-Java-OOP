@@ -5,14 +5,6 @@ import org.junit.Test;
 
 public class FarmvilleTests {
 
-
-    
-
-    @Test(expected = NullPointerException.class)
-    public void constructorShouldThrowExceptionBecauseNameIsEmpty() {
-        new Farm("     ", 5);
-    }
-
     @Test(expected = IllegalArgumentException.class)
     public void constructorShouldThrowExceptionBecauseCapacityIsNegative() {
         new Farm("Cow Farm", -1);

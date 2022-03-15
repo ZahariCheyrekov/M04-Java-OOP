@@ -15,4 +15,16 @@ public class FarmvilleTests {
         farm.add(animal);
     }
   
+    @Test
+    public void testShouldGetInformationFromFarmCorrectly() {
+        int expectedAnimalsCount = 1;
+        int actualAnimalsCount = farm.getCount();
+
+        assertEquals(expectedAnimalsCount, actualAnimalsCount);
+
+        String expectedName = "Old Duck";
+        String actualName = farm.getName();
+
+        assertEquals(expectedName, actualName);
+    }
 }

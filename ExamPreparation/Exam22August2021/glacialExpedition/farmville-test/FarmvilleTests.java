@@ -5,10 +5,7 @@ import org.junit.Test;
 
 public class FarmvilleTests {
 
-    @Test(expected = IllegalArgumentException.class)
-    public void constructorShouldThrowExceptionBecauseCapacityIsNegative() {
-        new Farm("Cow Farm", -1);
-    }
+  
 
     @Test(expected = IllegalArgumentException.class)
     public void addMethodShouldThrowBecauseFarmIsFull() {

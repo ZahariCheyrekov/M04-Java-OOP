@@ -6,10 +6,7 @@ import org.junit.Test;
 public class FarmvilleTests {
 
 
-    @Test(expected = NullPointerException.class)
-    public void constructorShouldThrowExceptionBecauseNameIsNull() {
-        new Farm(null, 5);
-    }
+    
 
     @Test(expected = NullPointerException.class)
     public void constructorShouldThrowExceptionBecauseNameIsEmpty() {

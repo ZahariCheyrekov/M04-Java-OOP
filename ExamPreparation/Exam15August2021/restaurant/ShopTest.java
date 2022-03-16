@@ -74,6 +74,7 @@ public class ShopTest {
     @Test
     public void testRemoveGoodsShouldSetTheShelveValueToNull() throws OperationNotSupportedException {
         Goods goods = new Goods("testGood", "testCode");
+      
         shop.addGoods("Shelves1", goods);
         shop.removeGoods("Shelves1", goods);
 

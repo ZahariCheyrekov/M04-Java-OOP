@@ -22,22 +22,6 @@ import static M04_JavaOOP.ExamPreparation.Exam15August2021.restaurant.common.Out
 public class ControllerImpl implements Controller {
 
     @Override
-    public String addHealthyFood(String type, double price, String name) {
-        HealthyFood food = type.equals("Salad")
-                ? new Salad(name, price)
-                : new VeganBiscuits(name, price);
-
-        HealthyFood previouslyAdded = this.healthFoodRepository.foodByName(name);
-
-        if (previouslyAdded == null) {
-            this.healthFoodRepository.add(food);
-            return String.format(FOOD_ADDED, name);
-        }
-
-        throw new IllegalArgumentException(String.format(FOOD_EXIST, name));
-    }
-
-    @Override
     public String addBeverage(String type, int counter, String brand, String name) {
         Beverages beverage = type.equals("Fresh")
                 ? new Fresh(name, counter, brand)

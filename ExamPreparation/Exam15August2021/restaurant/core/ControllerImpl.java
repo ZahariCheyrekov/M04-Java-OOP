@@ -152,8 +152,5 @@ public class ControllerImpl implements Controller {
     }
 
 
-    @Override
-    public String totalMoney() {
-        return String.format(TOTAL_MONEY, totalIncome);
-    }
+ 
 }

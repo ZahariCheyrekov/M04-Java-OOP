@@ -22,25 +22,6 @@ import static M04_JavaOOP.ExamPreparation.Exam15August2021.restaurant.common.Out
 public class ControllerImpl implements Controller {
 
     @Override
-    public String reserve(int numberOfPeople) {
-        Collection<Table> tables = this.tableRepository.getAllEntities();
-
-        Table table = tables.stream()
-                .filter(t -> !t.isReservedTable() && t.getSize() >= numberOfPeople)
-                .findFirst()
-                .orElse(null);
-
-        String message = String.format(RESERVATION_NOT_POSSIBLE, numberOfPeople);
-
-        if (table != null) {
-            table.reserve(numberOfPeople);
-            message = String.format(TABLE_RESERVED, table.getTableNumber(), numberOfPeople);
-        }
-
-        return message;
-    }
-
-    @Override
     public String orderHealthyFood(int tableNumber, String healthyFoodName) {
         Table table = tableRepository.byNumber(tableNumber);
 

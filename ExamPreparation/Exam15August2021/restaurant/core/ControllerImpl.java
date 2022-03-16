@@ -21,19 +21,6 @@ import static M04_JavaOOP.ExamPreparation.Exam15August2021.restaurant.common.Out
 
 public class ControllerImpl implements Controller {
 
-    private final HealthFoodRepository<HealthyFood> healthFoodRepository;
-    private final BeverageRepository<Beverages> beveragesRepository;
-    private final TableRepository<Table> tableRepository;
-    private double totalIncome;
-
-    public ControllerImpl(HealthFoodRepository<HealthyFood> healthFoodRepository,
-                          BeverageRepository<Beverages> beverageRepository, TableRepository<Table> tableRepository) {
-
-        this.healthFoodRepository = healthFoodRepository;
-        this.beveragesRepository = beverageRepository;
-        this.tableRepository = tableRepository;
-    }
-
     @Override
     public String addHealthyFood(String type, double price, String name) {
         HealthyFood food = type.equals("Salad")

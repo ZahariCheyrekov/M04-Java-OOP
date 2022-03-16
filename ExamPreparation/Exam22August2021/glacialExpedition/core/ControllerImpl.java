@@ -51,8 +51,7 @@ public class ControllerImpl implements Controller {
     @Override
     public String addState(String stateName, String... exhibits) {
         State state = new StateImpl(stateName);
-//        Collection<String> stateExhibits = state.getExhibits();
-//        Collections.addAll(stateExhibits, exhibits);
+
         for (String exhibit : exhibits) {
             state.getExhibits().add(exhibit);
         }
@@ -73,22 +72,23 @@ public class ControllerImpl implements Controller {
 
     @Override
     public String exploreState(String stateName) {
-        //Взимаме изследователите с повече от 50 енергия
+
         List<Explorer> explorers = this.explorerRepository.getCollection().stream()
                 .filter(explorer -> explorer.getEnergy() > 50)
                 .collect(Collectors.toList());
-        //Ако нямаме -> Exception
+
         if (explorers.isEmpty()) {
             throw new IllegalArgumentException(ExceptionMessages.STATE_EXPLORERS_DOES_NOT_EXISTS);
         }
 
         State stateToExplore = this.stateRepository.byName(stateName);
+        
         Mission mission = new MissionImpl();
         mission.explore(stateToExplore, explorers);
+        
         long retired = explorers.stream().filter(e -> e.getEnergy() == 0).count();
         this.exploredStates++;
-        //Ако имаме, започваме мисията
-        //да върнем колко изследователи са се изтощили
+
         return String.format(ConstantMessages.STATE_EXPLORER, stateName, retired);
     }
 
@@ -100,12 +100,14 @@ public class ControllerImpl implements Controller {
         result.append(ConstantMessages.FINAL_EXPLORER_INFO);
 
         Collection<Explorer> explorers = this.explorerRepository.getCollection();
+       
         for (Explorer explorer : explorers) {
             result.append(System.lineSeparator());
             result.append(String.format(ConstantMessages.FINAL_EXPLORER_NAME, explorer.getName()));
             result.append(System.lineSeparator());
             result.append(String.format(ConstantMessages.FINAL_EXPLORER_ENERGY, explorer.getEnergy()));
             result.append(System.lineSeparator());
+        
             if(explorer.getSuitcase().getExhibits().isEmpty()){
                 result.append(String.format(ConstantMessages.FINAL_EXPLORER_SUITCASE_EXHIBITS, "None"));
             } else {

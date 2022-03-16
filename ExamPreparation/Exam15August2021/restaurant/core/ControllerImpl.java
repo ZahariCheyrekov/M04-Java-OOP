@@ -23,12 +23,5 @@ public class ControllerImpl implements Controller {
 
   
 
-        if (beverage == null) {
-            return String.format(NON_EXISTENT_DRINK, name, brand);
-        }
 
-        table.orderBeverages(beverage);
-
-        return String.format(BEVERAGE_ORDER_SUCCESSFUL, name, tableNumber);
-    }
 }

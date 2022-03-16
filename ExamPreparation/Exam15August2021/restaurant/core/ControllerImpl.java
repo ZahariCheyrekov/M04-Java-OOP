@@ -21,15 +21,7 @@ import static M04_JavaOOP.ExamPreparation.Exam15August2021.restaurant.common.Out
 
 public class ControllerImpl implements Controller {
 
-    @Override
-    public String orderBeverage(int tableNumber, String name, String brand) {
-        Table table = tableRepository.byNumber(tableNumber);
-
-        if (table == null) {
-            return String.format(WRONG_TABLE_NUMBER, tableNumber);
-        }
-
-        Beverages beverage = beveragesRepository.beverageByName(name, brand);
+  
 
         if (beverage == null) {
             return String.format(NON_EXISTENT_DRINK, name, brand);

@@ -138,19 +138,4 @@ public class ControllerImpl implements Controller {
 
         return String.format(BEVERAGE_ORDER_SUCCESSFUL, name, tableNumber);
     }
-
-    @Override
-    public String closedBill(int tableNumber) {
-        Table table = this.tableRepository.byNumber(tableNumber);
-
-        double bill = table.bill();
-        table.clear();
-
-        totalIncome += bill;
-
-        return String.format(BILL, tableNumber, bill);
-    }
-
-
- 
 }

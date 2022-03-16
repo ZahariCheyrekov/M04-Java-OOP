@@ -22,25 +22,6 @@ import static M04_JavaOOP.ExamPreparation.Exam15August2021.restaurant.common.Out
 public class ControllerImpl implements Controller {
 
     @Override
-    public String orderHealthyFood(int tableNumber, String healthyFoodName) {
-        Table table = tableRepository.byNumber(tableNumber);
-
-        if (table == null) {
-            return String.format(WRONG_TABLE_NUMBER, tableNumber);
-        }
-
-        HealthyFood food = healthFoodRepository.foodByName(healthyFoodName);
-
-        if (food == null) {
-            return String.format(NONE_EXISTENT_FOOD, healthyFoodName);
-        }
-
-        table.orderHealthy(food);
-
-        return String.format(FOOD_ORDER_SUCCESSFUL, healthyFoodName, tableNumber);
-    }
-
-    @Override
     public String orderBeverage(int tableNumber, String name, String brand) {
         Table table = tableRepository.byNumber(tableNumber);
 

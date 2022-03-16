@@ -22,22 +22,6 @@ import static M04_JavaOOP.ExamPreparation.Exam15August2021.restaurant.common.Out
 public class ControllerImpl implements Controller {
 
     @Override
-    public String addTable(String type, int tableNumber, int capacity) {
-        Table table = type.equals("Indoors")
-                ? new Indoors(tableNumber, capacity)
-                : new InGarden(tableNumber, capacity);
-
-        Table previouslyAdded = this.tableRepository.byNumber(tableNumber);
-
-        if (previouslyAdded == null) {
-            this.tableRepository.add(table);
-            return String.format(TABLE_ADDED, tableNumber);
-        }
-
-        throw new IllegalArgumentException(String.format(TABLE_IS_ALREADY_ADDED, tableNumber));
-    }
-
-    @Override
     public String reserve(int numberOfPeople) {
         Collection<Table> tables = this.tableRepository.getAllEntities();
 

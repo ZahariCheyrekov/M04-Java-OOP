@@ -72,12 +72,5 @@ public class ShopTest {
         shop.removeGoods("Shelves1", nonExistingGood);
     }
 
-    @Test
-    public void testRemoveGoodsShouldReturnCorrectMessage() throws OperationNotSupportedException {
-        Goods goods = new Goods("testGood", "testCode");
-        shop.addGoods("Shelves1", goods);
-        String expected = "Goods: testCode is removed successfully!";
-        String actual = shop.removeGoods("Shelves1", goods);
-        assertEquals(expected, actual);
-    }
+
 }

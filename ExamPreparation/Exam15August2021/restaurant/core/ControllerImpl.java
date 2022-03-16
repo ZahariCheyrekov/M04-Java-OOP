@@ -19,9 +19,3 @@ import java.util.Collection;
 import static M04_JavaOOP.ExamPreparation.Exam15August2021.restaurant.common.ExceptionMessages.*;
 import static M04_JavaOOP.ExamPreparation.Exam15August2021.restaurant.common.OutputMessages.*;
 
-public class ControllerImpl implements Controller {
-
-  
-
-
-}

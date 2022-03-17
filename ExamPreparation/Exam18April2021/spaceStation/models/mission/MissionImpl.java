@@ -1,39 +1,38 @@
-package M04_JavaOOP.ExamPreparation.Exam18April2021.spaceStation.models.mission;
+package spaceStation.models.mission;
 
-import M04_JavaOOP.ExamPreparation.Exam18April2021.spaceStation.models.astronauts.Astronaut;
-import M04_JavaOOP.ExamPreparation.Exam18April2021.spaceStation.models.planets.Planet;
+import spaceStation.models.astronauts.Astronaut;
+import spaceStation.models.planets.Planet;
 
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class MissionImpl implements Mission {
-    public static int deadAstronauts;
+
+    private int deadAstronauts;
 
     @Override
     public void explore(Planet planet, Collection<Astronaut> astronauts) {
-        List<Astronaut> astronautsExplore = astronauts.stream().filter(Astronaut::canBreath).collect(Collectors.toList());
+
+        List<Astronaut> astronautsExplore = new ArrayList<>(astronauts);
 
         List<String> planetItems = new ArrayList<>(planet.getItems());
 
-        for (int astronaut = 0; astronaut < astronautsExplore.size(); astronaut++) {
-            Astronaut currentAstronaut = astronautsExplore.get(astronaut);
+
+        for (int index = 0; index < astronautsExplore.size(); index++) {
+            Astronaut astronaut = astronautsExplore.get(index);
 
             for (int item = 0; item < planetItems.size(); item++) {
                 String currentItem = planetItems.get(item);
 
-                currentAstronaut.breath();
-                currentAstronaut.getBag().getItems().add(currentItem);
-                planetItems.remove(currentItem);
+                astronaut.breath();
+                astronaut.getBag().getItems().add(currentItem);
+                planetItems.remove(item);
 
                 item--;
 
-                if (!currentAstronaut.canBreath()) {
-                    astronautsExplore.remove(currentAstronaut);
+                if (!astronaut.canBreath()) {
                     deadAstronauts++;
-
-                    astronaut--;
                     break;
                 }
             }
@@ -42,6 +41,6 @@ public class MissionImpl implements Mission {
 
     @Override
     public int getDeadAstronauts() {
-        return deadAstronauts;
+        return this.deadAstronauts;
     }
 }

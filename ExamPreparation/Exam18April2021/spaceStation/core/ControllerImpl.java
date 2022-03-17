@@ -23,18 +23,6 @@ import static M04_JavaOOP.ExamPreparation.Exam18April2021.spaceStation.common.Co
 public class ControllerImpl implements Controller {
 
     @Override
-    public String retireAstronaut(String astronautName) {
-        Astronaut astronaut = this.astronautRepository.findByName(astronautName);
-
-        if (astronaut == null) {
-            throw new IllegalArgumentException(String.format(ExceptionMessages.ASTRONAUT_DOES_NOT_EXIST, astronautName));
-        }
-
-        this.astronautRepository.remove(astronaut);
-        return String.format(ASTRONAUT_RETIRED, astronautName);
-    }
-
-    @Override
     public String explorePlanet(String planetName) {
         List<Astronaut> suitableAstronauts = this.astronautRepository
                 .getModels()

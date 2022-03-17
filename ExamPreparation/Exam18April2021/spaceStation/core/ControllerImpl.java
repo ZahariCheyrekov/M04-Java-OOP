@@ -21,12 +21,7 @@ import static M04_JavaOOP.ExamPreparation.Exam18April2021.spaceStation.common.Co
 import static M04_JavaOOP.ExamPreparation.Exam18April2021.spaceStation.common.ConstantMessages.*;
 
 public class ControllerImpl implements Controller {
-    private Repository<Astronaut> astronautRepository;
-    private Repository<Planet> planetRepository;
-    private int exploredPlanets;
-
-
-
+  
     @Override
     public String addAstronaut(String type, String astronautName) {
         Astronaut astronaut;

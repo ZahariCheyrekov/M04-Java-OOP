@@ -94,33 +94,5 @@ public class ControllerImpl implements Controller {
         return String.format(PLANET_EXPLORED, planetName, astronautsAfterMission);
     }
 
-    @Override
-    public String report() {
-        StringBuilder builder = new StringBuilder();
-
-        builder.append(String.format(REPORT_PLANET_EXPLORED, exploredPlanets)).append(System.lineSeparator());
-        builder.append(REPORT_ASTRONAUT_INFO).append(System.lineSeparator());
-
-        this.astronautRepository
-                .getModels()
-                .forEach(astronaut -> {
-
-                    builder.append(String.format(REPORT_ASTRONAUT_NAME, astronaut.getName()))
-                            .append(System.lineSeparator());
-                    builder.append(String.format(REPORT_ASTRONAUT_OXYGEN, astronaut.getOxygen()))
-                            .append(System.lineSeparator());
-
-                    if (astronaut.getBag().getItems().size() == 0) {
-                        builder.append(String.format(REPORT_ASTRONAUT_BAG_ITEMS, "none"))
-                                .append(System.lineSeparator());
-                    } else {
-                        builder.append(String.format(REPORT_ASTRONAUT_BAG_ITEMS,
-                                        String.join(REPORT_ASTRONAUT_BAG_ITEMS_DELIMITER,
-                                                astronaut.getBag().getItems())))
-                                .append(System.lineSeparator());
-                    }
-                });
-
-        return builder.toString().trim();
-    }
+   
 }

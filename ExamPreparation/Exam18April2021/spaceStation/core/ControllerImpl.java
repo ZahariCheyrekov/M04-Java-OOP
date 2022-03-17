@@ -24,21 +24,7 @@ public class ControllerImpl implements Controller {
 
     @Override
     public String explorePlanet(String planetName) {
-        List<Astronaut> suitableAstronauts = this.astronautRepository
-                .getModels()
-                .stream()
-                .filter(astronaut -> astronaut.getOxygen() > 60)
-                .collect(Collectors.toList());
 
-        if (suitableAstronauts.isEmpty()) {
-            throw new IllegalArgumentException(ExceptionMessages.PLANET_ASTRONAUTS_DOES_NOT_EXISTS);
-        }
-
-        Mission mission = new MissionImpl();
-        Planet planet = this.planetRepository.findByName(planetName);
-        mission.explore(planet, suitableAstronauts);
-        exploredPlanets++;
-        int astronautsAfterMission = mission.getDeadAstronauts();
 
 
         return String.format(PLANET_EXPLORED, planetName, astronautsAfterMission);

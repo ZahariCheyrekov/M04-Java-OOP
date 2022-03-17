@@ -21,15 +21,6 @@ import static M04_JavaOOP.ExamPreparation.Exam18April2021.spaceStation.common.Co
 import static M04_JavaOOP.ExamPreparation.Exam18April2021.spaceStation.common.ConstantMessages.*;
 
 public class ControllerImpl implements Controller {
- 
-
-    @Override
-    public String addPlanet(String planetName, String... items) {
-        Planet planet = new PlanetImpl(planetName);
-        planet.getItems().addAll(Arrays.asList(items));
-        this.planetRepository.add(planet);
-        return String.format(PLANET_ADDED, planetName);
-    }
 
     @Override
     public String retireAstronaut(String astronautName) {

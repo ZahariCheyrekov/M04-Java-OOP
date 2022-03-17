@@ -1,10 +1,13 @@
-package M04_JavaOOP.ExamPreparation.Exam18April2021.spaceStation.models.astronauts;
+package spaceStation.models.astronauts;
 
-import M04_JavaOOP.ExamPreparation.Exam18April2021.spaceStation.common.ExceptionMessages;
-import M04_JavaOOP.ExamPreparation.Exam18April2021.spaceStation.models.bags.Backpack;
-import M04_JavaOOP.ExamPreparation.Exam18April2021.spaceStation.models.bags.Bag;
+import spaceStation.models.bags.Backpack;
+import spaceStation.models.bags.Bag;
+
+import static spaceStation.common.ConstantMessages.*;
+import static spaceStation.common.ExceptionMessages.*;
 
 public abstract class BaseAstronaut implements Astronaut {
+
     private String name;
     private double oxygen;
     private Bag bag;
@@ -17,14 +20,14 @@ public abstract class BaseAstronaut implements Astronaut {
 
     private void setName(String name) {
         if (name == null || name.trim().isEmpty()) {
-            throw new NullPointerException(ExceptionMessages.ASTRONAUT_NAME_NULL_OR_EMPTY);
+            throw new NullPointerException(ASTRONAUT_NAME_NULL_OR_EMPTY);
         }
         this.name = name;
     }
 
     protected void setOxygen(double oxygen) {
         if (oxygen < 0) {
-            throw new IllegalArgumentException(ExceptionMessages.ASTRONAUT_OXYGEN_LESS_THAN_ZERO);
+            throw new IllegalArgumentException(ASTRONAUT_OXYGEN_LESS_THAN_ZERO);
         }
         this.oxygen = oxygen;
     }
@@ -52,5 +55,33 @@ public abstract class BaseAstronaut implements Astronaut {
     @Override
     public void breath() {
         this.oxygen = Math.max(0, this.oxygen - 10);
+    }
+
+    @Override
+    public String toString() {
+
+        StringBuilder astronautInfo = new StringBuilder();
+
+        astronautInfo
+                .append(String.format(REPORT_ASTRONAUT_NAME, this.name))
+                .append(System.lineSeparator());
+
+        astronautInfo
+                .append(String.format(REPORT_ASTRONAUT_OXYGEN, this.oxygen))
+                .append(System.lineSeparator());
+
+        if (bag.getItems().isEmpty()) {
+            astronautInfo.append(String.format(REPORT_ASTRONAUT_BAG_ITEMS, "none"));
+        } else {
+
+            String bagItems = String.join(REPORT_ASTRONAUT_BAG_ITEMS_DELIMITER,
+                    this.bag.getItems());
+
+            astronautInfo.append(String.format(REPORT_ASTRONAUT_BAG_ITEMS, bagItems));
+        }
+
+        astronautInfo.append(System.lineSeparator());
+
+        return astronautInfo.toString().trim();
     }
 }

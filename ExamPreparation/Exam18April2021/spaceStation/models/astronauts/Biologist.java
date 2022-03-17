@@ -1,6 +1,7 @@
-package M04_JavaOOP.ExamPreparation.Exam18April2021.spaceStation.models.astronauts;
+package spaceStation.models.astronauts;
 
 public class Biologist extends BaseAstronaut {
+
     private static final double OXYGEN = 70;
 
     public Biologist(String name) {

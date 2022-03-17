@@ -22,13 +22,6 @@ import static M04_JavaOOP.ExamPreparation.Exam18April2021.spaceStation.common.Co
 
 public class ControllerImpl implements Controller {
 
-    @Override
-    public String explorePlanet(String planetName) {
-
-
-
-        return String.format(PLANET_EXPLORED, planetName, astronautsAfterMission);
-    }
 
    
 }

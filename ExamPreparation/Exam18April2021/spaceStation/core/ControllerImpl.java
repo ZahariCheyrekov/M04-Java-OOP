@@ -25,10 +25,7 @@ public class ControllerImpl implements Controller {
     private Repository<Planet> planetRepository;
     private int exploredPlanets;
 
-    public ControllerImpl() {
-        this.astronautRepository = new AstronautRepository();
-        this.planetRepository = new PlanetRepository();
-    }
+
 
     @Override
     public String addAstronaut(String type, String astronautName) {

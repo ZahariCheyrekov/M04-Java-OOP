@@ -21,28 +21,7 @@ import static M04_JavaOOP.ExamPreparation.Exam18April2021.spaceStation.common.Co
 import static M04_JavaOOP.ExamPreparation.Exam18April2021.spaceStation.common.ConstantMessages.*;
 
 public class ControllerImpl implements Controller {
-  
-    @Override
-    public String addAstronaut(String type, String astronautName) {
-        Astronaut astronaut;
-
-        switch (type) {
-            case "Biologist":
-                astronaut = new Biologist(astronautName);
-                break;
-            case "Geodesist":
-                astronaut = new Geodesist(astronautName);
-                break;
-            case "Meteorologist":
-                astronaut = new Meteorologist(astronautName);
-                break;
-            default:
-                throw new IllegalArgumentException(ExceptionMessages.ASTRONAUT_INVALID_TYPE);
-        }
-
-        this.astronautRepository.add(astronaut);
-        return String.format(ASTRONAUT_ADDED, type, astronautName);
-    }
+ 
 
     @Override
     public String addPlanet(String planetName, String... items) {

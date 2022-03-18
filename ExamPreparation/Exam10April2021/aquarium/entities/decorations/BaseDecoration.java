@@ -1,6 +1,7 @@
-package M04_JavaOOP.ExamPreparation.Exam10April2021.aquarium.entities.decorations;
+package aquarium.entities.decorations;
 
 public abstract class BaseDecoration implements Decoration {
+
     private int comfort;
     private double price;
 

@@ -176,5 +176,11 @@ public class ControllerImpl implements Controller {
                 .sum();
     }
 
-    
+    private double calculateFishPrice(Aquarium aquarium) {
+        return aquarium
+                .getFish()
+                .stream()
+                .mapToDouble(Fish::getPrice)
+                .sum();
+    }
 }

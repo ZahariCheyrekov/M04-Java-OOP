@@ -1,7 +1,8 @@
-package M04_JavaOOP.ExamPreparation.Exam10April2021.aquarium.entities.fish;
+package aquarium.entities.fish;
 
 public class SaltwaterFish extends BaseFish {
-    private int size = 5;
+
+    private static final int SIZE = 5;
 
     public SaltwaterFish(String name, String species, double price) {
         super(name, species, price);
@@ -9,6 +10,6 @@ public class SaltwaterFish extends BaseFish {
 
     @Override
     public void eat() {
-        this.size += 2;
+        this.setSize(SIZE + 2);
     }
 }

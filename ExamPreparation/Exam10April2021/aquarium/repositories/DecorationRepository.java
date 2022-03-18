@@ -1,11 +1,12 @@
-package M04_JavaOOP.ExamPreparation.Exam10April2021.aquarium.repositories;
+package aquarium.repositories;
 
-import M04_JavaOOP.ExamPreparation.Exam10April2021.aquarium.entities.decorations.Decoration;
+import aquarium.entities.decorations.Decoration;
 
 import java.util.ArrayList;
 import java.util.Collection;
 
 public class DecorationRepository implements Repository {
+
     private Collection<Decoration> decorations;
 
     public DecorationRepository() {
@@ -26,7 +27,9 @@ public class DecorationRepository implements Repository {
     public Decoration findByType(String type) {
         return this.decorations
                 .stream()
-                .filter(decoration -> decoration.getClass().getSimpleName().equals(type))
+                .filter(decoration -> decoration.getClass()
+                        .getSimpleName()
+                        .equals(type))
                 .findFirst()
                 .orElse(null);
     }

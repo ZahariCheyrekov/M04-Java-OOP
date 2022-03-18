@@ -1,17 +1,18 @@
-package M04_JavaOOP.ExamPreparation.Exam10April2021.aquarium.entities.aquariums;
+package aquarium.entities.aquariums;
 
-import M04_JavaOOP.ExamPreparation.Exam10April2021.aquarium.entities.decorations.Decoration;
-import M04_JavaOOP.ExamPreparation.Exam10April2021.aquarium.entities.fish.Fish;
+import aquarium.entities.decorations.Decoration;
+import aquarium.entities.fish.Fish;
 
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.stream.Collectors;
+import java.util.stream.DoubleStream;
 
-import static M04_JavaOOP.ExamPreparation.Exam10April2021.aquarium.common.ConstantMessages.NOT_ENOUGH_CAPACITY;
-import static M04_JavaOOP.ExamPreparation.Exam10April2021.aquarium.common.ConstantMessages.WATER_NOT_SUITABLE;
-import static M04_JavaOOP.ExamPreparation.Exam10April2021.aquarium.common.ExceptionMessages.AQUARIUM_NAME_NULL_OR_EMPTY;
+import static aquarium.common.ConstantMessages.*;
+import static aquarium.common.ExceptionMessages.*;
 
-public class BaseAquarium implements Aquarium {
+public abstract class BaseAquarium implements Aquarium {
+
     private String name;
     private int capacity;
     private Collection<Decoration> decorations;
@@ -24,16 +25,19 @@ public class BaseAquarium implements Aquarium {
         this.fish = new ArrayList<>();
     }
 
-    public void setName(String name) {
-        if (name == null || name.isEmpty()) {
-            throw new IllegalArgumentException(AQUARIUM_NAME_NULL_OR_EMPTY);
+    private void setName(String name) {
+        if (name == null || name.trim().isEmpty()) {
+            throw new NullPointerException(AQUARIUM_NAME_NULL_OR_EMPTY);
         }
         this.name = name;
     }
 
     @Override
     public int calculateComfort() {
-        return this.decorations.stream().mapToInt(Decoration::getComfort).sum();
+        return this.decorations
+                .stream()
+                .mapToInt(Decoration::getComfort)
+                .sum();
     }
 
     @Override
@@ -43,16 +47,9 @@ public class BaseAquarium implements Aquarium {
 
     @Override
     public void addFish(Fish fish) {
-        if (this.fish.size() == this.capacity) {
-            throw new IllegalStateException(NOT_ENOUGH_CAPACITY);
+        if (this.capacity <= this.fish.size()) {
+            throw new IllegalArgumentException(NOT_ENOUGH_CAPACITY);
         }
-
-        String fishWaterType = fish.getClass().getSimpleName().replaceAll("Fish", "");
-
-        if (!this.getClass().getSimpleName().contains(fishWaterType)) {
-            throw new IllegalStateException(WATER_NOT_SUITABLE);
-        }
-
         this.fish.add(fish);
     }
 
@@ -68,9 +65,7 @@ public class BaseAquarium implements Aquarium {
 
     @Override
     public void feed() {
-        for (Fish currentFish : fish) {
-            currentFish.eat();
-        }
+        this.fish.forEach(Fish::eat);
     }
 
     @Override
@@ -89,7 +84,8 @@ public class BaseAquarium implements Aquarium {
                         + "Comfort: %d",
                 this.name,
                 this.getClass().getSimpleName(),
-                fishOutput, this.decorations.size(),
+                fishOutput,
+                this.decorations.size(),
                 calculateComfort());
     }
 

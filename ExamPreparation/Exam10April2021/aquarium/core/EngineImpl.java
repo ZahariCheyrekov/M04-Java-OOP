@@ -1,8 +1,6 @@
-package M04_JavaOOP.ExamPreparation.Exam10April2021.aquarium.core;
+package aquarium.core;
 
-
-
-import M04_JavaOOP.ExamPreparation.Exam10April2021.aquarium.common.Command;
+import aquarium.common.Command;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -14,7 +12,7 @@ public class EngineImpl implements Engine {
     private BufferedReader reader;
 
     public EngineImpl() {
-        this.controller = new ControllerImpl();]
+        this.controller = new ControllerImpl();
         this.reader = new BufferedReader(new InputStreamReader(System.in));
     }
 
@@ -35,6 +33,7 @@ public class EngineImpl implements Engine {
             System.out.println(result);
         }
     }
+
     private String processInput() throws IOException {
         String input = this.reader.readLine();
         String[] tokens = input.split("\\s+");
@@ -71,33 +70,47 @@ public class EngineImpl implements Engine {
         }
         return result;
     }
+
     private String addAquarium(String[] data) {
-        return null;
+        String aquariumType = data[0];
+        String aquariumName = data[1];
+
+        return controller.addAquarium(aquariumType, aquariumName);
     }
 
     private String addDecoration(String[] data) {
-        return null;
+        String type = data[0];
+        return controller.addDecoration(type);
     }
 
     private String insertDecoration(String[] data) {
-        return null;
+        String aquariumName = data[0];
+        String decorationType = data[1];
+
+        return controller.insertDecoration(aquariumName, decorationType);
     }
 
     private String addFish(String[] data) {
-        //{aquariumName} {fishType} {fishName} {fishSpecies} {price}
-        return null;
+        String aquariumName = data[0];
+        String fishType = data[1];
+        String fishName = data[2];
+        String fishSpecies = data[3];
+        double price = Double.parseDouble(data[4]);
+
+        return controller.addFish(aquariumName, fishType, fishName, fishSpecies, price);
     }
 
     private String feedFish(String[] data) {
-        return null;
+        String aquariumName = data[0];
+        return controller.feedFish(aquariumName);
     }
 
     private String calculateValue(String[] data) {
-        return null;
+        String aquariumName = data[0];
+        return controller.calculateValue(aquariumName);
     }
 
     private String report() {
-        return null;
+        return controller.report();
     }
 }
-

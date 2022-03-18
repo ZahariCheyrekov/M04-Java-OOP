@@ -1,108 +1,80 @@
 package aquarium;
 
+import org.junit.Before;
 import org.junit.Test;
-
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.stream.Collectors;
 
 import static org.junit.Assert.*;
 
 public class AquariumTests {
 
+    private Aquarium aquarium;
+    private Fish fish;
+
+    @Before
+    public void setUp() {
+        aquarium = new Aquarium("Odium", 2);
+        fish = new Fish("Nemo");
+        aquarium.add(fish);
+    }
+
     @Test(expected = NullPointerException.class)
-    public void testShouldFailForInvalidAquariumNameWithValueNull() {
+    public void testShouldThrowExceptionFoNullAquariumName() {
         new Aquarium(null, 10);
     }
 
-    @Test
-    public void testShouldSetNumberOfTheAquariumCorrectly() {
-        Aquarium aquarium = new Aquarium("Pesho", 10);
-        String actual = aquarium.getName();
-        assertEquals("Pesho", actual);
+    @Test(expected = IllegalArgumentException.class)
+    public void testShouldThrowExceptionForNegativeAquariumCapacity() {
+        new Aquarium("Aqua", -10);
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void testShouldFailForInvalidAquariumCapacityForLessThanZero() {
-        new Aquarium("fish", -1);
-    }
-
-    @Test
-    public void testShouldReturnTheCorrectCapacityOffTheAquariumAndCount() {
-        Aquarium aquarium = new Aquarium("fish", 10);
-        Fish fish = new Fish("Nemo");
+    public void testShouldThrowExceptionForNoAquariumCapacity() {
         aquarium.add(fish);
-
-        int actualCapacity = aquarium.getCapacity();
-        int actualCount = aquarium.getCount();
-
-        assertEquals(1, actualCount);
-        assertEquals(10, actualCapacity);
+        aquarium.add(fish);
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void testShouldFailForNotEnoughSpaceInTheAquarium() {
-        Aquarium aquarium = new Aquarium("fish", 1);
-        Fish fish = new Fish("Nemo");
-        Fish invalid = new Fish("NotNemo");
+    public void testShouldThrowExceptionForNoneExistingFishToRemove() {
+        aquarium.remove("noneExisting");
+    }
 
-        aquarium.add(fish);
-        aquarium.add(invalid);
+    @Test
+    public void testShouldRemoveFishFromAquariumCorrectly() {
+        aquarium.remove(fish.getName());
+        assertEquals(0, aquarium.getCount());
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void testShouldFailForNameWithValueNull() {
-        Aquarium aquarium = new Aquarium("fish", 1);
-        aquarium.remove("NoFish");
+    public void testShouldThrowExceptionForNoneExistingFishWithGivenName() {
+        aquarium.sellFish("Goldy");
     }
 
     @Test
-    public void testShouldRemoveFishFromTHeAquariumCorrectly() {
-        Aquarium aquarium = new Aquarium("fish", 1);
-        Fish fish = new Fish("Nemo");
-        aquarium.add(fish);
-        aquarium.remove("Nemo");
-    }
-
-    @Test(expected = IllegalArgumentException.class)
-    public void testShouldFailForInvalidNameWithValueNullForMethodSellFish() {
-        Aquarium aquarium = new Aquarium("fish", 1);
-        aquarium.sellFish("NoFish");
-    }
-
-    @Test
-    public void testShouldSellTheCorrectFishFromTheAquarium() {
-        Aquarium aquarium = new Aquarium("fish", 1);
-        Fish fish = new Fish("Nemo");
-        aquarium.add(fish);
-        aquarium.sellFish(fish.getName());
-    }
-
-    @Test
-    public void testShouldReturnTheCorrectReportMethodForAvailableFishInAquarium() {
-        Aquarium aquarium = new Aquarium("SharkTank", 10);
-        Collection<Fish> fish = new ArrayList<>();
-        Fish fishOne = new Fish("Nemo");
-        Fish fishTwo = new Fish("Jerry");
-
-        fish.add(fishOne);
-        fish.add(fishTwo);
-
-        aquarium.add(fishOne);
-        aquarium.add(fishTwo);
-
-        String names = fish.stream().map(Fish::getName).collect(Collectors.joining(", "));
-        String expected = String.format("Fish available at %s: %s", aquarium.getName(), names);
-
-        assertEquals(expected, aquarium.report());
-    }
-
-    @Test
-    public void testSellFishShouldSetFishAsSold() {
-        Aquarium aquarium = new Aquarium("SharkTank", 10);
-        Fish fish = new Fish("test_fish");
-        aquarium.add(fish);
-        aquarium.sellFish("test_fish");
+    public void testShouldSellFishCorrectlyAndSetAvailableToFalse() {
+        Fish soldFish = aquarium.sellFish(fish.getName());
+        assertEquals(fish, soldFish);
         assertFalse(fish.isAvailable());
+    }
+
+    @Test
+    public void testShouldReturnReportForTheAquarium() {
+        String expected = "Fish available at Odium: Nemo";
+        String actual = aquarium.report();
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testShouldGetAquariumCapacity() {
+        int expected = 2;
+        int actual = aquarium.getCapacity();
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testShouldGetAquariumName() {
+        String expected = "Odium";
+        String actual = aquarium.getName();
+        assertEquals(expected, actual);
     }
 }

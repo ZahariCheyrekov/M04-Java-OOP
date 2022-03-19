@@ -12,12 +12,7 @@ public class ComputerManagerTests {
 
 
 
-    @Test(expected = IllegalArgumentException.class)
-    public void testShouldThrowExceptionForNullModel() {
-        this.computerManager.getComputer("Giga", null);
-    }
 
-  
 
 
   

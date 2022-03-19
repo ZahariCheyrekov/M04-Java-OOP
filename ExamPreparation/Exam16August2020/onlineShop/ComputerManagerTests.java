@@ -16,6 +16,7 @@ public class ComputerManagerTests {
     public void setUp() {
         computerManager = new ComputerManager();
         computer = new Computer("Acer", "Aspire", 10);
+    
         computerManager.addComputer(computer);
     }
 

@@ -61,11 +61,7 @@ public class ComputerManagerTests {
         this.computerManager.getComputer("Giga", null);
     }
 
-    @Test(expected = IllegalArgumentException.class)
-    public void testShouldThrowExceptionForNoSuchComputerWithManufacturerAndModel() {
-        this.computerManager.addComputer(computer);
-        this.computerManager.getComputer("Javen", "LG");
-    }
+  
 
 
   

@@ -11,11 +11,7 @@ public class ComputerManagerTests {
    
 
   
-    @Test
-    public void testShouldReturnTheCorrectCountOfTheElementsInTheComputerManger() {
-        this.computerManager.addComputer(computer);
-        assertEquals(1, this.computerManager.getCount());
-    }
+
 
     @Test(expected = IllegalArgumentException.class)
     public void testShouldThrowExceptionForNullComputerElement() {

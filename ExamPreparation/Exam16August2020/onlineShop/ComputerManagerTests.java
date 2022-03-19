@@ -75,10 +75,6 @@ public class ComputerManagerTests {
         assertEquals(expected, actual);
     }
 
-    @Test(expected = IllegalArgumentException.class)
-    public void testShouldThrowExceptionForNullManufacturerByGetManufacturerMethod() {
-        this.computerManager.addComputer(computer);
-        this.computerManager.getComputersByManufacturer(null);
-    }
+  
 
 }

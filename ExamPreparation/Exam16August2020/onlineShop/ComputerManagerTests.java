@@ -81,10 +81,4 @@ public class ComputerManagerTests {
         this.computerManager.getComputersByManufacturer(null);
     }
 
-    @Test
-    public void testShouldGetCorrectComputerByGetManufacturerMethod() {
-        this.computerManager.addComputer(computer);
-        List<Computer> computers = this.computerManager.getComputersByManufacturer("Giga");
-        assertEquals(computer, computers.get(0));
-    }
 }

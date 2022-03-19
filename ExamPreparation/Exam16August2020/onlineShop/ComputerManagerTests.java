@@ -10,15 +10,6 @@ import static org.junit.Assert.*;
 public class ComputerManagerTests {
    
 
-  
-
-
-
-    @Test(expected = IllegalArgumentException.class)
-    public void testShouldFailForAlreadyExistingComputerInTheComputerManger() {
-        this.computerManager.addComputer(computer);
-        this.computerManager.addComputer(computer);
-    }
 
     @Test
     public void testShouldRemoveTheGivenComputerCorrectly() {

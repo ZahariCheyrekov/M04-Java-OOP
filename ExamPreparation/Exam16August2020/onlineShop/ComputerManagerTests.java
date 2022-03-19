@@ -10,10 +10,7 @@ import static org.junit.Assert.*;
 public class ComputerManagerTests {
    
 
-    @Test(expected = IllegalArgumentException.class)
-    public void testShouldThrowExceptionForNullManufacturer() {
-        this.computerManager.getComputer(null, "Acer");
-    }
+
 
     @Test(expected = IllegalArgumentException.class)
     public void testShouldThrowExceptionForNullModel() {

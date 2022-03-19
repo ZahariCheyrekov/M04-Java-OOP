@@ -10,17 +10,6 @@ import static org.junit.Assert.*;
 public class ComputerManagerTests {
    
 
-
-    @Test
-    public void testShouldRemoveTheGivenComputerCorrectly() {
-        Computer currentComputer = new Computer("Figo", "Mac", 2000);
-        String manufacturer = currentComputer.getManufacturer();
-        String model = currentComputer.getModel();
-
-        this.computerManager.addComputer(currentComputer);
-        this.computerManager.removeComputer(manufacturer, model);
-    }
-
     @Test(expected = IllegalArgumentException.class)
     public void testShouldThrowExceptionForNullManufacturer() {
         this.computerManager.getComputer(null, "Acer");

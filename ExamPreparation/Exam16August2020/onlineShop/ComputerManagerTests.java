@@ -12,11 +12,7 @@ public class ComputerManagerTests {
     private ComputerManager computerManager;
     private Computer computer;
 
-    @Before
-    public void setUp() {
-        this.computerManager = new ComputerManager();
-        this.computer = new Computer("Giga", "Acer", 100.0);
-    }
+   
 
     @Test(expected = UnsupportedOperationException.class)
     public void testShouldThrowExceptionForUnmodifiableCollection() {

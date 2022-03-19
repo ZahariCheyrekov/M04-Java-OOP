@@ -10,12 +10,7 @@ import static org.junit.Assert.*;
 public class ComputerManagerTests {
    
 
-    @Test(expected = UnsupportedOperationException.class)
-    public void testShouldThrowExceptionForUnmodifiableCollection() {
-        this.computerManager.addComputer(computer);
-        this.computerManager.getComputers().remove(0);
-    }
-
+  
     @Test
     public void testShouldReturnTheCorrectCountOfTheElementsInTheComputerManger() {
         this.computerManager.addComputer(computer);

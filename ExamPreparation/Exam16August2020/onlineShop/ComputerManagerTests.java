@@ -67,13 +67,6 @@ public class ComputerManagerTests {
         this.computerManager.getComputer("Javen", "LG");
     }
 
-    @Test
-    public void testShouldGetTheCorrectComputerByModelAndManufacturer() {
-        this.computerManager.addComputer(computer);
-        Computer actual = this.computerManager.getComputer("Giga", "Acer");
-        Computer expected = computer;
-        assertEquals(expected, actual);
-    }
 
   
 

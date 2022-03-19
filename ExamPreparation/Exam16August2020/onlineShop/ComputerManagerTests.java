@@ -13,10 +13,6 @@ public class ComputerManagerTests {
   
 
 
-    @Test(expected = IllegalArgumentException.class)
-    public void testShouldThrowExceptionForNullComputerElement() {
-        this.computerManager.addComputer(null);
-    }
 
     @Test(expected = IllegalArgumentException.class)
     public void testShouldFailForAlreadyExistingComputerInTheComputerManger() {

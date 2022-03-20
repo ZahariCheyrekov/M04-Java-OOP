@@ -6,20 +6,16 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class PlayerTests {
-    public static Player player;
-    public static Gun rifle;
 
-   
+    private Player player;
+    private final Player DEAD_PLAYER = new Player("dead", 0);
+    private Gun gun;
 
-    @Test
-    public void testShouldCreatePlayerCorrectly() {
-        String expectedName = "Boris";
-        String actualName = player.getUsername();
-        assertEquals(expectedName, actualName);
-
-        int expectedHealth = 100;
-        int actualHealth = player.getHealth();
-        assertEquals(expectedHealth, actualHealth);
+    @Before
+    public void setUp() {
+        player = new Player("Glory", 100);
+        gun = new Gun("Rifle", 100);
+        player.addGun(gun);
     }
 
     @Test(expected = NullPointerException.class)
@@ -28,60 +24,53 @@ public class PlayerTests {
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void testShouldThrowExceptionForLessThanZeroHealth() {
-        new Player("Hichi", -10);
+    public void testShouldThrowExceptionForHealthBelowZero() {
+        new Player("invalid", -10);
     }
 
     @Test(expected = UnsupportedOperationException.class)
-    public void testShouldThrowExceptionFoNonModifiableCollection() {
-        player.addGun(rifle);
+    public void testShouldThrowExceptionWhenTryingToModifyGunsCollection() {
         player.getGuns().clear();
     }
 
-    @Test(expected = IllegalStateException.class)
-    public void testShouldThrowExceptionForAlreadyDeadPlayer() {
-        Player playerZeroHealth = new Player("Die", 0);
-        playerZeroHealth.takeDamage(10);
-    }
-
-    @Test
-    public void testPlayerShouldTakeDamageAndDie() {
-        Player playerToDie = new Player("Boris", 10);
-        playerToDie.takeDamage(20);
-
-        int expectedHealth = 0;
-        int actualHealth = playerToDie.getHealth();
-        assertEquals(expectedHealth, actualHealth);
-    }
-
-    @Test
-    public void testPlayerShouldTakeDamageAndStayAlive() {
-        Player playerToDie = new Player("Boris", 10);
-        playerToDie.takeDamage(5);
-
-        int expectedHealth = 5;
-        int actualHealth = playerToDie.getHealth();
-        assertEquals(expectedHealth, actualHealth);
-    }
-
     @Test(expected = NullPointerException.class)
-    public void testShouldThrowExceptionForNullGun() {
+    public void testShouldThrowExceptionWhenTryingToAddNullGun() {
         player.addGun(null);
     }
 
     @Test
     public void testShouldRemoveGunFromPlayerCorrectly() {
-        player.addGun(rifle);
-        boolean isRemoved = player.removeGun(rifle);
+        boolean isRemoved = player.removeGun(gun);
         assertTrue(isRemoved);
-        assertEquals(0, player.getGuns().size());
     }
 
     @Test
-    public void testShouldGetCorrectGun() {
-        player.addGun(rifle);
-        Gun expected = rifle;
-        Gun actual = player.getGun(rifle.getName());
+    public void testShouldReturnGunByGivenName() {
+        Gun gunByName = player.getGun(this.gun.getName());
+        assertEquals(gun, gunByName);
+    }
+
+    @Test(expected = IllegalStateException.class)
+    public void testShouldThrowExceptionForAlreadyDeadPlayer() {
+        DEAD_PLAYER.takeDamage(10);
+    }
+
+    @Test
+    public void testShouldTakeDamageFromPlayerCorrectly() {
+        player.takeDamage(10);
+        int expectedHealth = 90;
+        int actualHealth = player.getHealth();
+        assertEquals(expectedHealth, actualHealth);
+
+        player.takeDamage(100);
+        boolean zeroHealth = player.getHealth() == 0;
+        assertTrue(zeroHealth);
+    }
+
+    @Test
+    public void testShouldGetUsernameCorrectly() {
+        String expected = "Glory";
+        String actual = player.getUsername();
         assertEquals(expected, actual);
     }
 }

@@ -1,6 +1,6 @@
-package M04_JavaOOP.ExamPreparation.Exam12April2020.CounterStriker.models.field;
+package CounterStriker.models.field;
 
-import M04_JavaOOP.ExamPreparation.Exam12April2020.CounterStriker.models.players.Player;
+import CounterStriker.models.players.Player;
 
 import java.util.Collection;
 

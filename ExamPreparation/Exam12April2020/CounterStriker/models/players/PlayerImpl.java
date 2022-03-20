@@ -1,10 +1,11 @@
-package M04_JavaOOP.ExamPreparation.Exam12April2020.CounterStriker.models.players;
+package CounterStriker.models.players;
 
-import M04_JavaOOP.ExamPreparation.Exam12April2020.CounterStriker.models.guns.Gun;
+import CounterStriker.models.guns.Gun;
 
-import static M04_JavaOOP.ExamPreparation.Exam12April2020.CounterStriker.common.ExceptionMessages.*;
+import static CounterStriker.common.ExceptionMessages.*;
 
 public abstract class PlayerImpl implements Player {
+
     private String username;
     private int health;
     private int armor;
@@ -18,21 +19,11 @@ public abstract class PlayerImpl implements Player {
         this.setGun(gun);
     }
 
-    @Override
-    public String getUsername() {
-        return this.username;
-    }
-
     private void setUsername(String username) {
         if (username == null || username.trim().isEmpty()) {
             throw new NullPointerException(INVALID_PLAYER_NAME);
         }
         this.username = username;
-    }
-
-    @Override
-    public int getHealth() {
-        return this.health;
     }
 
     private void setHealth(int health) {
@@ -42,26 +33,11 @@ public abstract class PlayerImpl implements Player {
         this.health = health;
     }
 
-    @Override
-    public int getArmor() {
-        return this.armor;
-    }
-
     private void setArmor(int armor) {
         if (armor < 0) {
             throw new IllegalArgumentException(INVALID_PLAYER_ARMOR);
         }
         this.armor = armor;
-    }
-
-    @Override
-    public boolean isAlive() {
-        return this.health > 0;
-    }
-
-    @Override
-    public Gun getGun() {
-        return this.gun;
     }
 
     private void setGun(Gun gun) {
@@ -72,8 +48,34 @@ public abstract class PlayerImpl implements Player {
     }
 
     @Override
+    public String getUsername() {
+        return this.username;
+    }
+
+    @Override
+    public int getHealth() {
+        return this.health;
+    }
+
+    @Override
+    public int getArmor() {
+        return this.armor;
+    }
+
+    @Override
+    public Gun getGun() {
+        return this.gun;
+    }
+
+    @Override
+    public boolean isAlive() {
+        return this.health > 0;
+    }
+
+    @Override
     public void takeDamage(int points) {
         int damage = points;
+
         if (damage >= this.getArmor()) {
             damage -= this.getArmor();
             this.armor = 0;
@@ -81,16 +83,21 @@ public abstract class PlayerImpl implements Player {
         } else {
             this.armor -= damage;
         }
+
+        if (this.health < 0) {
+            this.health = 0;
+        }
     }
 
     @Override
     public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append(String.format("%s: %s", this.getClass().getSimpleName(), this.username)).append(System.lineSeparator());
-        sb.append(String.format("--Health: %d", this.health)).append(System.lineSeparator());
-        sb.append(String.format("--Armor: %d", this.armor)).append(System.lineSeparator());
-        sb.append(String.format("--Gun: %s", this.gun.getName()));
+        StringBuilder info = new StringBuilder();
 
-        return sb.toString().trim();
+        info.append(String.format("%s: %s", this.getClass().getSimpleName(), this.username)).append(System.lineSeparator());
+        info.append(String.format("--Health: %d", this.health)).append(System.lineSeparator());
+        info.append(String.format("--Armor: %d", this.armor)).append(System.lineSeparator());
+        info.append(String.format("--Gun: %s", this.gun.getName()));
+
+        return info.toString().trim();
     }
 }

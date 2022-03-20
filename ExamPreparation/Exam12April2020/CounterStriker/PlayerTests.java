@@ -9,11 +9,7 @@ public class PlayerTests {
     public static Player player;
     public static Gun rifle;
 
-    @Before
-    public void setUp() {
-        player = new Player("Boris", 100);
-        rifle = new Gun("Rifle", 100);
-    }
+   
 
     @Test
     public void testShouldCreatePlayerCorrectly() {

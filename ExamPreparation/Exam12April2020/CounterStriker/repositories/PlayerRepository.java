@@ -1,34 +1,42 @@
-package M04_JavaOOP.ExamPreparation.Exam12April2020.CounterStriker.repositories;
+package CounterStriker.repositories;
 
-import M04_JavaOOP.ExamPreparation.Exam12April2020.CounterStriker.models.players.Player;
+import CounterStriker.models.players.Player;
 
-import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
+import java.util.LinkedHashMap;
+import java.util.Map;
 
-public class PlayerRepository<T extends Player> implements Repository<T> {
-    Collection<T> models;
+import static CounterStriker.common.ExceptionMessages.INVALID_PLAYER_REPOSITORY;
+
+public class PlayerRepository implements Repository<Player> {
+
+    private Map<String, Player> players;
 
     public PlayerRepository() {
-        this.models = new ArrayList<>();
+        this.players = new LinkedHashMap<>();
     }
 
     @Override
-    public Collection<T> getModels() {
-        return this.models;
+    public Collection<Player> getModels() {
+        return Collections.unmodifiableCollection(this.players.values());
     }
 
     @Override
-    public void add(T model) {
-        models.add(model);
+    public void add(Player model) {
+        if (model == null) {
+            throw new NullPointerException(INVALID_PLAYER_REPOSITORY);
+        }
+        this.players.put(model.getUsername(), model);
     }
 
     @Override
-    public boolean remove(T model) {
-        return models.remove(model);
+    public boolean remove(Player model) {
+        return this.players.remove(model.getUsername()) != null;
     }
 
     @Override
-    public T findByName(String name) {
-        return this.models.stream().filter(m -> m.getUsername().equals(name)).findFirst().orElse(null);
+    public Player findByName(String name) {
+        return this.players.get(name);
     }
 }

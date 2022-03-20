@@ -1,6 +1,6 @@
-package M04_JavaOOP.ExamPreparation.Exam12April2020.CounterStriker.models.players;
+package CounterStriker.models.players;
 
-import M04_JavaOOP.ExamPreparation.Exam12April2020.CounterStriker.models.guns.Gun;
+import CounterStriker.models.guns.Gun;
 
 public interface Player {
     String getUsername();

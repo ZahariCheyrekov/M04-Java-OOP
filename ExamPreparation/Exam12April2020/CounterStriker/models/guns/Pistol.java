@@ -1,7 +1,8 @@
-package M04_JavaOOP.ExamPreparation.Exam12April2020.CounterStriker.models.guns;
+package CounterStriker.models.guns;
 
 public class Pistol extends GunImpl {
-    private static final int BULLETS_TO_SHOOT = 1;
+
+    private static final int BULLETS_TO_FIRE = 1;
 
     public Pistol(String name, int bulletsCount) {
         super(name, bulletsCount);
@@ -9,10 +10,10 @@ public class Pistol extends GunImpl {
 
     @Override
     public int fire() {
-        if (super.getBulletsCount() < BULLETS_TO_SHOOT) {
+        if (super.getBulletsCount() < BULLETS_TO_FIRE) {
             return 0;
         }
-        super.decreaseBullets(BULLETS_TO_SHOOT);
-        return BULLETS_TO_SHOOT;
+        super.decreaseBullets(BULLETS_TO_FIRE);
+        return BULLETS_TO_FIRE;
     }
 }

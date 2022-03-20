@@ -1,6 +1,6 @@
-package M04_JavaOOP.ExamPreparation.Exam12April2020.CounterStriker.core;
+package CounterStriker.core;
 
-import M04_JavaOOP.ExamPreparation.Exam12April2020.CounterStriker.common.Command;
+import CounterStriker.common.Command;
 
 import java.io.BufferedReader;
 import java.io.IOException;

@@ -1,34 +1,39 @@
-package M04_JavaOOP.ExamPreparation.Exam12April2020.CounterStriker.repositories;
+package CounterStriker.repositories;
 
-import M04_JavaOOP.ExamPreparation.Exam12April2020.CounterStriker.models.guns.Gun;
+import CounterStriker.models.guns.Gun;
 
-import java.util.ArrayList;
-import java.util.Collection;
+import java.util.*;
 
-public class GunRepository<T extends Gun> implements Repository<T> {
-    Collection<T> models;
+import static CounterStriker.common.ExceptionMessages.INVALID_GUN_REPOSITORY;
+
+public class GunRepository implements Repository<Gun> {
+
+    private Map<String, Gun> guns;
 
     public GunRepository() {
-        this.models = new ArrayList<>();
+        this.guns = new LinkedHashMap<>();
     }
 
     @Override
-    public Collection<T> getModels() {
-        return this.models;
+    public Collection<Gun> getModels() {
+        return Collections.unmodifiableCollection(this.guns.values());
     }
 
     @Override
-    public void add(T model) {
-        models.add(model);
+    public void add(Gun model) {
+        if (model == null) {
+            throw new NullPointerException(INVALID_GUN_REPOSITORY);
+        }
+        this.guns.put(model.getName(), model);
     }
 
     @Override
-    public boolean remove(T model) {
-        return models.remove(model);
+    public boolean remove(Gun model) {
+        return this.guns.remove(model.getName()) != null;
     }
 
     @Override
-    public T findByName(String name) {
-        return this.models.stream().filter(m -> m.getName().equals(name)).findFirst().orElse(null);
+    public Gun findByName(String name) {
+        return this.guns.get(name);
     }
 }

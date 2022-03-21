@@ -8,12 +8,6 @@ import org.junit.Test;
 public class SpaceshipTests {
 
 
-  
-
-    @Test(expected = NullPointerException.class)
-    public void testShouldFailForInvalidNameWithEmptyValue() {
-        new Spaceship("    ", -10);
-    }
 
     @Test(expected = IllegalArgumentException.class)
     public void testShouldFailForInvalidCapacityOfTheSpaceship() {

@@ -43,6 +43,7 @@ public class SpaceshipTests {
         spaceship.add(astronaut);
         spaceship.add(astronaut);
     }
+   
     @Test
     public void testShouldGetSpaceshipNameCorrectly() {
         String expectedName = "FlagonXII";

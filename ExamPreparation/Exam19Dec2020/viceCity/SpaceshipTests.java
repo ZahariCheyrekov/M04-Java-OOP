@@ -7,11 +7,6 @@ import org.junit.Test;
 
 public class SpaceshipTests {
 
-    @Test
-    public void testGetAstronautsCountShouldReturnZeroWhenEmpty() {
-        assertEquals(0, spaceship.getCount());
-    }
-
     @Test(expected = IllegalArgumentException.class)
     public void testAddSameAstronautTwiceShouldFail() {
         spaceship.add(new Astronaut("testOne", 100));

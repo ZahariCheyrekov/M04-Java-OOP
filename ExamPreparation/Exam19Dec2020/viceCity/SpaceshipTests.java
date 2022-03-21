@@ -9,10 +9,6 @@ public class SpaceshipTests {
 
 
   
-    @Test(expected = NullPointerException.class)
-    public void testShouldFailForInvalidNameWithValueNull() {
-        new Spaceship(null, -10);
-    }
 
     @Test(expected = NullPointerException.class)
     public void testShouldFailForInvalidNameWithEmptyValue() {

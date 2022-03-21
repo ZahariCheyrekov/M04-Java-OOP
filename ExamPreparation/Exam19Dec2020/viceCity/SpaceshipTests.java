@@ -8,12 +8,6 @@ import org.junit.Test;
 public class SpaceshipTests {
 
     @Test(expected = IllegalArgumentException.class)
-    public void testAddSameAstronautTwiceShouldFail() {
-        spaceship.add(new Astronaut("testOne", 100));
-        spaceship.add(new Astronaut("testOne", 100));
-    }
-
-    @Test(expected = IllegalArgumentException.class)
     public void testAddAstronautWhenCapacityIsFullShouldFail() {
         Spaceship spaceship = new Spaceship("Spaceship", 1);
         spaceship.add(new Astronaut("testOne", 100));

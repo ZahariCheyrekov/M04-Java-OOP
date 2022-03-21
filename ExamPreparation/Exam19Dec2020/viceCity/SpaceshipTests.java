@@ -59,10 +59,5 @@ public class SpaceshipTests {
         spaceship.add(new Astronaut("testTwo", 100));
     }
 
-    @Test
-    public void testGetAstronautsCountShouldReturnTwoWhenTwoAdded() {
-        spaceship.add(new Astronaut("testOne", 100));
-        spaceship.add(new Astronaut("testTwo", 100));
-        assertEquals(2, spaceship.getCount());
-    }
+  
 }

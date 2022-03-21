@@ -8,11 +8,7 @@ import org.junit.Test;
 public class SpaceshipTests {
 
 
-    @Before
-    public void setUp() {
-        this.spaceship = new Spaceship("Flagon", 5);
-    }
-
+  
     @Test(expected = NullPointerException.class)
     public void testShouldFailForInvalidNameWithValueNull() {
         new Spaceship(null, -10);

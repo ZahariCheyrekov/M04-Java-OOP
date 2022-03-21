@@ -8,12 +8,6 @@ import org.junit.Test;
 public class SpaceshipTests {
 
     @Test
-    public void testRemoveAstronautShouldReturnTrueWhenSuchAdded() {
-        spaceship.add(new Astronaut("testOne", 100));
-        assertTrue(spaceship.remove("testOne"));
-    }
-    
-    @Test
     public void testGetAstronautsCountShouldReturnZeroWhenEmpty() {
         assertEquals(0, spaceship.getCount());
     }

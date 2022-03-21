@@ -50,6 +50,7 @@ public class SpaceshipTests {
         String actualName = spaceship.getName();
         assertEquals(expectedName, actualName);
     }
+    
     @Test
     public void testShouldGetSpaceshipAstronautsCountCorrectly() {
         spaceship.add(astronaut);

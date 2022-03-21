@@ -7,13 +7,6 @@ import org.junit.Test;
 
 public class SpaceshipTests {
 
-
-
-    @Test(expected = IllegalArgumentException.class)
-    public void testShouldFailForInvalidCapacityOfTheSpaceship() {
-        new Spaceship("Invalid", -10);
-    }
-
     @Test
     public void testRemoveAstronautShouldReturnFalseWhenNoSuchAdded() {
         spaceship.add(new Astronaut("testOne", 100));

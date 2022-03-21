@@ -7,7 +7,6 @@ import org.junit.Test;
 
 public class SpaceshipTests {
 
-    private Spaceship spaceship;
 
     @Before
     public void setUp() {

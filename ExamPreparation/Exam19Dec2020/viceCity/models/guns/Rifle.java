@@ -1,13 +1,13 @@
-package M04_JavaOOP.ExamPreparation.Exam19Dec2020.viceCity.models.guns;
+package viceCity.models.guns;
 
 public class Rifle extends BaseGun {
+
     private final static int BULLETS_PER_BARREL = 50;
     private static int TOTAL_BULLETS = 500;
 
     public Rifle(String name) {
         super(name, BULLETS_PER_BARREL, TOTAL_BULLETS);
     }
-
 
     @Override
     public int fire() {
@@ -18,6 +18,7 @@ public class Rifle extends BaseGun {
         if (getBulletsPerBarrel() > 0) {
             setBulletsPerBarrel(getBulletsPerBarrel() - 5);
         }
+
         return 5;
     }
 

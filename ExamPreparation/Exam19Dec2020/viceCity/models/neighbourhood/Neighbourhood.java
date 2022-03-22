@@ -1,6 +1,6 @@
-package M04_JavaOOP.ExamPreparation.Exam19Dec2020.viceCity.models.neighbourhood;
+package viceCity.models.neighbourhood;
 
-import M04_JavaOOP.ExamPreparation.Exam19Dec2020.viceCity.models.players.Player;
+import viceCity.models.players.Player;
 
 import java.util.Collection;
 

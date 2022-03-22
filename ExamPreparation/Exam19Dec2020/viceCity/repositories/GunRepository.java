@@ -1,11 +1,11 @@
-package M04_JavaOOP.ExamPreparation.Exam19Dec2020.viceCity.repositories;
+package viceCity.repositories.interfaces;
 
-import M04_JavaOOP.ExamPreparation.Exam19Dec2020.viceCity.repositories.interfaces.Repository;
-import M04_JavaOOP.ExamPreparation.Exam19Dec2020.viceCity.models.guns.Gun;
+import viceCity.models.guns.Gun;
 
 import java.util.*;
 
 public class GunRepository implements Repository<Gun> {
+
     private Map<String, Gun> models;
 
     public GunRepository() {
@@ -14,7 +14,7 @@ public class GunRepository implements Repository<Gun> {
 
     @Override
     public Collection<Gun> getModels() {
-        return Collections.unmodifiableCollection(models.values());
+        return Collections.unmodifiableCollection(this.models.values());
     }
 
     @Override
@@ -24,8 +24,7 @@ public class GunRepository implements Repository<Gun> {
 
     @Override
     public boolean remove(Gun model) {
-        Gun removed = this.models.remove(model.getName());
-        return removed != null;
+        return this.models.remove(model.getName()) != null;
     }
 
     @Override

@@ -1,14 +1,16 @@
-package M04_JavaOOP.ExamPreparation.Exam19Dec2020.viceCity.core;
+package viceCity.core;
 
-import M04_JavaOOP.ExamPreparation.Exam19Dec2020.viceCity.core.interfaces.Controller;
-import M04_JavaOOP.ExamPreparation.Exam19Dec2020.viceCity.models.guns.Gun;
-import M04_JavaOOP.ExamPreparation.Exam19Dec2020.viceCity.models.guns.Pistol;
-import M04_JavaOOP.ExamPreparation.Exam19Dec2020.viceCity.models.guns.Rifle;
-import M04_JavaOOP.ExamPreparation.Exam19Dec2020.viceCity.models.neighbourhood.GangNeighbourhood;
-import M04_JavaOOP.ExamPreparation.Exam19Dec2020.viceCity.models.neighbourhood.Neighbourhood;
-import M04_JavaOOP.ExamPreparation.Exam19Dec2020.viceCity.models.players.CivilPlayer;
-import M04_JavaOOP.ExamPreparation.Exam19Dec2020.viceCity.models.players.MainPlayer;
-import M04_JavaOOP.ExamPreparation.Exam19Dec2020.viceCity.models.players.Player;
+import viceCity.core.interfaces.Controller;
+import viceCity.models.guns.Gun;
+import viceCity.models.guns.Pistol;
+import viceCity.models.guns.Rifle;
+import viceCity.models.neighbourhood.GangNeighbourhood;
+import viceCity.models.neighbourhood.Neighbourhood;
+import viceCity.models.players.CivilPlayer;
+import viceCity.models.players.MainPlayer;
+import viceCity.models.players.Player;
+import viceCity.repositories.interfaces.GunRepository;
+import viceCity.repositories.interfaces.Repository;
 
 import java.util.ArrayDeque;
 import java.util.LinkedHashMap;
@@ -16,41 +18,49 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-import static M04_JavaOOP.ExamPreparation.Exam19Dec2020.viceCity.common.ConstantMessages.*;
+import static viceCity.common.ConstantMessages.*;
 
 public class ControllerImpl implements Controller {
+
     private Player mainPlayer;
-    private Map<String, Player> players;
     private ArrayDeque<Gun> guns;
     private Neighbourhood neighbourhood;
+    private Map<String, Player> players;
 
     public ControllerImpl() {
         this.mainPlayer = new MainPlayer();
-        this.players = new LinkedHashMap<>();
         this.guns = new ArrayDeque<>();
         this.neighbourhood = new GangNeighbourhood();
+        this.players = new LinkedHashMap<>();
     }
 
     @Override
     public String addPlayer(String name) {
-        this.players.put(name, new CivilPlayer(name));
+        Player player = new CivilPlayer(name);
+        this.players.putIfAbsent(player.getName(), player);
+
         return String.format(PLAYER_ADDED, name);
     }
 
     @Override
     public String addGun(String type, String name) {
+
         Gun gun;
 
-        if (type.equals("Rifle")) {
-            gun = new Rifle(name);
+        switch (type) {
+            case "Pistol":
+                gun = new Pistol(name);
+                break;
 
-        } else if (type.equals("Pistol")) {
-            gun = new Pistol(name);
-        } else {
-            return GUN_TYPE_INVALID;
+            case "Rifle":
+                gun = new Rifle(name);
+                break;
+
+            default:
+                return GUN_TYPE_INVALID;
         }
 
-        this.guns.offer(gun);
+        this.guns.add(gun);
 
         return String.format(GUN_ADDED, name, type);
     }
@@ -64,11 +74,11 @@ public class ControllerImpl implements Controller {
         }
 
         if (name.equals("Vercetti")) {
-            mainPlayer.getGunRepository().add(gun);
+            this.mainPlayer.getGunRepository().add(gun);
             return String.format(GUN_ADDED_TO_MAIN_PLAYER, gun.getName(), mainPlayer.getName());
         }
 
-        Player player = players.get(name);
+        Player player = this.players.get(name);
 
         if (player == null) {
             return CIVIL_PLAYER_DOES_NOT_EXIST;
@@ -81,6 +91,7 @@ public class ControllerImpl implements Controller {
 
     @Override
     public String fight() {
+
         this.neighbourhood.action(mainPlayer, players.values());
 
         if (this.mainPlayer.getLifePoints() == 100 && this.players

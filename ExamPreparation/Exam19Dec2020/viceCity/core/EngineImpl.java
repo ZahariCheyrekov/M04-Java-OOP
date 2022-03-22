@@ -1,8 +1,8 @@
-package M04_JavaOOP.ExamPreparation.Exam19Dec2020.viceCity.core;
+package viceCity.core;
 
-import M04_JavaOOP.ExamPreparation.Exam19Dec2020.viceCity.common.Command;
-import M04_JavaOOP.ExamPreparation.Exam19Dec2020.viceCity.core.interfaces.Controller;
-import M04_JavaOOP.ExamPreparation.Exam19Dec2020.viceCity.core.interfaces.Engine;
+import viceCity.common.Command;
+import viceCity.core.interfaces.Controller;
+import viceCity.core.interfaces.Engine;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -46,16 +46,16 @@ public class EngineImpl implements Engine {
 
         switch (command) {
             case AddPlayer:
-                result = controller.addPlayer(data[0]);
+
                 break;
             case AddGun:
-                result = controller.addGun(data[0], data[1]);
+
                 break;
             case AddGunToPlayer:
-                result = controller.addGunToPlayer(data[0]);
+
                 break;
             case Fight:
-                result = controller.fight();
+
                 break;
             case Exit:
                 result = Command.Exit.name();

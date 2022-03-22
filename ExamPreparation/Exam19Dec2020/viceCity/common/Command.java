@@ -1,4 +1,4 @@
-package M04_JavaOOP.ExamPreparation.Exam19Dec2020.viceCity.common;
+package viceCity.common;
 
 public enum  Command {
     AddPlayer,

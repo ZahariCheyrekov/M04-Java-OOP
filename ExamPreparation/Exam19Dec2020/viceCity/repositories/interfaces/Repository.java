@@ -1,4 +1,4 @@
-package M04_JavaOOP.ExamPreparation.Exam19Dec2020.viceCity.repositories.interfaces;
+package viceCity.repositories.interfaces;
 
 import java.util.Collection;
 

@@ -1,12 +1,13 @@
-package M04_JavaOOP.ExamPreparation.Exam19Dec2020.viceCity.models.players;
+package viceCity.models.players;
 
-import M04_JavaOOP.ExamPreparation.Exam19Dec2020.viceCity.models.guns.Gun;
-import M04_JavaOOP.ExamPreparation.Exam19Dec2020.viceCity.repositories.GunRepository;
-import M04_JavaOOP.ExamPreparation.Exam19Dec2020.viceCity.repositories.interfaces.Repository;
+import viceCity.models.guns.Gun;
+import viceCity.repositories.interfaces.GunRepository;
+import viceCity.repositories.interfaces.Repository;
 
-import static M04_JavaOOP.ExamPreparation.Exam19Dec2020.viceCity.common.ExceptionMessages.PLAYER_NULL_USERNAME;
+import static viceCity.common.ExceptionMessages.*;
 
 public abstract class BasePlayer implements Player {
+
     private String name;
     private int lifePoints;
     private Repository<Gun> gunRepository;
@@ -17,16 +18,16 @@ public abstract class BasePlayer implements Player {
         this.gunRepository = new GunRepository();
     }
 
-    public void setName(String name) {
+    private void setName(String name) {
         if (name == null || name.trim().isEmpty()) {
             throw new NullPointerException(PLAYER_NULL_USERNAME);
         }
         this.name = name;
     }
 
-    public void setLifePoints(int lifePoints) {
+    private void setLifePoints(int lifePoints) {
         if (lifePoints < 0) {
-            throw new IllegalArgumentException(PLAYER_NULL_USERNAME);
+            throw new IllegalArgumentException(PLAYER_LIFE_POINTS_LESS_THAN_ZERO);
         }
         this.lifePoints = lifePoints;
     }
@@ -53,6 +54,6 @@ public abstract class BasePlayer implements Player {
 
     @Override
     public void takeLifePoints(int points) {
-        this.lifePoints = Math.max(0, lifePoints - points);
+        this.lifePoints = Math.max(0, this.lifePoints - points);
     }
 }

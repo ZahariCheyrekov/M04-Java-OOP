@@ -1,6 +1,7 @@
-package M04_JavaOOP.ExamPreparation.Exam19Dec2020.viceCity.common;
+package viceCity.common;
 
 public class ExceptionMessages {
+  
     public static final String NAME_NULL = "Name cannot be null or whitespace!";
 
     public static final String TOTAL_BULLETS_LESS_THAN_ZERO = "Total bullets cannot be below zero!";

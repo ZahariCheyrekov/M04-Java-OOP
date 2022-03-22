@@ -1,6 +1,7 @@
-package M04_JavaOOP.ExamPreparation.Exam19Dec2020.viceCity.models.guns;
+package viceCity.models.guns;
 
 public class Pistol extends BaseGun {
+
     private final static int BULLETS_PER_BARREL = 10;
     private static int TOTAL_BULLETS = 100;
 
@@ -17,6 +18,7 @@ public class Pistol extends BaseGun {
         if (getBulletsPerBarrel() > 0) {
             setBulletsPerBarrel(getBulletsPerBarrel() - 1);
         }
+
         return 1;
     }
 

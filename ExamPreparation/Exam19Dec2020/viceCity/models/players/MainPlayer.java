@@ -1,8 +1,9 @@
-package M04_JavaOOP.ExamPreparation.Exam19Dec2020.viceCity.models.players;
+package viceCity.models.players;
 
 public class MainPlayer extends BasePlayer {
-    private final static int LIFE_POINTS = 100;
-    private final static String NAME = "Tommy Vercetti";
+
+    private static final String NAME = "Tommy Vercetti";
+    private static final int LIFE_POINTS = 100;
 
     public MainPlayer() {
         super(NAME, LIFE_POINTS);

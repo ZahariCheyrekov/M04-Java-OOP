@@ -9,10 +9,10 @@ import java.util.List;
 
 public class GarageTests {
 
-    private Garage garage;
-    private Car lamborghini;
-    private final static Car SLOW_CAR = new Car("slow", 50, 100);
-    private final static Car NULL_CAR = null;
+    private static Garage garage;
+    private static Car lamborghini;
+    private static final Car SLOW_CAR = new Car("slow", 50, 100);
+    private static final Car NULL_CAR = null;
     private static final String CAR_BRAND = "Lamborghini";
     private static final int SPEED = 500;
     private static final int CARS_IN_GARAGE = 2;

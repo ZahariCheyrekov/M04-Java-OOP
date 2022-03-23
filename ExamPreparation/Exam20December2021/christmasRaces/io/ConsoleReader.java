@@ -1,6 +1,6 @@
-package M04_JavaOOP.ExamPreparation.Exam20December2021.christmasRaces.io;
+package christmasRaces.io;
 
-import M04_JavaOOP.ExamPreparation.Exam20December2021.christmasRaces.io.interfaces.InputReader;
+import christmasRaces.io.interfaces.InputReader;
 
 import java.io.BufferedReader;
 import java.io.IOException;

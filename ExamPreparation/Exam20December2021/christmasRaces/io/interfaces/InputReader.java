@@ -1,4 +1,4 @@
-package M04_JavaOOP.ExamPreparation.Exam20December2021.christmasRaces.io.interfaces;
+package christmasRaces.io.interfaces;
 
 import java.io.IOException;
 

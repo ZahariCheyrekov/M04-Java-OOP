@@ -1,4 +1,4 @@
-package M04_JavaOOP.ExamPreparation.Exam20December2021.christmasRaces.entities.cars;
+package christmasRaces.entities.cars;
 
 public interface Car {
     String getModel();

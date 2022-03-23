@@ -1,4 +1,4 @@
-package M04_JavaOOP.ExamPreparation.Exam20December2021.christmasRaces.common;
+package christmasRaces.common;
 
 public class OutputMessages {
     public static final String CAR_CREATED = "%s %s is created.";

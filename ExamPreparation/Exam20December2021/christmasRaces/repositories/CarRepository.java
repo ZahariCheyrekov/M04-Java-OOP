@@ -1,37 +1,35 @@
-package M04_JavaOOP.ExamPreparation.Exam20December2021.christmasRaces.repositories;
+package christmasRaces.repositories;
 
-import M04_JavaOOP.ExamPreparation.Exam20December2021.christmasRaces.entities.cars.Car;
-import M04_JavaOOP.ExamPreparation.Exam20December2021.christmasRaces.repositories.interfaces.Repository;
+import christmasRaces.entities.cars.Car;
+import christmasRaces.repositories.interfaces.Repository;
 
 import java.util.*;
 
 public class CarRepository implements Repository<Car> {
-    private final Map<String,Car> models;
+
+    private Map<String, Car> cars;
 
     public CarRepository() {
-        this.models = new LinkedHashMap<>();
+        this.cars = new LinkedHashMap<>();
     }
 
     @Override
     public Car getByName(String name) {
-        return models.get(name);
+        return this.cars.get(name);
     }
 
     @Override
     public Collection<Car> getAll() {
-        return Collections.unmodifiableCollection(models.values());
+        return Collections.unmodifiableCollection(this.cars.values());
     }
 
     @Override
     public void add(Car model) {
-        models.put(model.getModel(), model);
-
+        this.cars.put(model.getModel(), model);
     }
 
     @Override
     public boolean remove(Car model) {
-        if (models.remove(model.getModel()) == null)
-            return false;
-        return true;
+        return this.cars.remove(model.getModel()) != null;
     }
 }

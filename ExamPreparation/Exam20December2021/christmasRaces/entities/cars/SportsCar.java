@@ -1,15 +1,22 @@
-package M04_JavaOOP.ExamPreparation.Exam20December2021.christmasRaces.entities.cars;
+package christmasRaces.entities.cars;
 
-public class SportsCar extends BaseCar{
+import static christmasRaces.common.ExceptionMessages.INVALID_HORSE_POWER;
+
+public class SportsCar extends BaseCar {
+
+    private static final double CUBIC_CENTIMETERS = 3000;
+    private static final int MINIMUM_HORSEPOWER = 250;
+    private static final int MAXIMUM_HORSEPOWER = 450;
+
     public SportsCar(String model, int horsePower) {
-        super(model, horsePower, 3000);
-        setHorsePower(horsePower);
+        super(model, horsePower, CUBIC_CENTIMETERS);
     }
 
     @Override
     protected void setHorsePower(int horsePower) {
-        if (horsePower < 250 || horsePower > 450)
-            throw new IllegalArgumentException(String.format("Invalid horse power: %d.", horsePower));
+        if (horsePower < MINIMUM_HORSEPOWER || horsePower > MAXIMUM_HORSEPOWER) {
+            throw new IllegalArgumentException(String.format(INVALID_HORSE_POWER, horsePower));
+        }
         super.setHorsePower(horsePower);
     }
 }

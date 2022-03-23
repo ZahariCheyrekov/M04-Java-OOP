@@ -8,57 +8,50 @@ import org.junit.Test;
 import java.util.List;
 
 public class GarageTests {
+
     private Garage garage;
-    private Car tesla;
-    private Car lada;
+    private Car lamborghini;
+    private final static Car SLOW_CAR = new Car("slow", 50, 100);
+    private final static Car NULL_CAR = null;
+    private static final String CAR_BRAND = "Lamborghini";
+    private static final int SPEED = 500;
+    private static final int CARS_IN_GARAGE = 2;
+    private static final int INDEX = 0;
 
     @Before
     public void setUp() {
         garage = new Garage();
-        tesla = new Car("Tesla", 1000, 60_000);
-        lada = new Car("Lada", 80, 400);
-    }
-
-    @Test
-    public void testShouldAddCarInGarageCorrectly() {
-        this.garage.addCar(tesla);
-        int expectedCount = 1;
-        int actual = this.garage.getCount();
-        assertEquals(expectedCount, actual);
+        lamborghini = new Car("Lamborghini", 1000, 100_000);
+        garage.addCar(lamborghini);
+        garage.addCar(SLOW_CAR);
     }
 
     @Test(expected = UnsupportedOperationException.class)
-    public void testShouldThrowExceptionFoUnmodifiableCollection() {
-        this.garage.addCar(this.tesla);
-        this.garage.getCars().clear();
+    public void testShouldThrowExceptionForTryingToModifyUnmodifiableCollection() {
+        garage.getCars().clear();
+    }
+
+    @Test
+    public void testShouldFindAllCarsAboveCertainSpeed() {
+        List<Car> carsWithMaxSpeed = garage.findAllCarsWithMaxSpeedAbove(SPEED);
+        assertEquals(carsWithMaxSpeed.get(INDEX), lamborghini);
+        assertEquals(CARS_IN_GARAGE, garage.getCount());
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void testShouldThrowExceptionForNullCar() {
-        this.garage.addCar(null);
+    public void testShouldThrowExceptionForTryingToAddNullCarInTheGarage() {
+        garage.addCar(NULL_CAR);
     }
 
     @Test
-    public void testShouldFindCarsWithMaxSpeedAboveCertainNumber() {
-        this.garage.addCar(this.tesla);
-        List<Car> cars = this.garage.findAllCarsWithMaxSpeedAbove(100);
-        assertEquals(1, cars.size());
+    public void testShouldGetMostExpensiveCarFromTheGarage() {
+        Car mostExpensiveCar = garage.getTheMostExpensiveCar();
+        assertEquals(lamborghini, mostExpensiveCar);
     }
 
     @Test
-    public void testShouldFindTheMostExpensiveCarInTheGarage() {
-        garage.addCar(tesla);
-        garage.addCar(lada);
-        Car mostExpensiveCar = this.garage.getTheMostExpensiveCar();
-        assertEquals(tesla, mostExpensiveCar);
-    }
-
-    @Test
-    public void testShouldFindAllCarsByGivenBrand() {
-        garage.addCar(tesla);
-        garage.addCar(lada);
-        List<Car> carsByBrand = this.garage.findAllCarsByBrand("Tesla");
-        Car actual = carsByBrand.get(0);
-        assertEquals(tesla, actual);
+    public void testShouldGetAllCarsFromTheGarageByTheGivenBrand() {
+        List<Car> allCarsByBrand = garage.findAllCarsByBrand(CAR_BRAND);
+        assertEquals(lamborghini, allCarsByBrand.get(INDEX));
     }
 }

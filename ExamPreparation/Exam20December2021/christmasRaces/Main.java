@@ -1,17 +1,17 @@
-package M04_JavaOOP.ExamPreparation.Exam20December2021.christmasRaces;
+package christmasRaces;
 
-import M04_JavaOOP.ExamPreparation.Exam20December2021.christmasRaces.core.ControllerImpl;
-import M04_JavaOOP.ExamPreparation.Exam20December2021.christmasRaces.core.EngineImpl;
-import M04_JavaOOP.ExamPreparation.Exam20December2021.christmasRaces.core.interfaces.Controller;
-import M04_JavaOOP.ExamPreparation.Exam20December2021.christmasRaces.entities.cars.Car;
-import M04_JavaOOP.ExamPreparation.Exam20December2021.christmasRaces.entities.drivers.Driver;
-import M04_JavaOOP.ExamPreparation.Exam20December2021.christmasRaces.entities.races.Race;
-import M04_JavaOOP.ExamPreparation.Exam20December2021.christmasRaces.io.ConsoleReader;
-import M04_JavaOOP.ExamPreparation.Exam20December2021.christmasRaces.io.ConsoleWriter;
-import M04_JavaOOP.ExamPreparation.Exam20December2021.christmasRaces.repositories.CarRepository;
-import M04_JavaOOP.ExamPreparation.Exam20December2021.christmasRaces.repositories.DriverRepository;
-import M04_JavaOOP.ExamPreparation.Exam20December2021.christmasRaces.repositories.RaceRepository;
-import M04_JavaOOP.ExamPreparation.Exam20December2021.christmasRaces.repositories.interfaces.Repository;
+import christmasRaces.core.ControllerImpl;
+import christmasRaces.core.EngineImpl;
+import christmasRaces.core.interfaces.Controller;
+import christmasRaces.entities.cars.Car;
+import christmasRaces.entities.drivers.Driver;
+import christmasRaces.entities.races.Race;
+import christmasRaces.io.ConsoleReader;
+import christmasRaces.io.ConsoleWriter;
+import christmasRaces.repositories.CarRepository;
+import christmasRaces.repositories.DriverRepository;
+import christmasRaces.repositories.RaceRepository;
+import christmasRaces.repositories.interfaces.Repository;
 
 public class Main {
     public static void main(String[] args) {

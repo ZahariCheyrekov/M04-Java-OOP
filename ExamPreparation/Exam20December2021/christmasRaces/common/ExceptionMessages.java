@@ -1,4 +1,4 @@
-package M04_JavaOOP.ExamPreparation.Exam20December2021.christmasRaces.common;
+package christmasRaces.common;
 
 public class ExceptionMessages {
     public static final String INVALID_MODEL = "Model %s cannot be less than %d symbols.";

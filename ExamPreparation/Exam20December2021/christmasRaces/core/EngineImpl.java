@@ -1,10 +1,10 @@
-package M04_JavaOOP.ExamPreparation.Exam20December2021.christmasRaces.core;
+package christmasRaces.core;
 
-import M04_JavaOOP.ExamPreparation.Exam20December2021.christmasRaces.common.Command;
-import M04_JavaOOP.ExamPreparation.Exam20December2021.christmasRaces.core.interfaces.Controller;
-import M04_JavaOOP.ExamPreparation.Exam20December2021.christmasRaces.core.interfaces.Engine;
-import M04_JavaOOP.ExamPreparation.Exam20December2021.christmasRaces.io.interfaces.InputReader;
-import M04_JavaOOP.ExamPreparation.Exam20December2021.christmasRaces.io.interfaces.OutputWriter;
+import christmasRaces.common.Command;
+import christmasRaces.core.interfaces.Controller;
+import christmasRaces.core.interfaces.Engine;
+import christmasRaces.io.interfaces.InputReader;
+import christmasRaces.io.interfaces.OutputWriter;
 
 import java.io.IOException;
 import java.util.Arrays;
@@ -75,32 +75,37 @@ public class EngineImpl implements Engine {
     }
 
     private String createRace(String[] data) {
-        // TODO
-        return controller.createRace(data[0], Integer.parseInt(data[1]));
+        String raceName = data[0];
+        int laps = Integer.parseInt(data[1]);
+        return controller.createRace(raceName, laps);
     }
 
     private String addDriver(String[] data) {
-        // TODO
-        return controller.addDriverToRace(data[0], data[1]);
+        String raceName = data[0];
+        String driverName = data[1];
+        return controller.addDriverToRace(raceName, driverName);
     }
 
     private String startRace(String[] data) {
-        // TODO
-        return controller.startRace(data[0]);
+        String raceName = data[0];
+        return controller.startRace(raceName);
     }
 
     private String addCar(String[] data) {
-        // TODO
-        return controller.addCarToDriver(data[0], data[1]);
+        String driverName = data[0];
+        String carModel = data[1];
+        return controller.addCarToDriver(driverName, carModel);
     }
 
     private String createCar(String[] data) {
-        // TODO
-        return controller.createCar(data[0], data[1], Integer.parseInt(data[2]));
+        String type = data[0];
+        String model = data[1];
+        int horsepower = Integer.parseInt(data[2]);
+        return controller.createCar(type, model, horsepower);
     }
 
     private String createDriver(String[] data) {
-        // TODO
-        return controller.createDriver(data[0]);
+        String driverName = data[0];
+        return controller.createDriver(driverName);
     }
 }

@@ -1,60 +1,75 @@
-package M04_JavaOOP.ExamPreparation.Exam20December2021.christmasRaces.entities.races;
+package christmasRaces.entities.races;
 
-import M04_JavaOOP.ExamPreparation.Exam20December2021.christmasRaces.entities.drivers.Driver;
+import christmasRaces.entities.drivers.Driver;
 
+import java.util.ArrayList;
 import java.util.Collection;
-import java.util.HashSet;
-import java.util.Set;
+
+import static christmasRaces.common.ExceptionMessages.*;
 
 public class RaceImpl implements Race {
+
     private String name;
     private int laps;
-    private Set<Driver> drivers;
+    private Collection<Driver> drivers;
 
     public RaceImpl(String name, int laps) {
-        setName(name);
-        setLaps(laps);
-        drivers = new HashSet<>();
+        this.setName(name);
+        this.setLaps(laps);
+        this.drivers = new ArrayList<>();
     }
 
-    @Override
-    public Collection<Driver> getDrivers() {
-        return drivers;
+    private void setName(String name) {
+        if (name == null || name.trim().isEmpty()) {
+            throw new IllegalArgumentException(String.format(INVALID_NAME, name, 5));
+        }
+        this.name = name;
+    }
+
+    private void setLaps(int laps) {
+        if (laps < 1) {
+            throw new IllegalArgumentException(INVALID_NUMBER_OF_LAPS);
+        }
+        this.laps = laps;
     }
 
     @Override
     public String getName() {
-        return name;
+        return this.name;
     }
 
     @Override
     public int getLaps() {
-        return laps;
+        return this.laps;
     }
 
-    private void setLaps(int laps) {
-        if(laps < 1)
-            throw new IllegalArgumentException("Laps cannot be less than 1.");
-        this.laps = laps;
+    @Override
+    public Collection<Driver> getDrivers() {
+        return this.drivers;
     }
 
-    private void setName(String name) {
-        if (name.trim().length() < 5)
-            throw new IllegalArgumentException(String.format("Name %s cannot be less than 5 symbols.", name));
-        this.name = name;
-    }
-
+    @Override
     public void addDriver(Driver driver) {
-        if(driver == null)
-            throw new IllegalArgumentException("Driver cannot be null.");
-        if (!driver.getCanParticipate())
-            throw new IllegalArgumentException(String.format(
-                    "Driver %s could not participate in race.", driver.getName()));
-        if(drivers.contains(driver))
-            throw new IllegalArgumentException(String.format(
-                    "Driver %s is already added in %s race.", driver.getName(), this.name));
-        drivers.add(driver);
+        if (driver == null) {
+            throw new IllegalArgumentException(DRIVER_INVALID);
+        }
+
+        boolean canParticipate = driver.getCanParticipate();
+        if (!canParticipate) {
+            throw new IllegalArgumentException(String.format(DRIVER_NOT_PARTICIPATE, driver.getName()));
+        }
+
+        Driver existingDriver = this.drivers
+                .stream()
+                .filter(d -> d.getName()
+                        .equals(driver.getName()))
+                .findFirst()
+                .orElse(null);
+
+        if (existingDriver != null) {
+            throw new IllegalArgumentException(String.format(DRIVER_ALREADY_ADDED, driver.getName(), this.name));
+        }
+
+        this.drivers.add(driver);
     }
-
-
 }

@@ -1,4 +1,4 @@
-package M04_JavaOOP.ExamPreparation.Exam20December2021.christmasRaces.repositories.interfaces;
+package christmasRaces.repositories.interfaces;
 
 import java.util.Collection;
 

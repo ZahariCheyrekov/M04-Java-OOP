@@ -1,4 +1,4 @@
-package M04_JavaOOP.ExamPreparation.Exam20December2021.christmasRaces.core.interfaces;
+package christmasRaces.core.interfaces;
 
 public interface Controller {
     String createDriver(String driver);

@@ -1,4 +1,4 @@
-package M04_JavaOOP.ExamPreparation.Exam11December2021.catHouse.common;
+package catHouse.common;
 
 public enum Command {
     AddHouse,

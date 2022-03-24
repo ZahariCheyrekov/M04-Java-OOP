@@ -1,4 +1,4 @@
-package M04_JavaOOP.ExamPreparation.Exam11December2021.catHouse.common;
+package catHouse.common;
 
 public class ExceptionMessages {
     public static final String CAT_NAME_NULL_OR_EMPTY = "Cat name cannot be null or empty.";
@@ -10,4 +10,3 @@ public class ExceptionMessages {
     public static final String INVALID_CAT_TYPE = "Invalid cat type.";
     public static final String NO_TOY_FOUND = "Toy of type %s is missing.";
 }
-

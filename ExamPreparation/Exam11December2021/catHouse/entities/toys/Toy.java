@@ -1,4 +1,4 @@
-package M04_JavaOOP.ExamPreparation.Exam11December2021.catHouse.entities.toys;
+package catHouse.entities.toys;
 
 public interface Toy {
     int getSoftness();

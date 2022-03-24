@@ -1,4 +1,4 @@
-package M04_JavaOOP.ExamPreparation.Exam11December2021.catHouse.common;
+package catHouse.common;
 
 public class ConstantMessages {
     public static final String NOT_ENOUGH_CAPACITY_FOR_CAT = "Not enough capacity for this cat.";

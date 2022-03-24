@@ -1,6 +1,6 @@
-package M04_JavaOOP.ExamPreparation.Exam11December2021.catHouse.repositories;
+package catHouse.repositories;
 
-import M04_JavaOOP.ExamPreparation.Exam11December2021.catHouse.entities.toys.Toy;
+import catHouse.entities.toys.Toy;
 
 public interface Repository {
 

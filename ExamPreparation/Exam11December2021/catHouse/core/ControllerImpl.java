@@ -1,31 +1,31 @@
-package M04_JavaOOP.ExamPreparation.Exam11December2021.catHouse.core;
+package catHouse.core;
 
-import M04_JavaOOP.ExamPreparation.Exam11December2021.catHouse.entities.cat.Cat;
-import M04_JavaOOP.ExamPreparation.Exam11December2021.catHouse.entities.cat.LonghairCat;
-import M04_JavaOOP.ExamPreparation.Exam11December2021.catHouse.entities.cat.ShorthairCat;
-import M04_JavaOOP.ExamPreparation.Exam11December2021.catHouse.entities.houses.House;
-import M04_JavaOOP.ExamPreparation.Exam11December2021.catHouse.entities.houses.LongHouse;
-import M04_JavaOOP.ExamPreparation.Exam11December2021.catHouse.entities.houses.ShortHouse;
-import M04_JavaOOP.ExamPreparation.Exam11December2021.catHouse.entities.toys.Ball;
-import M04_JavaOOP.ExamPreparation.Exam11December2021.catHouse.entities.toys.Mouse;
-import M04_JavaOOP.ExamPreparation.Exam11December2021.catHouse.entities.toys.Toy;
-import M04_JavaOOP.ExamPreparation.Exam11December2021.catHouse.repositories.Repository;
-import M04_JavaOOP.ExamPreparation.Exam11December2021.catHouse.repositories.ToyRepository;
+import catHouse.entities.cat.Cat;
+import catHouse.entities.cat.LonghairCat;
+import catHouse.entities.cat.ShorthairCat;
+import catHouse.entities.houses.House;
+import catHouse.entities.houses.LongHouse;
+import catHouse.entities.houses.ShortHouse;
+import catHouse.entities.toys.Ball;
+import catHouse.entities.toys.Mouse;
+import catHouse.entities.toys.Toy;
+import catHouse.repositories.Repository;
+import catHouse.repositories.ToyRepository;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
+import java.util.LinkedHashMap;
+import java.util.Map;
 
-import static M04_JavaOOP.ExamPreparation.Exam11December2021.catHouse.common.ConstantMessages.*;
-import static M04_JavaOOP.ExamPreparation.Exam11December2021.catHouse.common.ExceptionMessages.*;
+import static catHouse.common.ExceptionMessages.*;
+import static catHouse.common.ConstantMessages.*;
 
 public class ControllerImpl implements Controller {
-    private Repository toys;
-    private Collection<House> houses;
+
+    private final Repository toys;
+    private final Map<String, House> houses;
 
     public ControllerImpl() {
         this.toys = new ToyRepository();
-        this.houses = new ArrayList<>();
+        this.houses = new LinkedHashMap<>();
     }
 
     @Override
@@ -36,16 +36,16 @@ public class ControllerImpl implements Controller {
             case "ShortHouse":
                 house = new ShortHouse(name);
                 break;
-          
+
             case "LongHouse":
                 house = new LongHouse(name);
                 break;
-           
+
             default:
                 throw new NullPointerException(INVALID_HOUSE_TYPE);
         }
 
-        this.houses.add(house);
+        this.houses.put(house.getName(), house);
         return String.format(SUCCESSFULLY_ADDED_HOUSE_TYPE, type);
     }
 
@@ -56,11 +56,11 @@ public class ControllerImpl implements Controller {
         switch (type) {
             case "Ball":
                 toy = new Ball();
-           
+
                 break;
             case "Mouse":
                 toy = new Mouse();
-          
+
                 break;
             default:
                 throw new IllegalArgumentException(INVALID_TOY_TYPE);
@@ -78,11 +78,7 @@ public class ControllerImpl implements Controller {
             throw new IllegalArgumentException(String.format(NO_TOY_FOUND, toyType));
         }
 
-        House house = this.houses
-                .stream()
-                .filter(h -> h.getName().equals(houseName))
-                .findFirst()
-                .orElse(null);
+        House house = this.houses.get(houseName);
 
         house.buyToy(toy);
         this.toys.removeToy(toy);
@@ -98,20 +94,16 @@ public class ControllerImpl implements Controller {
             case "LonghairCat":
                 cat = new LonghairCat(catName, catBreed, price);
                 break;
-         
+
             case "ShorthairCat":
                 cat = new ShorthairCat(catName, catBreed, price);
                 break;
-            
+
             default:
                 throw new IllegalArgumentException(INVALID_CAT_TYPE);
         }
 
-        House house = this.houses
-                .stream()
-                .filter(h -> h.getName().equals(houseName))
-                .findFirst()
-                .orElse(null);
+        House house = this.houses.get(houseName);
 
         String houseType = house.getClass().getSimpleName();
 
@@ -128,38 +120,20 @@ public class ControllerImpl implements Controller {
 
     @Override
     public String feedingCat(String houseName) {
-        House house = this.houses
-                .stream()
-                .filter(h -> h.getName().equals(houseName))
-                .findFirst()
-                .orElse(null);
+        House house = this.houses.get(houseName);
+        house.feeding();
 
-        Collection<Cat> cats = house.getCats();
-
-        for (Cat cat : cats) {
-            cat.eating();
-        }
-
-        return String.format(FEEDING_CAT, cats.size());
+        return String.format(FEEDING_CAT, house.getCats().size());
     }
 
     @Override
     public String sumOfAll(String houseName) {
-        House house = this.houses
-                .stream()
-                .filter(h -> h.getName().equals(houseName))
-                .findFirst()
-                .orElse(null);
+        House house = this.houses.get(houseName);
 
-        Collection<Cat> cats = house.getCats();
-        Collection<Toy> toys = house.getToys();
+        double catsPrice = house.getCats().stream().mapToDouble(Cat::getPrice).sum();
+        double toysPrice = house.getToys().stream().mapToDouble(Toy::getPrice).sum();
 
-        double totalPrice = 0;
-
-        double catsPrice = cats.stream().mapToDouble(Cat::getPrice).sum();
-        double toysPrice = toys.stream().mapToDouble(Toy::getPrice).sum();
-
-        totalPrice += (catsPrice + toysPrice);
+        double totalPrice = catsPrice + toysPrice;
 
         return String.format(VALUE_HOUSE, houseName, totalPrice);
     }
@@ -168,34 +142,8 @@ public class ControllerImpl implements Controller {
     public String getStatistics() {
         StringBuilder stats = new StringBuilder();
 
-        this.houses
-                .forEach(house -> {
-                    stats.append(String.format("%s %s:", house.getName(),
-                                    house.getClass().getSimpleName()))
-                            .append(System.lineSeparator());
-
-                    List<Cat> cats = new ArrayList<>(house.getCats());
-
-                    if (cats.size() == 0) {
-                        stats.append("Cats: none").append(System.lineSeparator());
-                    } else {
-                        stats.append("Cats:");
-
-                        for (Cat cat : cats) {
-                            stats.append(" ").append(cat.getName());
-                        }
-                     
-                        stats.append(System.lineSeparator());
-                    }
-
-                    List<Toy> toys = new ArrayList<>(house.getToys());
-
-                    int toysCount = toys.size();
-                    int sumOfSoftness = toys.stream().mapToInt(Toy::getSoftness).sum();
-
-                    stats.append(String.format("Toys: %d Softness: %d", toysCount, sumOfSoftness))
-                            .append(System.lineSeparator());
-                });
+        this.houses.values().forEach(house -> stats.append(house.getStatistics())
+                .append(System.lineSeparator()));
 
         return stats.toString().trim();
     }

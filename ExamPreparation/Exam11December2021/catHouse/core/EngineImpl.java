@@ -1,6 +1,6 @@
-package M04_JavaOOP.ExamPreparation.Exam11December2021.catHouse.core;
+package catHouse.core;
 
-import M04_JavaOOP.ExamPreparation.Exam11December2021.catHouse.common.Command;
+import catHouse.common.Command;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -73,27 +73,42 @@ public class EngineImpl implements Engine {
     }
 
     private String addHouse(String[] data) {
-        return this.controller.addHouse(data[0], data[1]);
+        String type = data[0];
+        String name = data[1];
+
+        return this.controller.addHouse(type, name);
     }
 
     private String buyToy(String[] data) {
-        return this.controller.buyToy(data[0]);
+        String type = data[0];
+        return this.controller.buyToy(type);
     }
 
     private String toyForHouse(String[] data) {
-        return this.controller.toyForHouse(data[0], data[1]);
+        String houseName = data[0];
+        String toyType = data[1];
+
+        return this.controller.toyForHouse(houseName, toyType);
     }
 
     private String addCat(String[] data) {
-        return this.controller.addCat(data[0], data[1], data[2], data[3], Double.parseDouble(data[4]));
+        String houseName = data[0];
+        String catType = data[1];
+        String catName = data[2];
+        String catBreed = data[3];
+        double price = Double.parseDouble(data[4]);
+
+        return this.controller.addCat(houseName, catType, catName, catBreed, price);
     }
 
     private String feedingCat(String[] data) {
-        return this.controller.feedingCat(data[0]);
+        String houseName = data[0];
+        return this.controller.feedingCat(houseName);
     }
 
     private String sumOfAll(String[] data) {
-        return this.controller.sumOfAll(data[0]);
+        String houseName = data[0];
+        return this.controller.sumOfAll(houseName);
     }
 
     private String getStatistics() {

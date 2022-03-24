@@ -10,95 +10,79 @@ public class HouseTests {
     private static House house;
     private static Cat cat;
 
+    private static final String HOUSE_NAME = "Big House";
+    private static final String CAT_NAME = "Garfield";
+    private static final String NONE_EXISTING_CAT = "Tom";
+    private static final String STATISTICS_MESSAGE = "The cat Garfield is in the house Big House!";
+
+    private static final int HOUSE_CAPACITY = 2;
+    private static final int HOUSE_COUNT = 1;
+    private static final int ZERO_COUNT = 0;
+    private static final int INVALID_HOUSE_CAPACITY = -10;
+
     @Before
     public void setUp() {
-        house = new House("Big House", 2);
-        cat = new Cat("Garfield");
+        house = new House(HOUSE_NAME, HOUSE_CAPACITY);
+        cat = new Cat(CAT_NAME);
+        house.addCat(cat);
     }
 
     @Test(expected = NullPointerException.class)
     public void testShouldThrowExceptionForInvalidNameWithValueNull() {
-        new House(null, 10);
+        new House(null, HOUSE_CAPACITY);
     }
 
     @Test
     public void testShouldGetHouseNameCorrectly() {
-        String actual = house.getName();
-        String expected = "Big House";
-
-        assertEquals(expected, actual);
+        assertEquals(HOUSE_NAME, house.getName());
     }
 
     @Test
     public void testShouldGetHouseCapacityCorrectly() {
-        int actual = house.getCapacity();
-        int expected = 2;
-
-        assertEquals(expected, actual);
+        assertEquals(HOUSE_CAPACITY, house.getCapacity());
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void testShouldThrowExceptionForInvalidCapacityBelowZero() {
-        new House("House", -10);
+        new House(HOUSE_NAME, INVALID_HOUSE_CAPACITY);
     }
 
     @Test
     public void testShouldGetCatsCountCorrectly() {
-        house.addCat(cat);
-
-        int actual = house.getCount();
-        int expected = 1;
-
-        assertEquals(expected, actual);
+        assertEquals(HOUSE_COUNT, house.getCount());
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void testShouldThrowExceptionForFullHouseCapacity() {
         house.addCat(cat);
         house.addCat(cat);
-        house.addCat(cat);
     }
 
     @Test
     public void testShouldRemoveCatCorrectlyFromTheCatHouse() {
-        house.addCat(cat);
         house.removeCat(cat.getName());
-
-        int actualCount = house.getCount();
-        int expectedCount = 0;
-
-        assertEquals(expectedCount, actualCount);
+        assertEquals(ZERO_COUNT, house.getCount());
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void testShouldThrowExceptionForNoSuchCatWithGivenName() {
-        house.addCat(cat);
-        house.removeCat("Tom");
+        house.removeCat(NONE_EXISTING_CAT);
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void testShouldThrowExceptionForNoSuchCatForSale() {
-        house.addCat(cat);
-        house.catForSale("Blue");
+        house.catForSale(NONE_EXISTING_CAT);
     }
 
     @Test
     public void testShouldSetCatForSaleCorrectly() {
-        house.addCat(cat);
         Cat catForSale = house.catForSale(cat.getName());
-
         boolean isHungry = catForSale.isHungry();
-
         assertFalse(isHungry);
     }
 
     @Test
     public void testShouldReturnStatisticsForCatsInTheHouse() {
-        house.addCat(cat);
-
-        String actual = house.statistics();
-        String expected = "The cat Garfield is in the house Big House!";
-
-        assertEquals(expected, actual);
+        assertEquals(STATISTICS_MESSAGE, house.statistics());
     }
 }

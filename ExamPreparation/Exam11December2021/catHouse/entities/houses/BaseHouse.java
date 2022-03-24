@@ -1,29 +1,28 @@
-package M04_JavaOOP.ExamPreparation.Exam11December2021.catHouse.entities.houses;
+package catHouse.entities.houses;
 
-import M04_JavaOOP.ExamPreparation.Exam11December2021.catHouse.common.ConstantMessages;
-import M04_JavaOOP.ExamPreparation.Exam11December2021.catHouse.common.ExceptionMessages;
-import M04_JavaOOP.ExamPreparation.Exam11December2021.catHouse.entities.cat.Cat;
-import M04_JavaOOP.ExamPreparation.Exam11December2021.catHouse.entities.toys.Toy;
+import catHouse.common.DataValidator;
+import catHouse.entities.cat.Cat;
+import catHouse.entities.toys.Toy;
 
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
+import static catHouse.common.ConstantMessages.*;
+import static catHouse.common.ExceptionMessages.*;
+
 public abstract class BaseHouse implements House {
+
     private String name;
     private int capacity;
     private Collection<Toy> toys;
     private Collection<Cat> cats;
 
     protected BaseHouse(String name, int capacity) {
-        this.name = name;
+        this.setName(name);
         this.setCapacity(capacity);
         this.toys = new ArrayList<>();
         this.cats = new ArrayList<>();
-    }
-
-    public void setCapacity(int capacity) {
-        this.capacity = capacity;
     }
 
     @Override
@@ -36,9 +35,7 @@ public abstract class BaseHouse implements House {
 
     @Override
     public void addCat(Cat cat) {
-        if (this.capacity <= this.cats.size()) {
-            throw new IllegalStateException(ConstantMessages.NOT_ENOUGH_CAPACITY_FOR_CAT);
-        }
+        DataValidator.checkHouseCapacity(this.cats.size(), this.capacity, NOT_ENOUGH_CAPACITY_FOR_CAT);
         this.cats.add(cat);
     }
 
@@ -54,41 +51,35 @@ public abstract class BaseHouse implements House {
 
     @Override
     public void feeding() {
-        for (Cat cat : this.cats) {
-            cat.eating();
-        }
+        this.cats.forEach(Cat::eating);
     }
 
     @Override
     public String getStatistics() {
         StringBuilder stats = new StringBuilder();
 
-        stats.append(String.format("%s %s:", this.name, this.getClass().getSimpleName()))
+        stats.append(String.format("%s %s:", this.name,
+                        this.getClass().getSimpleName()))
                 .append(System.lineSeparator());
 
-        List<Cat> catsList = null;
-
-        if (this.cats.size() == 0) {
+        if (cats.size() == 0) {
             stats.append("Cats: none").append(System.lineSeparator());
         } else {
-            stats.append("Cats: ");
+            stats.append("Cats:");
 
-            catsList = new ArrayList<>(this.cats);
-
-            for (int cat = 0; cat < catsList.size(); cat++) {
-                String currentCatName = catsList.get(cat).getName();
-
-                if (cat < catsList.size()) {
-                    stats.append(currentCatName).append(", ");
-                } else {
-                    stats.append(currentCatName);
-                }
+            for (Cat cat : cats) {
+                stats.append(" ").append(cat.getName());
             }
 
             stats.append(System.lineSeparator());
         }
 
-        this.cats = catsList;
+        int toysCount = toys.size();
+        int sumOfSoftness = toys.stream().mapToInt(Toy::getSoftness).sum();
+
+        stats.append(String.format("Toys: %d Softness: %d", toysCount, sumOfSoftness))
+                .append(System.lineSeparator());
+
         return stats.toString().trim();
     }
 
@@ -99,10 +90,12 @@ public abstract class BaseHouse implements House {
 
     @Override
     public void setName(String name) {
-        if (name == null || name.trim().isEmpty()) {
-            throw new NullPointerException(ExceptionMessages.HOUSE_NAME_CANNOT_BE_NULL_OR_EMPTY);
-        }
+        DataValidator.validateStringData(name, HOUSE_NAME_CANNOT_BE_NULL_OR_EMPTY);
         this.name = name;
+    }
+
+    private void setCapacity(int capacity) {
+        this.capacity = capacity;
     }
 
     @Override

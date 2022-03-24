@@ -1,7 +1,7 @@
-package M04_JavaOOP.ExamPreparation.Exam11December2021.catHouse;
+package catHouse;
 
-import M04_JavaOOP.ExamPreparation.Exam11December2021.catHouse.core.Engine;
-import M04_JavaOOP.ExamPreparation.Exam11December2021.catHouse.core.EngineImpl;
+import catHouse.core.Engine;
+import catHouse.core.EngineImpl;
 
 public class Main {
     public static void main(String[] args) {

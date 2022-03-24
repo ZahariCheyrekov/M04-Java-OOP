@@ -1,6 +1,7 @@
-package M04_JavaOOP.ExamPreparation.Exam11December2021.catHouse.entities.toys;
+package catHouse.entities.toys;
 
 public abstract class BaseToy implements Toy {
+
     private int softness;
     private double price;
 

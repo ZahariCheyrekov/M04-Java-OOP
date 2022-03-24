@@ -1,7 +1,9 @@
-package M04_JavaOOP.ExamPreparation.Exam11December2021.catHouse.entities.cat;
+package catHouse.entities.cat;
 
 public class ShorthairCat extends BaseCat {
+
     private static final int KILOGRAMS = 7;
+    private static final int INCREASE_PER_EAT = 1;
 
     public ShorthairCat(String name, String breed, double price) {
         super(name, breed, price);
@@ -9,6 +11,6 @@ public class ShorthairCat extends BaseCat {
 
     @Override
     public void eating() {
-        this.setKilograms(KILOGRAMS + 1);
+        super.setKilograms(KILOGRAMS + INCREASE_PER_EAT);
     }
 }

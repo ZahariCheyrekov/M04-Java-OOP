@@ -1,7 +1,7 @@
-package M04_JavaOOP.ExamPreparation.Exam11December2021.catHouse.entities.houses;
+package catHouse.entities.houses;
 
-import M04_JavaOOP.ExamPreparation.Exam11December2021.catHouse.entities.cat.Cat;
-import M04_JavaOOP.ExamPreparation.Exam11December2021.catHouse.entities.toys.Toy;
+import catHouse.entities.cat.Cat;
+import catHouse.entities.toys.Toy;
 
 import java.util.Collection;
 

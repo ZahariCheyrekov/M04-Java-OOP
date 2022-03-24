@@ -1,4 +1,4 @@
-package M04_JavaOOP.ExamPreparation.Exam11December2021.catHouse.entities.cat;
+package catHouse.entities.cat;
 
 public interface Cat {
     String getName();

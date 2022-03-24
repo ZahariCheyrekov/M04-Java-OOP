@@ -1,11 +1,12 @@
-package M04_JavaOOP.ExamPreparation.Exam11December2021.catHouse.repositories;
+package catHouse.repositories;
 
-import M04_JavaOOP.ExamPreparation.Exam11December2021.catHouse.entities.toys.Toy;
+import catHouse.entities.toys.Toy;
 
 import java.util.ArrayList;
 import java.util.Collection;
 
 public class ToyRepository implements Repository {
+
     private Collection<Toy> toys;
 
     public ToyRepository() {
@@ -26,7 +27,10 @@ public class ToyRepository implements Repository {
     public Toy findFirst(String type) {
         return this.toys
                 .stream()
-                .filter(toy -> toy.getClass().getSimpleName().equals(type))
+                .filter(toy -> toy
+                        .getClass()
+                        .getSimpleName()
+                        .equals(type))
                 .findFirst()
                 .orElse(null);
     }

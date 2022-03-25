@@ -1,14 +1,15 @@
-package M04_JavaOOP.ExamPreparation.Exam22August2021.glacialExpedition.repositories;
+package glacialExpedition.repositories;
 
-import M04_JavaOOP.ExamPreparation.Exam22August2021.glacialExpedition.models.states.State;
+import glacialExpedition.models.states.State;
 
 import java.util.Collection;
 import java.util.Collections;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-public class StateRepository implements Repository<State>{
-    Map<String, State> states;
+public class StateRepository implements Repository<State> {
+
+    private Map<String, State> states;
 
     public StateRepository() {
         this.states = new LinkedHashMap<>();

@@ -1,9 +1,10 @@
-package M04_JavaOOP.ExamPreparation.Exam22August2021.glacialExpedition.models.suitcases;
+package glacialExpedition.models.suitcases;
 
 import java.util.ArrayList;
 import java.util.Collection;
 
 public class Carton implements Suitcase {
+
     private Collection<String> exhibits;
 
     public Carton() {

@@ -1,6 +1,6 @@
-package M04_JavaOOP.ExamPreparation.Exam22August2021.glacialExpedition.core;
+package glacialExpedition.core;
 
-import M04_JavaOOP.ExamPreparation.Exam22August2021.glacialExpedition.common.Command;
+import glacialExpedition.common.Command;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -67,7 +67,8 @@ public class EngineImpl implements Engine {
     }
 
     private String retireExplorer(String[] data) {
-        return controller.retireExplorer(data[0]);
+        String explorerName = data[0];
+        return controller.retireExplorer(explorerName);
     }
 
     private String finalResult() {
@@ -75,16 +76,21 @@ public class EngineImpl implements Engine {
     }
 
     private String exploreState(String[] data) {
-        return controller.exploreState(data[0]);
+        String stateName = data[0];
+        return controller.exploreState(stateName);
     }
 
     private String addState(String[] data) {
         String stateName = data[0];
         String[] exhibits = Arrays.stream(data).skip(1).toArray(String[]::new);
+
         return controller.addState(stateName, exhibits);
     }
 
     private String addExplorer(String[] data) {
-        return controller.addExplorer(data[0], data[1]);
+        String type = data[0];
+        String explorerName = data[1];
+
+        return controller.addExplorer(type, explorerName);
     }
 }

@@ -1,4 +1,4 @@
-package M04_JavaOOP.ExamPreparation.Exam22August2021.glacialExpedition.models.states;
+package glacialExpedition.models.states;
 
 import java.util.Collection;
 

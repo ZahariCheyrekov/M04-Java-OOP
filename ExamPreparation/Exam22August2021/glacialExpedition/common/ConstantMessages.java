@@ -1,4 +1,4 @@
-package M04_JavaOOP.ExamPreparation.Exam22August2021.glacialExpedition.common;
+package glacialExpedition.common;
 
 public class ConstantMessages {
     public static final String EXPLORER_ADDED = "Added %s: %s.";

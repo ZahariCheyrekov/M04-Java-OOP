@@ -1,6 +1,6 @@
-package M04_JavaOOP.ExamPreparation.Exam22August2021.glacialExpedition.models.explorers;
+package glacialExpedition.models.explorers;
 
-import M04_JavaOOP.ExamPreparation.Exam22August2021.glacialExpedition.models.suitcases.Suitcase;
+import glacialExpedition.models.suitcases.Suitcase;
 
 public interface Explorer {
     String getName();

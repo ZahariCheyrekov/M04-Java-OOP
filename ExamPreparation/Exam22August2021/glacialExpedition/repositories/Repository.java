@@ -1,4 +1,4 @@
-package M04_JavaOOP.ExamPreparation.Exam22August2021.glacialExpedition.repositories;
+package glacialExpedition.repositories;
 
 import java.util.Collection;
 

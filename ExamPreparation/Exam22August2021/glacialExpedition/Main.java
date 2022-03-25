@@ -1,9 +1,9 @@
-package M04_JavaOOP.ExamPreparation.Exam22August2021.glacialExpedition;
+package glacialExpedition;
 
-import M04_JavaOOP.ExamPreparation.Exam22August2021.glacialExpedition.core.Controller;
-import M04_JavaOOP.ExamPreparation.Exam22August2021.glacialExpedition.core.ControllerImpl;
-import M04_JavaOOP.ExamPreparation.Exam22August2021.glacialExpedition.core.Engine;
-import M04_JavaOOP.ExamPreparation.Exam22August2021.glacialExpedition.core.EngineImpl;
+import glacialExpedition.core.Controller;
+import glacialExpedition.core.ControllerImpl;
+import glacialExpedition.core.Engine;
+import glacialExpedition.core.EngineImpl;
 
 public class Main {
 

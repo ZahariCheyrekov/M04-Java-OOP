@@ -1,6 +1,6 @@
-package M04_JavaOOP.ExamPreparation.Exam22August2021.glacialExpedition.repositories;
+package glacialExpedition.repositories;
 
-import M04_JavaOOP.ExamPreparation.Exam22August2021.glacialExpedition.models.explorers.Explorer;
+import glacialExpedition.models.explorers.Explorer;
 
 import java.util.Collection;
 import java.util.Collections;
@@ -8,29 +8,30 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 public class ExplorerRepository implements Repository<Explorer> {
-    Map<String, Explorer> explorerMap;
+
+    private Map<String, Explorer> explorers;
 
     public ExplorerRepository() {
-        explorerMap = new LinkedHashMap<>();
+        this.explorers = new LinkedHashMap<>();
     }
 
     @Override
     public Collection<Explorer> getCollection() {
-        return Collections.unmodifiableCollection(this.explorerMap.values());
+        return Collections.unmodifiableCollection(this.explorers.values());
     }
 
     @Override
-    public void add(Explorer explorer) {
-        explorerMap.put(explorer.getName(), explorer);
+    public void add(Explorer entity) {
+        this.explorers.put(entity.getName(), entity);
     }
 
     @Override
     public boolean remove(Explorer entity) {
-        return explorerMap.remove(entity.getName()) != null;
+        return this.explorers.remove(entity.getName()) != null;
     }
 
     @Override
     public Explorer byName(String name) {
-        return explorerMap.get(name);
+        return this.explorers.get(name);
     }
 }

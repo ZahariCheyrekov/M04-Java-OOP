@@ -1,7 +1,7 @@
-package M04_JavaOOP.ExamPreparation.Exam22August2021.glacialExpedition.models.mission;
+package glacialExpedition.models.mission;
 
-import M04_JavaOOP.ExamPreparation.Exam22August2021.glacialExpedition.models.explorers.Explorer;
-import M04_JavaOOP.ExamPreparation.Exam22August2021.glacialExpedition.models.states.State;
+import glacialExpedition.models.explorers.Explorer;
+import glacialExpedition.models.states.State;
 
 
 import java.util.Collection;

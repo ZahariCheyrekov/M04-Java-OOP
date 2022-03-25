@@ -1,18 +1,21 @@
-package M04_JavaOOP.ExamPreparation.Exam22August2021.glacialExpedition.models.explorers;
+package glacialExpedition.models.explorers;
 
 public class NaturalExplorer extends BaseExplorer {
-    private static final double NATURAL_EXPLORER_ENERGY = 60;
+
+    private static final double ENERGY = 60;
+    private static final double DECREASE_IN_ENERGY = 7;
+    private static final double ZERO_ENERGY = 0;
 
     public NaturalExplorer(String name) {
-        super(name, NATURAL_EXPLORER_ENERGY);
+        super(name, ENERGY);
     }
 
     @Override
     public void search() {
-        if (getEnergy() <= 7) {
-            super.setEnergy(0);
+        if (getEnergy() <= DECREASE_IN_ENERGY) {
+            super.setEnergy(ZERO_ENERGY);
         } else {
-            super.setEnergy(this.getEnergy() - 7);
+            super.setEnergy(this.getEnergy() - DECREASE_IN_ENERGY);
         }
     }
 }

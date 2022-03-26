@@ -1,4 +1,4 @@
-package M04_JavaOOP.ExamPreparation.Exam15August2021.restaurant.io.interfaces;
+package restaurant.io.interfaces;
 
 import java.io.IOException;
 

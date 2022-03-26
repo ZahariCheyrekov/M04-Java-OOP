@@ -1,32 +1,39 @@
-package M04_JavaOOP.ExamPreparation.Exam15August2021.restaurant.repositories;
+package restaurant.repositories;
 
-import M04_JavaOOP.ExamPreparation.Exam15August2021.restaurant.entities.drinks.interfaces.Beverages;
-import M04_JavaOOP.ExamPreparation.Exam15August2021.restaurant.repositories.interfaces.BeverageRepository;
+import restaurant.entities.drinks.interfaces.Beverages;
+import restaurant.repositories.interfaces.BeverageRepository;
 
-import java.util.*;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.LinkedHashMap;
+import java.util.Map;
 
 public class BeverageRepositoryImpl implements BeverageRepository<Beverages> {
-    private List<Beverages> beverages;
+
+    private Map<String, Beverages> beverages;
 
     public BeverageRepositoryImpl() {
-        this.beverages = new ArrayList<>();
+        this.beverages = new LinkedHashMap<>();
     }
 
     @Override
     public Beverages beverageByName(String drinkName, String drinkBrand) {
-        return beverages.stream()
-                .filter(b -> b.getName().equals(drinkName) && b.getBrand().equals(drinkBrand))
+        return this.beverages
+                .values()
+                .stream()
+                .filter(beverage -> beverage.getName().equals(drinkName) &&
+                        beverage.getBrand().equals(drinkBrand))
                 .findFirst()
                 .orElse(null);
     }
 
     @Override
     public Collection<Beverages> getAllEntities() {
-        return beverages;
+        return Collections.unmodifiableCollection(this.beverages.values());
     }
 
     @Override
     public void add(Beverages entity) {
-        beverages.add(entity);
+        this.beverages.put(entity.getName(), entity);
     }
 }

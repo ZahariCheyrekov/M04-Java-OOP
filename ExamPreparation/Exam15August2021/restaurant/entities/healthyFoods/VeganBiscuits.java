@@ -1,9 +1,10 @@
-package M04_JavaOOP.ExamPreparation.Exam15August2021.restaurant.entities.healthyFoods;
+package restaurant.entities.healthyFoods;
 
 public class VeganBiscuits extends Food {
-    private static final double InitialVeganBiscuitsPortion = 205;
+
+    private static final double BISCUITS_PORTION = 205;
 
     public VeganBiscuits(String name, double price) {
-        super(name, InitialVeganBiscuitsPortion, price);
+        super(name, BISCUITS_PORTION, price);
     }
 }

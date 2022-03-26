@@ -1,13 +1,15 @@
-package M04_JavaOOP.ExamPreparation.Exam15August2021.restaurant.repositories;
+package restaurant.repositories;
 
-import M04_JavaOOP.ExamPreparation.Exam15August2021.restaurant.entities.tables.interfaces.Table;
-import M04_JavaOOP.ExamPreparation.Exam15August2021.restaurant.repositories.interfaces.TableRepository;
+import restaurant.entities.tables.interfaces.Table;
+import restaurant.repositories.interfaces.TableRepository;
 
 import java.util.Collection;
+import java.util.Collections;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
 public class TableRepositoryImpl implements TableRepository<Table> {
+
     private Map<Integer, Table> tables;
 
     public TableRepositoryImpl() {
@@ -16,16 +18,16 @@ public class TableRepositoryImpl implements TableRepository<Table> {
 
     @Override
     public Collection<Table> getAllEntities() {
-        return tables.values();
+        return Collections.unmodifiableCollection(this.tables.values());
     }
 
     @Override
     public void add(Table entity) {
-        tables.put(entity.getTableNumber(), entity);
+        this.tables.put(entity.getTableNumber(), entity);
     }
 
     @Override
     public Table byNumber(int number) {
-        return tables.get(number);
+        return this.tables.get(number);
     }
 }

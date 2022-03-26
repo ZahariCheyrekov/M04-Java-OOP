@@ -1,10 +1,12 @@
-package M04_JavaOOP.ExamPreparation.Exam15August2021.restaurant.entities.healthyFoods;
+package restaurant.entities.healthyFoods;
 
-import M04_JavaOOP.ExamPreparation.Exam15August2021.restaurant.entities.healthyFoods.interfaces.HealthyFood;
+import restaurant.common.DataValidator;
+import restaurant.entities.healthyFoods.interfaces.HealthyFood;
 
-import static M04_JavaOOP.ExamPreparation.Exam15August2021.restaurant.common.ExceptionMessages.*;
+import static restaurant.common.ExceptionMessages.*;
 
 public abstract class Food implements HealthyFood {
+
     private String name;
     private double portion;
     private double price;
@@ -16,38 +18,32 @@ public abstract class Food implements HealthyFood {
     }
 
     private void setName(String name) {
-        if (name == null || name.trim().isEmpty()) {
-            throw new IllegalArgumentException(INVALID_NAME);
-        }
+        DataValidator.validateString(name, INVALID_NAME);
         this.name = name;
     }
 
     private void setPortion(double portion) {
-        if (portion <= 0) {
-            throw new IllegalArgumentException(INVALID_PORTION);
-        }
+        DataValidator.validateDouble(portion, INVALID_PORTION);
         this.portion = portion;
     }
 
     private void setPrice(double price) {
-        if (price <= 0) {
-            throw new IllegalArgumentException(INVALID_PRICE);
-        }
+        DataValidator.validateDouble(price, INVALID_PRICE);
         this.price = price;
     }
 
     @Override
     public String getName() {
-        return name;
+        return this.name;
     }
 
     @Override
     public double getPortion() {
-        return portion;
+        return this.portion;
     }
 
     @Override
     public double getPrice() {
-        return price;
+        return this.price;
     }
 }

@@ -1,4 +1,4 @@
-package M04_JavaOOP.ExamPreparation.Exam15August2021.restaurant.entities.drinks.interfaces;
+package restaurant.entities.drinks.interfaces;
 
 public interface Beverages {
     String getName();

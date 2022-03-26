@@ -1,20 +1,18 @@
-package M04_JavaOOP.ExamPreparation.Exam15August2021.restaurant;
+package restaurant;
 
-import M04_JavaOOP.ExamPreparation.Exam15August2021.restaurant.core.ControllerImpl;
-import M04_JavaOOP.ExamPreparation.Exam15August2021.restaurant.core.EngineImpl;
-import M04_JavaOOP.ExamPreparation.Exam15August2021.restaurant.io.ConsoleReader;
-import M04_JavaOOP.ExamPreparation.Exam15August2021.restaurant.io.ConsoleWriter;
-import M04_JavaOOP.ExamPreparation.Exam15August2021.restaurant.core.interfaces.Controller;
-import M04_JavaOOP.ExamPreparation.Exam15August2021.restaurant.entities.drinks.interfaces.Beverages;
-import M04_JavaOOP.ExamPreparation.Exam15August2021.restaurant.entities.healthyFoods.interfaces.HealthyFood;
-import M04_JavaOOP.ExamPreparation.Exam15August2021.restaurant.entities.tables.interfaces.Table;
+import restaurant.core.ControllerImpl;
+import restaurant.core.EngineImpl;
+import restaurant.core.interfaces.Controller;
+import restaurant.entities.drinks.interfaces.Beverages;
+import restaurant.entities.healthyFoods.interfaces.HealthyFood;
+import restaurant.entities.tables.interfaces.Table;
 
-import M04_JavaOOP.ExamPreparation.Exam15August2021.restaurant.repositories.BeverageRepositoryImpl;
-import M04_JavaOOP.ExamPreparation.Exam15August2021.restaurant.repositories.HealthFoodRepositoryImpl;
-import M04_JavaOOP.ExamPreparation.Exam15August2021.restaurant.repositories.TableRepositoryImpl;
-import M04_JavaOOP.ExamPreparation.Exam15August2021.restaurant.repositories.interfaces.BeverageRepository;
-import M04_JavaOOP.ExamPreparation.Exam15August2021.restaurant.repositories.interfaces.HealthFoodRepository;
-import M04_JavaOOP.ExamPreparation.Exam15August2021.restaurant.repositories.interfaces.TableRepository;
+import restaurant.io.ConsoleReader;
+import restaurant.io.ConsoleWriter;
+import restaurant.repositories.BeverageRepositoryImpl;
+import restaurant.repositories.HealthFoodRepositoryImpl;
+import restaurant.repositories.TableRepositoryImpl;
+import restaurant.repositories.interfaces.*;
 
 public class Main {
     public static void main(String[] args) {

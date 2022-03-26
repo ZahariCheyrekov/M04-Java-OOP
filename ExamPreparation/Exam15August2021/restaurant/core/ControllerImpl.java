@@ -12,16 +12,14 @@ import restaurant.entities.tables.Indoors;
 import restaurant.entities.tables.interfaces.Table;
 import restaurant.repositories.interfaces.*;
 
-import java.util.Collection;
-
 import static restaurant.common.ExceptionMessages.*;
 import static restaurant.common.OutputMessages.*;
 
 public class ControllerImpl implements Controller {
 
-    private final HealthFoodRepository<HealthyFood> healthFoodRepository;
-    private final BeverageRepository<Beverages> beverageRepository;
-    private final TableRepository<Table> tableRepository;
+    private HealthFoodRepository<HealthyFood> healthFoodRepository;
+    private BeverageRepository<Beverages> beverageRepository;
+    private TableRepository<Table> tableRepository;
     private double totalMoney;
 
     public ControllerImpl(HealthFoodRepository<HealthyFood> healthFoodRepository,
@@ -35,7 +33,6 @@ public class ControllerImpl implements Controller {
 
     @Override
     public String addHealthyFood(String type, double price, String name) {
-
         HealthyFood food = type.equals("Salad")
                 ? new Salad(name, price)
                 : new VeganBiscuits(name, price);
@@ -52,7 +49,6 @@ public class ControllerImpl implements Controller {
 
     @Override
     public String addBeverage(String type, int counter, String brand, String name) {
-
         Beverages beverage = type.equals("Fresh")
                 ? new Fresh(name, counter, brand)
                 : new Smoothie(name, counter, brand);
@@ -69,7 +65,6 @@ public class ControllerImpl implements Controller {
 
     @Override
     public String addTable(String type, int tableNumber, int capacity) {
-
         Table table = type.equals("Indoors")
                 ? new Indoors(tableNumber, capacity)
                 : new InGarden(tableNumber, capacity);
@@ -86,12 +81,11 @@ public class ControllerImpl implements Controller {
 
     @Override
     public String reserve(int numberOfPeople) {
-
-        Collection<Table> tables = this.tableRepository.getAllEntities();
-
-        Table suitableTable = tables
+        Table suitableTable = this.tableRepository
+                .getAllEntities()
                 .stream()
-                .filter(table -> !table.isReservedTable() && table.getSize() >= numberOfPeople)
+                .filter(table -> !table.isReservedTable() &&
+                        table.getSize() >= numberOfPeople)
                 .findFirst()
                 .orElse(null);
 
@@ -129,13 +123,13 @@ public class ControllerImpl implements Controller {
             return String.format(WRONG_TABLE_NUMBER, tableNumber);
         }
 
-        Beverages beverage = this.beverageRepository.beverageByName(name, brand);
+        Beverages beverages = this.beverageRepository.beverageByName(name, brand);
 
-        if (beverage == null) {
+        if (beverages == null) {
             return String.format(NON_EXISTENT_DRINK, name, brand);
         }
 
-        table.orderBeverages(beverage);
+        table.orderBeverages(beverages);
         return String.format(BEVERAGE_ORDER_SUCCESSFUL, name, tableNumber);
     }
 
@@ -143,13 +137,13 @@ public class ControllerImpl implements Controller {
     public String closedBill(int tableNumber) {
         Table table = this.tableRepository.byNumber(tableNumber);
 
-        double bill = table.bill();
+        double tableBill = table.bill();
         table.clear();
+        totalMoney += tableBill;
 
-        totalMoney += bill;
-
-        return String.format(BILL, tableNumber, bill);
+        return String.format(BILL, tableNumber, tableBill);
     }
+
 
     @Override
     public String totalMoney() {

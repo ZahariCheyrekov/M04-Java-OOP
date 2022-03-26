@@ -1,7 +1,7 @@
-package M04_JavaOOP.ExamPreparation.Exam15August2021.restaurant.io;
+package restaurant.io;
 
 
-import M04_JavaOOP.ExamPreparation.Exam15August2021.restaurant.io.interfaces.InputReader;
+import restaurant.io.interfaces.InputReader;
 
 import java.io.BufferedReader;
 import java.io.IOException;

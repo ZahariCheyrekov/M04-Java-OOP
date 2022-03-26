@@ -1,9 +1,10 @@
-package M04_JavaOOP.ExamPreparation.Exam15August2021.restaurant.entities.healthyFoods;
+package restaurant.entities.healthyFoods;
 
 public class Salad extends Food {
-    private static final double InitialSaladPortion = 150;
+
+    private static final double SALAD_PORTION = 150;
 
     public Salad(String name, double price) {
-        super(name, InitialSaladPortion, price);
+        super(name, SALAD_PORTION, price);
     }
 }

@@ -1,9 +1,10 @@
-package M04_JavaOOP.ExamPreparation.Exam15August2021.restaurant.entities.drinks;
+package restaurant.entities.drinks;
 
 public class Fresh extends BaseBeverage {
-    private static final double freshPrice  = 3.50;
+
+    private static final double FRESH_PRICE = 3.50;
 
     public Fresh(String name, int counter, String brand) {
-        super(name, counter, freshPrice, brand);
+        super(name, counter, FRESH_PRICE, brand);
     }
 }

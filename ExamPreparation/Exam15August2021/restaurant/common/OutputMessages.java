@@ -1,4 +1,4 @@
-package M04_JavaOOP.ExamPreparation.Exam15August2021.restaurant.common;
+package restaurant.common;
 
 public class OutputMessages {
     public static final String FOOD_ADDED = "Added %s to the healthy menu!";

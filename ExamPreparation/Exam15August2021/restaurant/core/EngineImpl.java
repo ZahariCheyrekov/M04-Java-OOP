@@ -1,10 +1,10 @@
-package M04_JavaOOP.ExamPreparation.Exam15August2021.restaurant.core;
+package restaurant.core;
 
-import M04_JavaOOP.ExamPreparation.Exam15August2021.restaurant.common.enums.Commands;
-import M04_JavaOOP.ExamPreparation.Exam15August2021.restaurant.core.interfaces.Controller;
-import M04_JavaOOP.ExamPreparation.Exam15August2021.restaurant.core.interfaces.Engine;
-import M04_JavaOOP.ExamPreparation.Exam15August2021.restaurant.io.ConsoleReader;
-import M04_JavaOOP.ExamPreparation.Exam15August2021.restaurant.io.ConsoleWriter;
+import restaurant.common.enums.Commands;
+import restaurant.core.interfaces.Controller;
+import restaurant.core.interfaces.Engine;
+import restaurant.io.ConsoleReader;
+import restaurant.io.ConsoleWriter;
 
 import java.io.IOException;
 import java.util.Arrays;
@@ -51,14 +51,14 @@ public class EngineImpl implements Engine {
         switch (command) {
 
             case addHealthyFood:
-            result = this.controller.addHealthyFood(
-                    data[0], Double.parseDouble(data[1]), data[2]
-            );
-            break;
+                result = this.controller.addHealthyFood(
+                        data[0], Double.parseDouble(data[1]), data[2]
+                );
+                break;
 
             case addBeverage:
                 result = this.controller.addBeverage(
-                        data[0], Integer.parseInt(data[1]), data[2],  data[3]
+                        data[0], Integer.parseInt(data[1]), data[2], data[3]
                 );
                 break;
 
@@ -88,5 +88,4 @@ public class EngineImpl implements Engine {
         }
         return result.trim();
     }
-
 }

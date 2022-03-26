@@ -1,10 +1,12 @@
-package M04_JavaOOP.ExamPreparation.Exam15August2021.restaurant.entities.drinks;
+package restaurant.entities.drinks;
 
-import M04_JavaOOP.ExamPreparation.Exam15August2021.restaurant.entities.drinks.interfaces.Beverages;
+import restaurant.common.DataValidator;
+import restaurant.entities.drinks.interfaces.Beverages;
 
-import static M04_JavaOOP.ExamPreparation.Exam15August2021.restaurant.common.ExceptionMessages.*;
+import static restaurant.common.ExceptionMessages.*;
 
 public abstract class BaseBeverage implements Beverages {
+
     private String name;
     private int counter;
     private double price;
@@ -17,51 +19,43 @@ public abstract class BaseBeverage implements Beverages {
         this.setBrand(brand);
     }
 
-    public void setName(String name) {
-        if (name == null || name.trim().isEmpty()) {
-            throw new IllegalArgumentException(INVALID_NAME);
-        }
+    private void setName(String name) {
+        DataValidator.validateString(name, INVALID_NAME);
         this.name = name;
     }
 
-    public void setCounter(int counter) {
-        if (counter <= 0) {
-            throw new IllegalArgumentException(INVALID_COUNTER);
-        }
+    private void setCounter(int counter) {
+        DataValidator.validateInt(counter, INVALID_COUNTER);
         this.counter = counter;
     }
 
-    public void setPrice(double price) {
-        if (price <= 0) {
-            throw new IllegalArgumentException(INVALID_PRICE);
-        }
+    private void setPrice(double price) {
+        DataValidator.validateDouble(price, INVALID_PRICE);
         this.price = price;
     }
 
-    public void setBrand(String brand) {
-        if (brand == null || brand.trim().isEmpty()) {
-            throw new IllegalArgumentException(INVALID_BRAND);
-        }
+    private void setBrand(String brand) {
+        DataValidator.validateString(brand, INVALID_BRAND);
         this.brand = brand;
     }
 
     @Override
     public String getName() {
-        return name;
+        return this.name;
     }
 
     @Override
     public int getCounter() {
-        return counter;
+        return this.counter;
     }
 
     @Override
     public double getPrice() {
-        return price;
+        return this.price;
     }
 
     @Override
     public String getBrand() {
-        return brand;
+        return this.brand;
     }
 }

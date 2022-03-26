@@ -1,7 +1,7 @@
-package M04_JavaOOP.ExamPreparation.Exam15August2021.restaurant.entities.tables.interfaces;
+package restaurant.entities.tables.interfaces;
 
-import M04_JavaOOP.ExamPreparation.Exam15August2021.restaurant.entities.healthyFoods.interfaces.HealthyFood;
-import M04_JavaOOP.ExamPreparation.Exam15August2021.restaurant.entities.drinks.interfaces.Beverages;
+import restaurant.entities.healthyFoods.interfaces.HealthyFood;
+import restaurant.entities.drinks.interfaces.Beverages;
 
 public interface Table {
     int getTableNumber();

@@ -1,11 +1,14 @@
-package M04_JavaOOP.ExamPreparation.Exam18April2021.spaceStation.repositories;
+package spaceStation.repositories;
 
+import spaceStation.models.astronauts.Astronaut;
 
-import M04_JavaOOP.ExamPreparation.Exam18April2021.spaceStation.models.astronauts.Astronaut;
-
-import java.util.*;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.LinkedHashMap;
+import java.util.Map;
 
 public class AstronautRepository implements Repository<Astronaut> {
+
     private Map<String, Astronaut> astronauts;
 
     public AstronautRepository() {
@@ -13,7 +16,6 @@ public class AstronautRepository implements Repository<Astronaut> {
     }
 
     @Override
-
     public Collection<Astronaut> getModels() {
         return Collections.unmodifiableCollection(this.astronauts.values());
     }
@@ -25,8 +27,7 @@ public class AstronautRepository implements Repository<Astronaut> {
 
     @Override
     public boolean remove(Astronaut model) {
-        Astronaut astronaut = this.astronauts.remove(model.getName());
-        return astronaut != null;
+        return this.astronauts.remove(model.getName()) != null;
     }
 
     @Override

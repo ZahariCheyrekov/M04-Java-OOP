@@ -1,9 +1,9 @@
-package M04_JavaOOP.ExamPreparation.Exam18April2021.spaceStation;
+package spaceStation;
 
-import M04_JavaOOP.ExamPreparation.Exam18April2021.spaceStation.core.Controller;
-import M04_JavaOOP.ExamPreparation.Exam18April2021.spaceStation.core.ControllerImpl;
-import M04_JavaOOP.ExamPreparation.Exam18April2021.spaceStation.core.Engine;
-import M04_JavaOOP.ExamPreparation.Exam18April2021.spaceStation.core.EngineImpl;
+import spaceStation.core.Controller;
+import spaceStation.core.ControllerImpl;
+import spaceStation.core.Engine;
+import spaceStation.core.EngineImpl;
 
 public class Main {
     public static void main(String[] args) {

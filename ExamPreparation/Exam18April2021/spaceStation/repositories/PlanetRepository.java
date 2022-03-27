@@ -1,11 +1,14 @@
-package M04_JavaOOP.ExamPreparation.Exam18April2021.spaceStation.repositories;
+package spaceStation.repositories;
 
+import spaceStation.models.planets.Planet;
 
-import M04_JavaOOP.ExamPreparation.Exam18April2021.spaceStation.models.planets.Planet;
-
-import java.util.*;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.LinkedHashMap;
+import java.util.Map;
 
 public class PlanetRepository implements Repository<Planet> {
+
     private Map<String, Planet> planets;
 
     public PlanetRepository() {
@@ -24,8 +27,7 @@ public class PlanetRepository implements Repository<Planet> {
 
     @Override
     public boolean remove(Planet model) {
-        Planet planet = this.planets.remove(model.getName());
-        return planet != null;
+        return this.planets.remove(model.getName()) != null;
     }
 
     @Override

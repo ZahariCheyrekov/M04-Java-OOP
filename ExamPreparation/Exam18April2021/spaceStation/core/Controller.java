@@ -1,4 +1,4 @@
-package M04_JavaOOP.ExamPreparation.Exam18April2021.spaceStation.core;
+package spaceStation.core;
 
 public interface Controller {
     String addAstronaut(String type, String astronautName);

@@ -59,29 +59,16 @@ public abstract class BaseAstronaut implements Astronaut {
 
     @Override
     public String toString() {
+        String bagItems = this.getBag().getItems().size() == 0
+                ? EMPTY_BAG
+                : String.join(REPORT_ASTRONAUT_BAG_ITEMS_DELIMITER, this.bag.getItems());
 
-        StringBuilder astronautInfo = new StringBuilder();
+        StringBuilder info = new StringBuilder();
 
-        astronautInfo
-                .append(String.format(REPORT_ASTRONAUT_NAME, this.name))
-                .append(System.lineSeparator());
+        info.append(String.format(REPORT_ASTRONAUT_NAME, this.name)).append(System.lineSeparator());
+        info.append(String.format(REPORT_ASTRONAUT_OXYGEN, this.oxygen)).append(System.lineSeparator());
+        info.append(String.format(REPORT_ASTRONAUT_BAG_ITEMS, bagItems));
 
-        astronautInfo
-                .append(String.format(REPORT_ASTRONAUT_OXYGEN, this.oxygen))
-                .append(System.lineSeparator());
-
-        if (bag.getItems().isEmpty()) {
-            astronautInfo.append(String.format(REPORT_ASTRONAUT_BAG_ITEMS, "none"));
-        } else {
-
-            String bagItems = String.join(REPORT_ASTRONAUT_BAG_ITEMS_DELIMITER,
-                    this.bag.getItems());
-
-            astronautInfo.append(String.format(REPORT_ASTRONAUT_BAG_ITEMS, bagItems));
-        }
-
-        astronautInfo.append(System.lineSeparator());
-
-        return astronautInfo.toString().trim();
+        return info.toString().trim();
     }
 }

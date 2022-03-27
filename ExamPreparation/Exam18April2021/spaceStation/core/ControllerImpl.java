@@ -15,8 +15,8 @@ import spaceStation.repositories.Repository;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import static spaceStation.common.ExceptionMessages.*;
 import static spaceStation.common.ConstantMessages.*;
+import static spaceStation.common.ExceptionMessages.*;
 
 public class ControllerImpl implements Controller {
 
@@ -31,34 +31,28 @@ public class ControllerImpl implements Controller {
 
     @Override
     public String addAstronaut(String type, String astronautName) {
-
         Astronaut astronaut;
 
         switch (type) {
             case "Biologist":
                 astronaut = new Biologist(astronautName);
                 break;
-
             case "Geodesist":
                 astronaut = new Geodesist(astronautName);
                 break;
-
             case "Meteorologist":
                 astronaut = new Meteorologist(astronautName);
                 break;
-
             default:
                 throw new IllegalArgumentException(ASTRONAUT_INVALID_TYPE);
         }
 
         this.astronautRepository.add(astronaut);
-
         return String.format(ASTRONAUT_ADDED, type, astronautName);
     }
 
     @Override
     public String addPlanet(String planetName, String... items) {
-
         Planet planet = new PlanetImpl(planetName);
 
         for (String item : items) {
@@ -66,13 +60,11 @@ public class ControllerImpl implements Controller {
         }
 
         this.planetRepository.add(planet);
-
         return String.format(PLANET_ADDED, planetName);
     }
 
     @Override
     public String retireAstronaut(String astronautName) {
-
         Astronaut astronaut = this.astronautRepository.findByName(astronautName);
 
         if (astronaut == null) {
@@ -80,12 +72,12 @@ public class ControllerImpl implements Controller {
         }
 
         this.astronautRepository.remove(astronaut);
-
         return String.format(ASTRONAUT_RETIRED, astronautName);
     }
 
     @Override
     public String explorePlanet(String planetName) {
+        Planet planet = this.planetRepository.findByName(planetName);
 
         List<Astronaut> suitableAstronauts = this.astronautRepository
                 .getModels()
@@ -97,11 +89,9 @@ public class ControllerImpl implements Controller {
             throw new IllegalArgumentException(PLANET_ASTRONAUTS_DOES_NOT_EXISTS);
         }
 
-        Planet planet = this.planetRepository.findByName(planetName);
-
         Mission mission = new MissionImpl();
         mission.explore(planet, suitableAstronauts);
-        exploredPlanets++;
+        this.exploredPlanets++;
 
         int deadAstronauts = mission.getDeadAstronauts();
 
@@ -110,21 +100,17 @@ public class ControllerImpl implements Controller {
 
     @Override
     public String report() {
+        StringBuilder info = new StringBuilder();
 
-        StringBuilder reportInfo = new StringBuilder();
-
-        reportInfo.append(String.format(REPORT_PLANET_EXPLORED, exploredPlanets))
-                .append(System.lineSeparator());
-
-        reportInfo.append(REPORT_ASTRONAUT_INFO)
-                .append(System.lineSeparator());
+        info.append(String.format(REPORT_PLANET_EXPLORED, this.exploredPlanets)).append(System.lineSeparator());
+        info.append(REPORT_ASTRONAUT_INFO).append(System.lineSeparator());
 
         this.astronautRepository
                 .getModels()
-                .forEach(astronaut -> reportInfo
+                .forEach(astronaut -> info
                         .append(astronaut.toString())
                         .append(System.lineSeparator()));
 
-        return reportInfo.toString().trim();
+        return info.toString().trim();
     }
 }

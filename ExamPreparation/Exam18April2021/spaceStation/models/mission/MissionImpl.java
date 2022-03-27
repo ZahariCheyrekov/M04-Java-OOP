@@ -14,25 +14,23 @@ public class MissionImpl implements Mission {
     @Override
     public void explore(Planet planet, Collection<Astronaut> astronauts) {
 
-        List<Astronaut> astronautsExplore = new ArrayList<>(astronauts);
-
+        List<Astronaut> astronautList = new ArrayList<>(astronauts);
         List<String> planetItems = new ArrayList<>(planet.getItems());
 
+        for (int ast = 0; ast < astronautList.size(); ast++) {
+            Astronaut astronaut = astronautList.get(ast);
 
-        for (int index = 0; index < astronautsExplore.size(); index++) {
-            Astronaut astronaut = astronautsExplore.get(index);
-
-            for (int item = 0; item < planetItems.size(); item++) {
-                String currentItem = planetItems.get(item);
+            for (int itm = 0; itm < planetItems.size(); itm++) {
+                String item = planetItems.get(itm);
 
                 astronaut.breath();
-                astronaut.getBag().getItems().add(currentItem);
-                planetItems.remove(item);
+                astronaut.getBag().getItems().add(item);
+                planetItems.remove(itm);
 
-                item--;
+                itm--;
 
                 if (!astronaut.canBreath()) {
-                    deadAstronauts++;
+                    this.deadAstronauts++;
                     break;
                 }
             }

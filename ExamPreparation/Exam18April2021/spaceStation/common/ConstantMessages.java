@@ -1,4 +1,4 @@
-package M04_JavaOOP.ExamPreparation.Exam18April2021.spaceStation.common;
+package spaceStation.common;
 
 public class ConstantMessages {
     public static final String ASTRONAUT_ADDED = "Successfully added %s: %s!";
@@ -18,6 +18,8 @@ public class ConstantMessages {
     public static final String REPORT_ASTRONAUT_OXYGEN = "Oxygen: %.0f";
 
     public static final String REPORT_ASTRONAUT_BAG_ITEMS = "Bag items: %s";
+
+    public static final String EMPTY_BAG = "none";
 
     public static final String REPORT_ASTRONAUT_BAG_ITEMS_DELIMITER = ", ";
 }

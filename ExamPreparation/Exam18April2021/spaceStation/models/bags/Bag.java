@@ -1,4 +1,4 @@
-package M04_JavaOOP.ExamPreparation.Exam18April2021.spaceStation.models.bags;
+package spaceStation.models.bags;
 
 import java.util.Collection;
 

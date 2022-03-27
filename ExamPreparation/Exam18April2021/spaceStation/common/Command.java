@@ -1,4 +1,4 @@
-package M04_JavaOOP.ExamPreparation.Exam18April2021.spaceStation.common;
+package spaceStation.common;
 
 public enum Command {
     AddAstronaut,

@@ -1,6 +1,6 @@
-package M04_JavaOOP.ExamPreparation.Exam18April2021.spaceStation.core;
+package spaceStation.core;
 
-import M04_JavaOOP.ExamPreparation.Exam18April2021.spaceStation.common.Command;
+import spaceStation.common.Command;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -68,7 +68,8 @@ public class EngineImpl implements Engine {
     }
 
     private String retireAstronaut(String[] data) {
-        return controller.retireAstronaut(data[0]);
+        String astronautName = data[0];
+        return controller.retireAstronaut(astronautName);
     }
 
     private String report() {
@@ -76,15 +77,21 @@ public class EngineImpl implements Engine {
     }
 
     private String explorePlanet(String[] data) {
-        return controller.explorePlanet(data[0]);
+        String planetName = data[0];
+        return controller.explorePlanet(planetName);
     }
 
     private String addPlanet(String[] data) {
-        List<String> list = Arrays.asList(data).subList(1, data.length);
-        return controller.addPlanet(data[0], list.toArray(new String[0]));
+        String planetName = data[0];
+        List<String> items = Arrays.asList(data).subList(1, data.length);
+
+        return controller.addPlanet(planetName, items.toArray(new String[0]));
     }
 
     private String addAstronaut(String[] data) {
-        return controller.addAstronaut(data[0], data[1]);
+        String astronautType = data[0];
+        String astronautName = data[1];
+
+        return controller.addAstronaut(astronautType, astronautName);
     }
 }

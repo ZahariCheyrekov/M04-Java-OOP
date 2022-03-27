@@ -3,7 +3,7 @@ package spaceStation.models.planets;
 import java.util.ArrayList;
 import java.util.Collection;
 
-import static spaceStation.common.ExceptionMessages.*;
+import static spaceStation.common.ExceptionMessages.PLANET_NAME_NULL_OR_EMPTY;
 
 public class PlanetImpl implements Planet {
 

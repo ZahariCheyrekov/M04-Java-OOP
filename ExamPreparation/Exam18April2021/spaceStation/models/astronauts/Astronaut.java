@@ -1,6 +1,6 @@
-package M04_JavaOOP.ExamPreparation.Exam18April2021.spaceStation.models.astronauts;
+package spaceStation.models.astronauts;
 
-import M04_JavaOOP.ExamPreparation.Exam18April2021.spaceStation.models.bags.Bag;
+import spaceStation.models.bags.Bag;
 
 public interface Astronaut {
     String getName();

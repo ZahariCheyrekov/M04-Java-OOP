@@ -1,4 +1,4 @@
-package M04_JavaOOP.ExamPreparation.Exam10April2021.aquarium.common;
+package aquarium.common;
 
 public class ExceptionMessages {
     public static final String FISH_NAME_NULL_OR_EMPTY = "Fish name cannot be null or empty.";
@@ -10,4 +10,3 @@ public class ExceptionMessages {
     public static final String INVALID_FISH_TYPE = "Invalid fish type.";
     public static final String NO_DECORATION_FOUND = "There isn't a decoration of type %s.";
 }
-

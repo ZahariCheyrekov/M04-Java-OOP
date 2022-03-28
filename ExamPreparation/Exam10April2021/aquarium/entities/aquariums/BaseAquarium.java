@@ -1,12 +1,12 @@
 package aquarium.entities.aquariums;
 
+import aquarium.common.DataValidator;
 import aquarium.entities.decorations.Decoration;
 import aquarium.entities.fish.Fish;
 
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.stream.Collectors;
-import java.util.stream.DoubleStream;
 
 import static aquarium.common.ConstantMessages.*;
 import static aquarium.common.ExceptionMessages.*;
@@ -26,18 +26,18 @@ public abstract class BaseAquarium implements Aquarium {
     }
 
     private void setName(String name) {
-        if (name == null || name.trim().isEmpty()) {
-            throw new NullPointerException(AQUARIUM_NAME_NULL_OR_EMPTY);
-        }
+        DataValidator.validateString(name, AQUARIUM_NAME_NULL_OR_EMPTY);
         this.name = name;
     }
 
     @Override
     public int calculateComfort() {
-        return this.decorations
+        int decorationsComfortSum = this.decorations
                 .stream()
                 .mapToInt(Decoration::getComfort)
                 .sum();
+
+        return decorationsComfortSum;
     }
 
     @Override
@@ -71,22 +71,23 @@ public abstract class BaseAquarium implements Aquarium {
     @Override
     public String getInfo() {
 
-        String fishOutput = this.fish
-                .isEmpty() ? "none" :
-                this.fish
-                        .stream()
-                        .map(Fish::getName)
-                        .collect(Collectors.joining(" "));
+        String names = this.fish
+                .isEmpty()
+                ? EMPTY_AQUARIUM
+                : this.fish
+                .stream()
+                .map(Fish::getName)
+                .collect(Collectors.joining(FISH_NAMES_DELIMITER));
 
-        return String.format("%s (%s):%n" +
-                        "Fish: %s%n"
-                        + "Decorations: %d%n"
-                        + "Comfort: %d",
-                this.name,
-                this.getClass().getSimpleName(),
-                fishOutput,
-                this.decorations.size(),
-                calculateComfort());
+        StringBuilder info = new StringBuilder();
+
+        info.append(String.format(AQUARIUM_NAME_TYPE_INFO, this.name, this.getClass().getSimpleName()))
+                .append(System.lineSeparator());
+        info.append(String.format(AQUARIUM_FISH_NAMES, names)).append(System.lineSeparator());
+        info.append(String.format(AQUARIUM_DECORATIONS, this.decorations.size())).append(System.lineSeparator());
+        info.append(String.format(AQUARIUM_COMFORT, this.calculateComfort())).append(System.lineSeparator());
+
+        return info.toString().trim();
     }
 
     @Override

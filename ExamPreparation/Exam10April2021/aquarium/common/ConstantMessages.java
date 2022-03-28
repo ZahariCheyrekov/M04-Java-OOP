@@ -1,4 +1,4 @@
-package M04_JavaOOP.ExamPreparation.Exam10April2021.aquarium.common;
+package aquarium.common;
 
 public class ConstantMessages {
     public static final String NOT_ENOUGH_CAPACITY = "Not enough capacity.";
@@ -9,4 +9,10 @@ public class ConstantMessages {
     public static final String SUCCESSFULLY_ADDED_AQUARIUM_TYPE = "Successfully added %s.";
     public static final String SUCCESSFULLY_ADDED_DECORATION_TYPE = "Successfully added %s.";
     public static final String VALUE_AQUARIUM = "The value of Aquarium %s is %.2f.";
+    public static final String EMPTY_AQUARIUM = "none";
+    public static final String FISH_NAMES_DELIMITER = " ";
+    public static final String AQUARIUM_NAME_TYPE_INFO = "%s (%s):";
+    public static final String AQUARIUM_FISH_NAMES = "Fish: %s";
+    public static final String AQUARIUM_DECORATIONS = "Decorations: %d";
+    public static final String AQUARIUM_COMFORT = "Comfort: %d";
 }

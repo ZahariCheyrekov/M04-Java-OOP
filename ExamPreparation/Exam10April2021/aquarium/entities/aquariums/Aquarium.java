@@ -6,6 +6,7 @@ import aquarium.entities.fish.Fish;
 import java.util.Collection;
 
 public interface Aquarium {
+    
     int calculateComfort();
 
     String getName();

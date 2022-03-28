@@ -1,5 +1,7 @@
 package aquarium.entities.fish;
 
+import aquarium.common.DataValidator;
+
 import static aquarium.common.ExceptionMessages.*;
 
 public abstract class BaseFish implements Fish {
@@ -9,6 +11,8 @@ public abstract class BaseFish implements Fish {
     private int size;
     private double price;
 
+    private static final int INCREASED_SIZE_PER_MEAL = 5;
+
     protected BaseFish(String name, String species, double price) {
         this.setName(name);
         this.setSpecies(species);
@@ -17,23 +21,17 @@ public abstract class BaseFish implements Fish {
 
     @Override
     public void setName(String name) {
-        if (name == null || name.trim().isEmpty()) {
-            throw new NullPointerException(FISH_NAME_NULL_OR_EMPTY);
-        }
+        DataValidator.validateString(name, FISH_NAME_NULL_OR_EMPTY);
         this.name = name;
     }
 
     private void setSpecies(String species) {
-        if (species == null || species.trim().isEmpty()) {
-            throw new NullPointerException(SPECIES_NAME_NULL_OR_EMPTY);
-        }
+        DataValidator.validateString(species, SPECIES_NAME_NULL_OR_EMPTY);
         this.species = species;
     }
 
     private void setPrice(double price) {
-        if (price <= 0) {
-            throw new IllegalArgumentException(FISH_PRICE_BELOW_OR_EQUAL_ZERO);
-        }
+        DataValidator.validateDouble(price, FISH_PRICE_BELOW_OR_EQUAL_ZERO);
         this.price = price;
     }
 
@@ -43,7 +41,7 @@ public abstract class BaseFish implements Fish {
 
     @Override
     public void eat() {
-        this.setSize(this.size + 5);
+        this.size += INCREASED_SIZE_PER_MEAL;
     }
 
     @Override

@@ -1,70 +1,86 @@
 package aquarium;
 
+import static org.junit.Assert.*;
+
 import org.junit.Before;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 public class AquariumTests {
 
     private Aquarium aquarium;
     private Fish fish;
 
- 
+    private static final String AQUARIUM_NAME = "DeepWater";
+    private static final int AQUARIUM_CAPACITY = 2;
+    private static final int INVALID_AQUARIUM_CAPACITY = -10;
+    private static final int ZERO_FISH_COUNT = 0;
+
+    private static final String FISH_NAME = "Jeffry";
+    private static final String BREAM_NAME = "Bri";
+    private static final String CLOWNFISH_NAME = "Downfall";
+    private static final String NULL_AQUARIUM_NAME = null;
+
+    private static final Fish SHARK = new Fish(BREAM_NAME);
+    private static final Fish WHALE = new Fish(CLOWNFISH_NAME);
+    private static final String REPORT_MESSAGE = "Fish available at %s: %s";
+
+    @Before
+    public void setUp() {
+        aquarium = new Aquarium(AQUARIUM_NAME, AQUARIUM_CAPACITY);
+        fish = new Fish(FISH_NAME);
+        aquarium.add(fish);
+    }
 
     @Test(expected = NullPointerException.class)
-    public void testShouldThrowExceptionFoNullAquariumName() {
-        new Aquarium(null, 10);
+    public void testShouldThrowExceptionForTryingToSetNullAquariumName() {
+        new Aquarium(NULL_AQUARIUM_NAME, AQUARIUM_CAPACITY);
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void testShouldThrowExceptionForNegativeAquariumCapacity() {
-        new Aquarium("Aqua", -10);
+    public void testShouldThrowExceptionForTryingToSetInvalidAquariumCapacity() {
+        new Aquarium(AQUARIUM_NAME, INVALID_AQUARIUM_CAPACITY);
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void testShouldThrowExceptionForNoAquariumCapacity() {
-        aquarium.add(fish);
-        aquarium.add(fish);
+    public void testShouldThrowExceptionForNoMoreSpaceInTheAquarium() {
+        aquarium.add(SHARK);
+        aquarium.add(WHALE);
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void testShouldThrowExceptionForNoneExistingFishToRemove() {
-        aquarium.remove("noneExisting");
+    public void testShouldTrowExceptionWhenTryingToRemoveNoneExistingFish() {
+        aquarium.add(SHARK);
+        aquarium.remove(CLOWNFISH_NAME);
     }
 
     @Test
-    public void testShouldRemoveFishFromAquariumCorrectly() {
-        aquarium.remove(fish.getName());
-        assertEquals(0, aquarium.getCount());
+    public void testShouldRemoveFishFromTheAquariumCorrectly() {
+        aquarium.remove(FISH_NAME);
+        assertEquals(ZERO_FISH_COUNT, aquarium.getCount());
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void testShouldThrowExceptionForNoneExistingFishWithGivenName() {
-        aquarium.sellFish("Goldy");
+    public void testShouldThrowExceptionForTryingToRemoveFishWithNoSuchNameFromTheAquarium() {
+        aquarium.sellFish(CLOWNFISH_NAME);
     }
 
     @Test
-    public void testShouldSellFishCorrectlyAndSetAvailableToFalse() {
-        Fish soldFish = aquarium.sellFish(fish.getName());
+    public void testShouldSellFishFromTheAquariumByTheGivenName() {
+        Fish soldFish = aquarium.sellFish(FISH_NAME);
         assertEquals(fish, soldFish);
-        assertFalse(fish.isAvailable());
+        assertFalse(soldFish.isAvailable());
     }
 
     @Test
-    public void testShouldReturnReportForTheAquarium() {
-        String expected = "Fish available at Odium: Nemo";
-        String actual = aquarium.report();
-
-        assertEquals(expected, actual);
+    public void testShouldReturnTheReportForTheFishNamesInTheAquarium() {
+        String expectedReport = String.format(REPORT_MESSAGE, aquarium.getName(), FISH_NAME);
+        String aquariumReport = aquarium.report();
+        assertEquals(expectedReport, aquariumReport);
     }
 
     @Test
-    public void testShouldGetAquariumCapacity() {
-        int expected = 2;
-        int actual = aquarium.getCapacity();
-        assertEquals(expected, actual);
+    public void testShouldGetTheAquariumCapacityCorrectly() {
+        int actualCapacity = aquarium.getCapacity();
+        assertEquals(AQUARIUM_CAPACITY, actualCapacity);
     }
-
-
 }

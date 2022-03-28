@@ -12,25 +12,24 @@ import aquarium.entities.fish.SaltwaterFish;
 import aquarium.repositories.DecorationRepository;
 import aquarium.repositories.Repository;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.LinkedHashMap;
+import java.util.Map;
 
-import static aquarium.common.ExceptionMessages.*;
 import static aquarium.common.ConstantMessages.*;
+import static aquarium.common.ExceptionMessages.*;
 
 public class ControllerImpl implements Controller {
 
     private Repository decorations;
-    private List<Aquarium> aquariums;
+    private Map<String, Aquarium> aquariums;
 
     public ControllerImpl() {
         this.decorations = new DecorationRepository();
-        this.aquariums = new ArrayList<>();
+        this.aquariums = new LinkedHashMap<>();
     }
 
     @Override
     public String addAquarium(String aquariumType, String aquariumName) {
-
         Aquarium aquarium;
 
         switch (aquariumType) {
@@ -44,8 +43,7 @@ public class ControllerImpl implements Controller {
                 throw new NullPointerException(INVALID_AQUARIUM_TYPE);
         }
 
-        this.aquariums.add(aquarium);
-
+        this.aquariums.put(aquariumName, aquarium);
         return String.format(SUCCESSFULLY_ADDED_AQUARIUM_TYPE, aquariumType);
     }
 
@@ -65,7 +63,6 @@ public class ControllerImpl implements Controller {
         }
 
         this.decorations.add(decoration);
-
         return String.format(SUCCESSFULLY_ADDED_DECORATION_TYPE, type);
     }
 
@@ -77,11 +74,10 @@ public class ControllerImpl implements Controller {
             throw new IllegalArgumentException(String.format(NO_DECORATION_FOUND, decorationType));
         }
 
+        Aquarium aquarium = this.aquariums.get(aquariumName);
+
+        aquarium.getDecorations().add(decoration);
         this.decorations.remove(decoration);
-
-        Aquarium aquarium = getAquariumByName(aquariumName);
-
-        aquarium.addDecoration(decoration);
 
         return String.format(SUCCESSFULLY_ADDED_DECORATION_IN_AQUARIUM, decorationType, aquariumName);
     }
@@ -101,64 +97,52 @@ public class ControllerImpl implements Controller {
                 throw new IllegalArgumentException(INVALID_FISH_TYPE);
         }
 
-        Aquarium aquarium = getAquariumByName(aquariumName);
+        Aquarium aquarium = this.aquariums.get(aquariumName);
 
-        String aquariumType = aquarium.getClass().getSimpleName();
+        String typeAquarium = aquarium.getClass().getSimpleName();
 
-        boolean areSuitable = checkIfSuitable(fishType, aquariumType);
+        boolean areSuitable = checkIfSuitable(fishType, typeAquarium);
 
         if (!areSuitable) {
             return WATER_NOT_SUITABLE;
         }
 
         aquarium.addFish(fish);
+
         return String.format(SUCCESSFULLY_ADDED_FISH_IN_AQUARIUM, fishType, aquariumName);
     }
 
     @Override
     public String feedFish(String aquariumName) {
+        Aquarium aquarium = this.aquariums.get(aquariumName);
+        aquarium.feed();
 
-        Aquarium aquarium = getAquariumByName(aquariumName);
-
-        aquarium.getFish().forEach(Fish::eat);
-
-        int fedFish = aquarium.getFish().size();
-
-        return String.format(FISH_FED, fedFish);
+        int fishInAquarium = aquarium.getFish().size();
+        return String.format(FISH_FED, fishInAquarium);
     }
 
     @Override
     public String calculateValue(String aquariumName) {
-
-        Aquarium aquarium = getAquariumByName(aquariumName);
+        Aquarium aquarium = this.aquariums.get(aquariumName);
 
         double decorationsPrice = calculateDecorationPrice(aquarium);
         double fishPrice = calculateFishPrice(aquarium);
-
         double totalPrice = decorationsPrice + fishPrice;
 
-        return String.format(VALUE_AQUARIUM, aquariumName, totalPrice);
+        return String.format(VALUE_AQUARIUM, aquarium.getName(), totalPrice);
     }
 
     @Override
     public String report() {
-
         StringBuilder info = new StringBuilder();
 
-        this.aquariums.forEach(aquarium -> info
-                .append(aquarium.getInfo())
-                .append(System.lineSeparator()));
+        this.aquariums
+                .values()
+                .forEach(aquarium -> info.
+                        append(aquarium.getInfo())
+                        .append(System.lineSeparator()));
 
         return info.toString().trim();
-    }
-
-    private Aquarium getAquariumByName(String aquariumName) {
-        return this.aquariums
-                .stream()
-                .filter(a -> a.getName()
-                        .equals(aquariumName))
-                .findFirst()
-                .orElse(null);
     }
 
     private boolean checkIfSuitable(String fishType, String aquariumType) {

@@ -27,7 +27,8 @@ public class DecorationRepository implements Repository {
     public Decoration findByType(String type) {
         return this.decorations
                 .stream()
-                .filter(decoration -> decoration.getClass()
+                .filter(decoration -> decoration
+                        .getClass()
                         .getSimpleName()
                         .equals(type))
                 .findFirst()

@@ -71,10 +71,5 @@ public class AquariumTests {
         assertEquals(expected, actual);
     }
 
-    @Test
-    public void testShouldGetAquariumName() {
-        String expected = "Odium";
-        String actual = aquarium.getName();
-        assertEquals(expected, actual);
-    }
+
 }

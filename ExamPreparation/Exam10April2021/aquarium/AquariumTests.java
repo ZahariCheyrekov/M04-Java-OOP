@@ -10,12 +10,7 @@ public class AquariumTests {
     private Aquarium aquarium;
     private Fish fish;
 
-    @Before
-    public void setUp() {
-        aquarium = new Aquarium("Odium", 2);
-        fish = new Fish("Nemo");
-        aquarium.add(fish);
-    }
+ 
 
     @Test(expected = NullPointerException.class)
     public void testShouldThrowExceptionFoNullAquariumName() {

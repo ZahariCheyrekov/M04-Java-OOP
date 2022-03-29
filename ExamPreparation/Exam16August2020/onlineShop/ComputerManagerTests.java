@@ -9,7 +9,6 @@ import static org.junit.Assert.*;
 
 public class ComputerManagerTests {
 
-    private ComputerManager computerManager;
     private Computer computer;
 
     @Before

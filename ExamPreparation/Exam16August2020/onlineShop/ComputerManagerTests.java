@@ -29,4 +29,9 @@ public class ComputerManagerTests {
         computer = new Computer(COMPUTER_MANUFACTURER, COMPUTER_MODEL, COMPUTER_PRICE);
         computerManager.addComputer(computer);
     }
+   
+    @Test(expected = UnsupportedOperationException.class)
+    public void testShouldThrowExceptionForTryingToModifyUnmodifiableCollection() {
+        computerManager.getComputers().clear();
+    }
 }

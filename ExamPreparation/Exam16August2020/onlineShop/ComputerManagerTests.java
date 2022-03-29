@@ -1,12 +1,6 @@
 package computers;
 
 public class ComputerManagerTests {
-
-
-    
-        computerManager.addComputer(computer);
-    }
-
     @Test(expected = UnsupportedOperationException.class)
     public void testShouldThrowExceptionForNonModifiableCollection() {
         computerManager.getComputers().clear();

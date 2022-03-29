@@ -3,10 +3,6 @@ package computers;
 public class ComputerManagerTests {
 
 
-    @Before
-    public void setUp() {
-        computerManager = new ComputerManager();
-        computer = new Computer("Acer", "Aspire", 10);
     
         computerManager.addComputer(computer);
     }

@@ -50,4 +50,9 @@ public class ComputerManagerTests {
         Computer removedComputer = computerManager.removeComputer(COMPUTER_MANUFACTURER, COMPUTER_MODEL);
         assertEquals(computer, removedComputer);
     }
+   
+   @Test(expected = IllegalArgumentException.class)
+    public void testShouldTrowExceptionForNoneExistingManufacturerAndModelInComputerManger() {
+        computerManager.getComputer(NONE_EXISTING_MANUFACTURER, NONE_EXISTING_MODEL);
+    }
 }

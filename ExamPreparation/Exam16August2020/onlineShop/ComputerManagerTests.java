@@ -2,10 +2,6 @@ package computers;
 
 public class ComputerManagerTests {
 
-    public void testShouldThrowExceptionForAlreadyExistingComputer() {
-        computerManager.addComputer(computer);
-    }
-
     @Test
     public void testShouldRemoveComputerFromTheManager() {
         String manufacturer = "Acer";

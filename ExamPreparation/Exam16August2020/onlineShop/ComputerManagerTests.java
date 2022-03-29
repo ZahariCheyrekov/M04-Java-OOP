@@ -3,10 +3,6 @@ package computers;
 public class ComputerManagerTests {
     @Test(expected = UnsupportedOperationException.class)
     public void testShouldThrowExceptionForNonModifiableCollection() {
-        computerManager.getComputers().clear();
-
-        int countComputers = computerManager.getCount();
-        assertEquals(1, countComputers);
     }
 
     @Test(expected = IllegalArgumentException.class)

@@ -2,10 +2,6 @@ package computers;
 
 public class ComputerManagerTests {
 
-    @Test
-    public void testShouldRemoveComputerFromTheManager() {
-        String manufacturer = "Acer";
-        String model = "Aspire";
 
         Computer removed = computerManager.removeComputer(manufacturer, model);
         assertEquals(computer, removed);

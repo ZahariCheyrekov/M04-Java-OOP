@@ -3,11 +3,6 @@ package computers;
 public class ComputerManagerTests {
 
     @Test(expected = IllegalArgumentException.class)
-    public void testShouldThrowExceptionForNullComputer() {
-        computerManager.addComputer(null);
-    }
-
-    @Test(expected = IllegalArgumentException.class)
     public void testShouldThrowExceptionForAlreadyExistingComputer() {
         computerManager.addComputer(computer);
     }

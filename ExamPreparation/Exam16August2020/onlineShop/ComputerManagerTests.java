@@ -55,4 +55,10 @@ public class ComputerManagerTests {
     public void testShouldTrowExceptionForNoneExistingManufacturerAndModelInComputerManger() {
         computerManager.getComputer(NONE_EXISTING_MANUFACTURER, NONE_EXISTING_MODEL);
     }
+   
+     @Test
+    public void testShouldGetComputerByManufacturerAndModel() {
+        Computer computerByManufacturerAndModel = computerManager.getComputer(COMPUTER_MANUFACTURER, COMPUTER_MODEL);
+        assertEquals(computer, computerByManufacturerAndModel);
+    }
 }

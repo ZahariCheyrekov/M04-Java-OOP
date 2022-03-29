@@ -44,4 +44,10 @@ public class ComputerManagerTests {
     public void testShouldThrowExceptionWhenTryingToAddAlreadyExistingComputer() {
         computerManager.addComputer(computer);
     }
+   
+    @Test
+    public void testShouldRemoveComputerByGivenManufacturerAndModel() {
+        Computer removedComputer = computerManager.removeComputer(COMPUTER_MANUFACTURER, COMPUTER_MODEL);
+        assertEquals(computer, removedComputer);
+    }
 }

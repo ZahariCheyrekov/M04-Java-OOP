@@ -1,6 +1,6 @@
 package computers;
 
-public class ComputerManagerTests {
+public clss ComputerManagerTests {
 
 
 }

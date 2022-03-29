@@ -1,9 +1,6 @@
 package computers;
 
 public class ComputerManagerTests {
-    @Test(expected = UnsupportedOperationException.class)
-    public void testShouldThrowExceptionForNonModifiableCollection() {
-    }
 
     @Test(expected = IllegalArgumentException.class)
     public void testShouldThrowExceptionForNullComputer() {

@@ -34,4 +34,9 @@ public class ComputerManagerTests {
     public void testShouldThrowExceptionForTryingToModifyUnmodifiableCollection() {
         computerManager.getComputers().clear();
     }
+   
+    @Test(expected = IllegalArgumentException.class)
+    public void testShouldThrowExceptionForTryingToAddComputerWithValueNull() {
+        computerManager.addComputer(NULL_COMPUTER);
+    }
 }

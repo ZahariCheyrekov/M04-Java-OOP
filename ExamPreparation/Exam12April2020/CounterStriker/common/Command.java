@@ -1,4 +1,4 @@
-package M04_JavaOOP.ExamPreparation.Exam12April2020.CounterStriker.common;
+package CounterStriker.common;
 
 public enum Command {
     AddGun,

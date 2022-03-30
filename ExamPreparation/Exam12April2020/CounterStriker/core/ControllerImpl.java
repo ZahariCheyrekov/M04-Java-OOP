@@ -10,6 +10,7 @@ import CounterStriker.models.players.Player;
 import CounterStriker.models.players.Terrorist;
 import CounterStriker.repositories.GunRepository;
 import CounterStriker.repositories.PlayerRepository;
+import CounterStriker.repositories.Repository;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -19,9 +20,11 @@ import static CounterStriker.common.OutputMessages.*;
 
 public class ControllerImpl implements Controller {
 
-    private GunRepository guns;
-    private PlayerRepository players;
+    private Repository<Gun> guns;
+    private Repository<Player> players;
     private Field field;
+
+    private static final int EQUAL_RESULT = 0;
 
     public ControllerImpl() {
         this.guns = new GunRepository();
@@ -45,7 +48,6 @@ public class ControllerImpl implements Controller {
         }
 
         this.guns.add(gun);
-
         return String.format(SUCCESSFULLY_ADDED_GUN, name);
     }
 
@@ -71,7 +73,6 @@ public class ControllerImpl implements Controller {
         }
 
         this.players.add(player);
-
         return String.format(SUCCESSFULLY_ADDED_PLAYER, username);
     }
 
@@ -83,31 +84,36 @@ public class ControllerImpl implements Controller {
                 .filter(Player::isAlive)
                 .collect(Collectors.toList());
 
-        return field.start(alivePlayers);
+        String resultAfterBattle = this.field.start(alivePlayers);
+
+        return resultAfterBattle;
     }
 
     @Override
     public String report() {
         StringBuilder info = new StringBuilder();
 
-        this.players
-                .getModels()
-                .stream()
-                .sorted((first, second) -> {
-                    int result = first.getClass().getSimpleName().compareTo(second.getClass().getSimpleName());
 
-                    if (result == 0) {
+        this.players.getModels().stream().sorted((first, second) -> {
+
+                    int result = first
+                            .getClass()
+                            .getSimpleName()
+                            .compareTo(second.getClass()
+                                    .getSimpleName());
+
+                    if (result == EQUAL_RESULT) {
                         result = Integer.compare(second.getHealth(), first.getHealth());
                     }
 
-                    if (result == 0) {
+                    if (result == EQUAL_RESULT) {
                         result = first.getUsername().compareTo(second.getUsername());
                     }
 
                     return result;
                 })
-                .forEach(p -> info
-                        .append(p)
+                .forEach(player -> info
+                        .append(player)
                         .append(System.lineSeparator()));
 
         return info.toString().trim();

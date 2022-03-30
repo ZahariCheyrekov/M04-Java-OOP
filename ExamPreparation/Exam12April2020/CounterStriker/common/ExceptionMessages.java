@@ -1,6 +1,7 @@
-package M04_JavaOOP.ExamPreparation.Exam12April2020.CounterStriker.common;
+package CounterStriker.common;
 
 public class ExceptionMessages {
+
     public static final String INVALID_PLAYER_NAME = "Username cannot be null or empty.";
 
     public static final String INVALID_PLAYER_HEALTH = "Player health cannot be below 0.";

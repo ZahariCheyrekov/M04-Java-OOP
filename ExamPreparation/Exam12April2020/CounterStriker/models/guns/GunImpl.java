@@ -1,5 +1,7 @@
 package CounterStriker.models.guns;
 
+import CounterStriker.common.DataValidator;
+
 import static CounterStriker.common.ExceptionMessages.*;
 
 public abstract class GunImpl implements Gun {
@@ -7,22 +9,21 @@ public abstract class GunImpl implements Gun {
     private String name;
     private int bulletsCount;
 
+    private static final int NO_BULLETS = 0;
+    private static final int BULLETS_PER_FIRE = 1;
+
     protected GunImpl(String name, int bulletsCount) {
         this.setName(name);
         this.setBulletsCount(bulletsCount);
     }
 
     private void setName(String name) {
-        if (name == null || name.trim().isEmpty()) {
-            throw new NullPointerException(INVALID_GUN_NAME);
-        }
+        DataValidator.validateString(name, INVALID_GUN_NAME);
         this.name = name;
     }
 
     protected void setBulletsCount(int bulletsCount) {
-        if (bulletsCount < 0) {
-            throw new IllegalArgumentException(INVALID_GUN_BULLETS_COUNT);
-        }
+        DataValidator.validateInt(bulletsCount, INVALID_GUN_BULLETS_COUNT);
         this.bulletsCount = bulletsCount;
     }
 
@@ -36,7 +37,13 @@ public abstract class GunImpl implements Gun {
         return this.bulletsCount;
     }
 
-    protected void decreaseBullets(int amount) {
-        this.bulletsCount -= amount;
+    @Override
+    public int fire() {
+        if (this.bulletsCount >= BULLETS_PER_FIRE) {
+            this.bulletsCount -= BULLETS_PER_FIRE;
+            return BULLETS_PER_FIRE;
+        }
+
+        return NO_BULLETS;
     }
 }

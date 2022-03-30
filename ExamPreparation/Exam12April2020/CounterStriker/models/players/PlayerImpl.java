@@ -1,8 +1,10 @@
 package CounterStriker.models.players;
 
+import CounterStriker.common.DataValidator;
 import CounterStriker.models.guns.Gun;
 
 import static CounterStriker.common.ExceptionMessages.*;
+import static CounterStriker.common.OutputMessages.*;
 
 public abstract class PlayerImpl implements Player {
 
@@ -12,6 +14,8 @@ public abstract class PlayerImpl implements Player {
     private boolean isAlive;
     private Gun gun;
 
+    private static final int ZERO_HEALTH = 0;
+
     protected PlayerImpl(String username, int health, int armor, Gun gun) {
         this.setUsername(username);
         this.setHealth(health);
@@ -20,30 +24,22 @@ public abstract class PlayerImpl implements Player {
     }
 
     private void setUsername(String username) {
-        if (username == null || username.trim().isEmpty()) {
-            throw new NullPointerException(INVALID_PLAYER_NAME);
-        }
+        DataValidator.validateString(username, INVALID_PLAYER_NAME);
         this.username = username;
     }
 
     private void setHealth(int health) {
-        if (health < 0) {
-            throw new IllegalArgumentException(INVALID_PLAYER_HEALTH);
-        }
+        DataValidator.validateInt(health, INVALID_PLAYER_HEALTH);
         this.health = health;
     }
 
     private void setArmor(int armor) {
-        if (armor < 0) {
-            throw new IllegalArgumentException(INVALID_PLAYER_ARMOR);
-        }
+        DataValidator.validateInt(armor, INVALID_PLAYER_ARMOR);
         this.armor = armor;
     }
 
     private void setGun(Gun gun) {
-        if (gun == null) {
-            throw new NullPointerException(INVALID_GUN);
-        }
+        DataValidator.validateGun(gun, INVALID_GUN);
         this.gun = gun;
     }
 
@@ -69,7 +65,8 @@ public abstract class PlayerImpl implements Player {
 
     @Override
     public boolean isAlive() {
-        return this.health > 0;
+        this.isAlive = health > ZERO_HEALTH;
+        return isAlive;
     }
 
     @Override
@@ -78,14 +75,14 @@ public abstract class PlayerImpl implements Player {
 
         if (damage >= this.getArmor()) {
             damage -= this.getArmor();
-            this.armor = 0;
+            this.armor = ZERO_HEALTH;
             this.health -= damage;
         } else {
             this.armor -= damage;
         }
 
-        if (this.health < 0) {
-            this.health = 0;
+        if (this.health < ZERO_HEALTH) {
+            this.health = ZERO_HEALTH;
         }
     }
 
@@ -93,10 +90,13 @@ public abstract class PlayerImpl implements Player {
     public String toString() {
         StringBuilder info = new StringBuilder();
 
-        info.append(String.format("%s: %s", this.getClass().getSimpleName(), this.username)).append(System.lineSeparator());
-        info.append(String.format("--Health: %d", this.health)).append(System.lineSeparator());
-        info.append(String.format("--Armor: %d", this.armor)).append(System.lineSeparator());
-        info.append(String.format("--Gun: %s", this.gun.getName()));
+        info.append(String.format(PLAYER_TO_STRING, this.getClass().getSimpleName(), this.username))
+                .append(System.lineSeparator());
+        info.append(String.format(PLAYER_HEALTH_TO_STRING, this.health))
+                .append(System.lineSeparator());
+        info.append(String.format(PLAYER_ARMOR_TO_STRING, this.armor))
+                .append(System.lineSeparator());
+        info.append(String.format(PLAYER_GUN_TO_STRING, this.gun.getName()));
 
         return info.toString().trim();
     }

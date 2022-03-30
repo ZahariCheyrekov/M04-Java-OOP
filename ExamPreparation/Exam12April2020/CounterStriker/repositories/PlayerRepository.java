@@ -1,5 +1,6 @@
 package CounterStriker.repositories;
 
+import CounterStriker.common.DataValidator;
 import CounterStriker.models.players.Player;
 
 import java.util.Collection;
@@ -24,9 +25,7 @@ public class PlayerRepository implements Repository<Player> {
 
     @Override
     public void add(Player model) {
-        if (model == null) {
-            throw new NullPointerException(INVALID_PLAYER_REPOSITORY);
-        }
+        DataValidator.validatePlayer(model, INVALID_PLAYER_REPOSITORY);
         this.players.put(model.getUsername(), model);
     }
 

@@ -1,7 +1,7 @@
-package M04_JavaOOP.ExamPreparation.Exam12April2020.CounterStriker;
+package CounterStriker;
 
-import M04_JavaOOP.ExamPreparation.Exam12April2020.CounterStriker.core.EngineImpl;
-import M04_JavaOOP.ExamPreparation.Exam12April2020.CounterStriker.core.Engine;
+import CounterStriker.core.EngineImpl;
+import CounterStriker.core.Engine;
 
 public class Main {
     public static void main(String[] args) {

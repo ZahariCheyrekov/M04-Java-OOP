@@ -1,8 +1,12 @@
 package CounterStriker.repositories;
 
+import CounterStriker.common.DataValidator;
 import CounterStriker.models.guns.Gun;
 
-import java.util.*;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.LinkedHashMap;
+import java.util.Map;
 
 import static CounterStriker.common.ExceptionMessages.INVALID_GUN_REPOSITORY;
 
@@ -21,9 +25,7 @@ public class GunRepository implements Repository<Gun> {
 
     @Override
     public void add(Gun model) {
-        if (model == null) {
-            throw new NullPointerException(INVALID_GUN_REPOSITORY);
-        }
+        DataValidator.validateGun(model, INVALID_GUN_REPOSITORY);
         this.guns.put(model.getName(), model);
     }
 

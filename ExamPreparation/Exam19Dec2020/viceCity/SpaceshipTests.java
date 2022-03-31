@@ -8,14 +8,6 @@ public class SpaceshipTests {
 
     
 
-
-    @Test(expected = IllegalArgumentException.class)
-    public void testShouldThrowExceptionForNoMoreCapacityOnTheSpaceship() {
-        spaceship.add(astronaut);
-        spaceship.add(new Astronaut("Spaceman2", 100));
-        spaceship.add(new Astronaut("Spaceman3", 100));
-    }
-
     @Test(expected = IllegalArgumentException.class)
     public void testShouldThrowExceptionForAlreadyExistingAstronautOnTheSpaceship() {
         spaceship.add(astronaut);

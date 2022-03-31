@@ -6,10 +6,7 @@ import org.junit.Test;
 
 public class SpaceshipTests {
 
-    @Test(expected = IllegalArgumentException.class)
-    public void testShouldThrowExceptionForLessThanZeroCapacityForTheSpaceship() {
-        new Spaceship("GalaxyI", -10);
-    }
+    
 
     @Test
     public void testShouldRemoveAstronautFromTheSpaceship() {

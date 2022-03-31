@@ -1,5 +1,7 @@
 package viceCity.models.guns;
 
+import viceCity.common.DataValidator;
+
 import static viceCity.common.ExceptionMessages.*;
 
 public abstract class BaseGun implements Gun {
@@ -9,6 +11,8 @@ public abstract class BaseGun implements Gun {
     private int totalBullets;
     private boolean canFire;
 
+    private static final int ZERO_BULLETS = 0;
+
     protected BaseGun(String name, int bulletsPerBarrel, int totalBullets) {
         this.setName(name);
         this.setBulletsPerBarrel(bulletsPerBarrel);
@@ -16,19 +20,17 @@ public abstract class BaseGun implements Gun {
     }
 
     private void setName(String name) {
-        if (name == null || name.trim().isEmpty()) {
-            throw new NullPointerException(NAME_NULL);
-        }
+        DataValidator.validateString(name, NAME_NULL);
         this.name = name;
     }
 
     protected void setBulletsPerBarrel(int bulletsPerBarrel) {
-        checkBulletsBelowZero(bulletsPerBarrel, BULLETS_LESS_THAN_ZERO);
+        DataValidator.validateInt(bulletsPerBarrel, BULLETS_LESS_THAN_ZERO);
         this.bulletsPerBarrel = bulletsPerBarrel;
     }
 
     protected void setTotalBullets(int totalBullets) {
-        checkBulletsBelowZero(totalBullets, TOTAL_BULLETS_LESS_THAN_ZERO);
+        DataValidator.validateInt(totalBullets, TOTAL_BULLETS_LESS_THAN_ZERO);
         this.totalBullets = totalBullets;
     }
 
@@ -44,17 +46,11 @@ public abstract class BaseGun implements Gun {
 
     @Override
     public boolean canFire() {
-        return this.totalBullets > 0 || this.bulletsPerBarrel > 0;
+        return this.bulletsPerBarrel > ZERO_BULLETS || this.totalBullets > ZERO_BULLETS;
     }
 
     @Override
     public int getTotalBullets() {
         return this.totalBullets;
-    }
-
-    private void checkBulletsBelowZero(int bullets, String exceptionMessage) {
-        if (bullets < 0) {
-            throw new IllegalArgumentException(exceptionMessage);
-        }
     }
 }

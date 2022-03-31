@@ -6,9 +6,6 @@ import org.junit.Test;
 
 public class SpaceshipTests {
 
-    private final Spaceship spaceship = new Spaceship("FlagonXII", 2);
-    private final Astronaut astronaut = new Astronaut("Spaceman", 100);
-
     @Test(expected = NullPointerException.class)
     public void testShouldThrowExceptionForNullSpaceshipName() {
         new Spaceship(null, 10);

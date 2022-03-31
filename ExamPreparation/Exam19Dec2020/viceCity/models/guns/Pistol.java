@@ -2,8 +2,10 @@ package viceCity.models.guns;
 
 public class Pistol extends BaseGun {
 
+    private final static int ZERO_BULLETS = 0;
+    private final static int BULLETS_PER_FIRE = 1;
     private final static int BULLETS_PER_BARREL = 10;
-    private static int TOTAL_BULLETS = 100;
+    private static final int TOTAL_BULLETS = 100;
 
     public Pistol(String name) {
         super(name, BULLETS_PER_BARREL, TOTAL_BULLETS);
@@ -11,19 +13,19 @@ public class Pistol extends BaseGun {
 
     @Override
     public int fire() {
-        if (getBulletsPerBarrel() == 0 && getTotalBullets() > 0) {
+        if (getBulletsPerBarrel() == ZERO_BULLETS && getTotalBullets() > ZERO_BULLETS) {
             reload();
         }
 
-        if (getBulletsPerBarrel() > 0) {
-            setBulletsPerBarrel(getBulletsPerBarrel() - 1);
+        if (getBulletsPerBarrel() > ZERO_BULLETS) {
+            this.setBulletsPerBarrel(getBulletsPerBarrel() - BULLETS_PER_FIRE);
         }
 
-        return 1;
+        return BULLETS_PER_FIRE;
     }
 
     private void reload() {
-        setTotalBullets(getTotalBullets() - BULLETS_PER_BARREL);
-        setBulletsPerBarrel(BULLETS_PER_BARREL);
+        this.setTotalBullets(getTotalBullets() - BULLETS_PER_BARREL);
+        this.setBulletsPerBarrel(BULLETS_PER_BARREL);
     }
 }

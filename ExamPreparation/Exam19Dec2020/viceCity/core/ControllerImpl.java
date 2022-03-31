@@ -9,8 +9,6 @@ import viceCity.models.neighbourhood.Neighbourhood;
 import viceCity.models.players.CivilPlayer;
 import viceCity.models.players.MainPlayer;
 import viceCity.models.players.Player;
-import viceCity.repositories.interfaces.GunRepository;
-import viceCity.repositories.interfaces.Repository;
 
 import java.util.ArrayDeque;
 import java.util.LinkedHashMap;

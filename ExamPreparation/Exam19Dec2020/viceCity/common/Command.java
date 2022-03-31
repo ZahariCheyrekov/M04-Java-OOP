@@ -1,6 +1,6 @@
 package viceCity.common;
 
-public enum  Command {
+public enum Command {
     AddPlayer,
     AddGun,
     AddGunToPlayer,

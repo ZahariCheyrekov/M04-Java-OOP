@@ -6,10 +6,7 @@ import org.junit.Test;
 
 public class SpaceshipTests {
 
-    @Test(expected = NullPointerException.class)
-    public void testShouldThrowExceptionForNullSpaceshipName() {
-        new Spaceship(null, 10);
-    }
+   
 
     @Test
     public void testShouldCreateSpaceshipCorrectly() {

@@ -1,7 +1,7 @@
 package viceCity.common;
 
 public class ConstantMessages {
-  
+
     public static final String PLAYER_ADDED = "Successfully added civil player: %s!";
 
     public static final String GUN_TYPE_INVALID = "Invalid gun type!";

@@ -1,5 +1,6 @@
 package viceCity.models.players;
 
+import viceCity.common.DataValidator;
 import viceCity.models.guns.Gun;
 import viceCity.repositories.interfaces.GunRepository;
 import viceCity.repositories.interfaces.Repository;
@@ -10,7 +11,9 @@ public abstract class BasePlayer implements Player {
 
     private String name;
     private int lifePoints;
-    private Repository<Gun> gunRepository;
+    private final Repository<Gun> gunRepository;
+
+    private static final int ZERO_HEALTH = 0;
 
     protected BasePlayer(String name, int lifePoints) {
         this.setName(name);
@@ -19,16 +22,12 @@ public abstract class BasePlayer implements Player {
     }
 
     private void setName(String name) {
-        if (name == null || name.trim().isEmpty()) {
-            throw new NullPointerException(PLAYER_NULL_USERNAME);
-        }
+        DataValidator.validateString(name, PLAYER_NULL_USERNAME);
         this.name = name;
     }
 
     private void setLifePoints(int lifePoints) {
-        if (lifePoints < 0) {
-            throw new IllegalArgumentException(PLAYER_LIFE_POINTS_LESS_THAN_ZERO);
-        }
+        DataValidator.validateInt(lifePoints, PLAYER_LIFE_POINTS_LESS_THAN_ZERO);
         this.lifePoints = lifePoints;
     }
 
@@ -44,7 +43,7 @@ public abstract class BasePlayer implements Player {
 
     @Override
     public boolean isAlive() {
-        return this.lifePoints > 0;
+        return this.lifePoints > ZERO_HEALTH;
     }
 
     @Override
@@ -54,6 +53,6 @@ public abstract class BasePlayer implements Player {
 
     @Override
     public void takeLifePoints(int points) {
-        this.lifePoints = Math.max(0, this.lifePoints - points);
+        this.lifePoints = Math.max(ZERO_HEALTH, this.lifePoints - points);
     }
 }

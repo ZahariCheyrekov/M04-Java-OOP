@@ -8,12 +8,6 @@ public class SpaceshipTests {
 
     
 
-    @Test
-    public void testShouldRemoveAstronautFromTheSpaceship() {
-        spaceship.add(astronaut);
-        boolean isRemoved = spaceship.remove(astronaut.getName());
-        assertTrue(isRemoved);
-    }
 
     @Test(expected = IllegalArgumentException.class)
     public void testShouldThrowExceptionForNoMoreCapacityOnTheSpaceship() {

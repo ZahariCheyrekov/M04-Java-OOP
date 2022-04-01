@@ -15,6 +15,7 @@ import christmasRaces.repositories.interfaces.Repository;
 
 public class Main {
     public static void main(String[] args) {
+      
         Repository<Car> carRepository = new CarRepository();
         Repository<Race> raceRepository = new RaceRepository();
         Repository<Driver> driverRepository = new DriverRepository();
@@ -23,6 +24,7 @@ public class Main {
 
         ConsoleReader reader = new ConsoleReader();
         ConsoleWriter writer = new ConsoleWriter();
+        
         EngineImpl engine = new EngineImpl(reader, writer, controller);
         engine.run();
     }

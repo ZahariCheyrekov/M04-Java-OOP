@@ -18,19 +18,7 @@ public class GarageTests {
     private static final int CARS_IN_GARAGE = 2;
     private static final int INDEX = 0;
 
-    @Before
-    public void setUp() {
-        garage = new Garage();
-        lamborghini = new Car("Lamborghini", 1000, 100_000);
-        garage.addCar(lamborghini);
-        garage.addCar(SLOW_CAR);
-    }
-
-    @Test(expected = UnsupportedOperationException.class)
-    public void testShouldThrowExceptionForTryingToModifyUnmodifiableCollection() {
-        garage.getCars().clear();
-    }
-
+ 
     @Test
     public void testShouldFindAllCarsAboveCertainSpeed() {
         List<Car> carsWithMaxSpeed = garage.findAllCarsWithMaxSpeedAbove(SPEED);

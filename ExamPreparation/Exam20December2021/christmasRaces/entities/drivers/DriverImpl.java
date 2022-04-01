@@ -1,9 +1,9 @@
 package christmasRaces.entities.drivers;
 
+import christmasRaces.common.DataValidator;
 import christmasRaces.entities.cars.Car;
 
-import static christmasRaces.common.ExceptionMessages.CAR_INVALID;
-import static christmasRaces.common.ExceptionMessages.INVALID_NAME;
+import static christmasRaces.common.ExceptionMessages.*;
 
 public class DriverImpl implements Driver {
 
@@ -17,9 +17,8 @@ public class DriverImpl implements Driver {
     }
 
     private void setName(String name) {
-        if (name == null || name.trim().isEmpty()) {
-            throw new IllegalArgumentException(String.format(INVALID_NAME, name, 5));
-        }
+        String exceptionMessage = String.format(INVALID_NAME, name, 5);
+        DataValidator.validateString(name, exceptionMessage, 5);
         this.name = name;
     }
 
@@ -40,10 +39,7 @@ public class DriverImpl implements Driver {
 
     @Override
     public void addCar(Car car) {
-        if (car == null) {
-            throw new IllegalArgumentException(CAR_INVALID);
-        }
-
+        DataValidator.validateCar(car, CAR_INVALID);
         this.car = car;
         this.canParticipate = true;
     }

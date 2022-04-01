@@ -1,6 +1,7 @@
 package christmasRaces.common;
 
 public class ExceptionMessages {
+
     public static final String INVALID_MODEL = "Model %s cannot be less than %d symbols.";
     public static final String INVALID_NAME = "Name %s cannot be less than %d symbols.";
     public static final String INVALID_HORSE_POWER = "Invalid horse power: %d.";

@@ -3,6 +3,7 @@ package christmasRaces.entities.drivers;
 import christmasRaces.entities.cars.Car;
 
 public interface Driver {
+    
     String getName();
 
     Car getCar();

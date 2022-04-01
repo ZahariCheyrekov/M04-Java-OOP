@@ -1,5 +1,7 @@
 package christmasRaces.entities.cars;
 
+import christmasRaces.common.DataValidator;
+
 import static christmasRaces.common.ExceptionMessages.*;
 
 public abstract class BaseCar implements Car {
@@ -15,9 +17,8 @@ public abstract class BaseCar implements Car {
     }
 
     private void setModel(String model) {
-        if (model == null || model.trim().isEmpty()) {
-            throw new IllegalArgumentException(String.format(INVALID_MODEL, model, 4));
-        }
+        String exceptionMessage = String.format(INVALID_MODEL, model, 4);
+        DataValidator.validateString(model, exceptionMessage, 4);
         this.model = model;
     }
 

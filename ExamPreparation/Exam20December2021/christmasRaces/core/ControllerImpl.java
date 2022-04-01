@@ -10,9 +10,8 @@ import christmasRaces.entities.races.Race;
 import christmasRaces.entities.races.RaceImpl;
 import christmasRaces.repositories.interfaces.Repository;
 
+import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -25,6 +24,8 @@ public class ControllerImpl implements Controller {
     private Repository<Car> carRepository;
     private Repository<Race> raceRepository;
 
+    private static final int MINIMUM_DRIVERS_PER_RACE = 3;
+
     public ControllerImpl(Repository<Driver> driverRepository, Repository<Car> carRepository, Repository<Race> raceRepository) {
         this.driverRepository = driverRepository;
         this.carRepository = carRepository;
@@ -33,7 +34,6 @@ public class ControllerImpl implements Controller {
 
     @Override
     public String createDriver(String driver) {
-
         Driver existingDriver = this.driverRepository.getByName(driver);
 
         if (existingDriver != null) {
@@ -48,7 +48,6 @@ public class ControllerImpl implements Controller {
 
     @Override
     public String createCar(String type, String model, int horsePower) {
-
         Car existingCar = this.carRepository.getByName(model);
 
         if (existingCar != null) {
@@ -70,13 +69,11 @@ public class ControllerImpl implements Controller {
         }
 
         this.carRepository.add(newCar);
-
         return String.format(CAR_CREATED, carType, model);
     }
 
     @Override
     public String addCarToDriver(String driverName, String carModel) {
-
         Driver driver = this.driverRepository.getByName(driverName);
 
         if (driver == null) {
@@ -90,13 +87,11 @@ public class ControllerImpl implements Controller {
         }
 
         driver.addCar(car);
-
         return String.format(CAR_ADDED, driverName, carModel);
     }
 
     @Override
     public String addDriverToRace(String raceName, String driverName) {
-
         Race race = this.raceRepository.getByName(raceName);
 
         if (race == null) {
@@ -110,13 +105,11 @@ public class ControllerImpl implements Controller {
         }
 
         race.addDriver(driver);
-
         return String.format(DRIVER_ADDED, driverName, raceName);
     }
 
     @Override
     public String startRace(String raceName) {
-
         Race race = this.raceRepository.getByName(raceName);
 
         if (race == null) {
@@ -161,15 +154,14 @@ public class ControllerImpl implements Controller {
 
     @Override
     public String createRace(String name, int laps) {
+        Race existingRace = this.raceRepository.getByName(name);
 
-        Race race = this.raceRepository.getByName(name);
-
-        if (race != null) {
+        if (existingRace != null) {
             throw new IllegalArgumentException(String.format(RACE_EXISTS, name));
         }
 
-        Race newRace = new RaceImpl(name, laps);
-        this.raceRepository.add(newRace);
+        Race race = new RaceImpl(name, laps);
+        this.raceRepository.add(race);
 
         return String.format(RACE_CREATED, name);
     }

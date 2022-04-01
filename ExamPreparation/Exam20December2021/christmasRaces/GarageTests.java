@@ -9,13 +9,6 @@ ng CAR_BRAND = "Lamborghini";
     private static final int CARS_IN_GARAGE = 2;
     private static final int INDEX = 0;
 
- 
-    @Test
-    public void testShouldFindAllCarsAboveCertainSpeed() {
-        List<Car> carsWithMaxSpeed = garage.findAllCarsWithMaxSpeedAbove(SPEED);
-        assertEquals(carsWithMaxSpeed.get(INDEX), lamborghini);
-        assertEquals(CARS_IN_GARAGE, garage.getCount());
-    }
 
     @Test(expected = IllegalArgumentException.class)
     public void testShouldThrowExceptionForTryingToAddNullCarInTheGarage() {

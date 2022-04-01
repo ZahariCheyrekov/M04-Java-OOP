@@ -1,6 +1,7 @@
 package christmasRaces.core.interfaces;
 
 public interface Controller {
+    
     String createDriver(String driver);
 
     String createCar(String type, String model, int horsePower);

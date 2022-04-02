@@ -6,6 +6,7 @@ import catHouse.entities.toys.Toy;
 import java.util.Collection;
 
 public interface House {
+    
     int sumSoftness();
 
     void addCat(Cat cat);

@@ -8,12 +8,6 @@ import static org.junit.Assert.*;
 public class HouseTests {
 
 
-
-    @Test(expected = IllegalArgumentException.class)
-    public void testShouldThrowExceptionForInvalidCapacityBelowZero() {
-        new House(HOUSE_NAME, INVALID_HOUSE_CAPACITY);
-    }
-
     @Test
     public void testShouldGetCatsCountCorrectly() {
         assertEquals(HOUSE_COUNT, house.getCount());

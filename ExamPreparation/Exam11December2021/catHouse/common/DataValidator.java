@@ -2,21 +2,17 @@ package catHouse.common;
 
 public class DataValidator {
 
-    public static void validateStringData(String stringToValidate, String exceptionMessage) {
-        if (stringToValidate == null || stringToValidate.trim().isEmpty()) {
+    private static final double INVALID_CAT_PRICE = 0;
+
+    public static void validateString(String dataToValidate, String exceptionMessage) {
+        if (dataToValidate == null || dataToValidate.trim().isEmpty()) {
             throw new NullPointerException(exceptionMessage);
         }
     }
 
-    public static void validateCatPrice(double price, String exceptionMessage) {
-        if (price <= 0) {
+    public static void validateCatPrice(double catPrice, String exceptionMessage) {
+        if (catPrice <= INVALID_CAT_PRICE) {
             throw new IllegalArgumentException(exceptionMessage);
-        }
-    }
-
-    public static void checkHouseCapacity(int catsInTheHouse, int houseCapacity, String exceptionMessage) {
-        if (houseCapacity <= catsInTheHouse) {
-            throw new IllegalStateException(exceptionMessage);
         }
     }
 }

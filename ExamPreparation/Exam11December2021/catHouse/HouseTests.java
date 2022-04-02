@@ -10,11 +10,6 @@ public class HouseTests {
 
 
 
-    @Test
-    public void testShouldRemoveCatCorrectlyFromTheCatHouse() {
-        house.removeCat(cat.getName());
-        assertEquals(ZERO_COUNT, house.getCount());
-    }
 
     @Test(expected = IllegalArgumentException.class)
     public void testShouldThrowExceptionForNoSuchCatWithGivenName() {

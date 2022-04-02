@@ -1,6 +1,7 @@
 package catHouse.common;
 
 public class ExceptionMessages {
+
     public static final String CAT_NAME_NULL_OR_EMPTY = "Cat name cannot be null or empty.";
     public static final String CAT_BREED_CANNOT_BE_NULL_OR_EMPTY = "Cat breed cannot be null or empty.";
     public static final String CAT_PRICE_CANNOT_BE_BELOW_OR_EQUAL_TO_ZERO = "Cat price cannot be below or equal to 0.";

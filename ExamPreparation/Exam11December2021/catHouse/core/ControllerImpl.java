@@ -15,13 +15,13 @@ import catHouse.repositories.ToyRepository;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-import static catHouse.common.ExceptionMessages.*;
 import static catHouse.common.ConstantMessages.*;
+import static catHouse.common.ExceptionMessages.*;
 
 public class ControllerImpl implements Controller {
 
-    private final Repository toys;
-    private final Map<String, House> houses;
+    private Repository toys;
+    private Map<String, House> houses;
 
     public ControllerImpl() {
         this.toys = new ToyRepository();

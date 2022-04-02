@@ -24,12 +24,12 @@ public abstract class BaseCat implements Cat {
 
     @Override
     public void setName(String name) {
-        DataValidator.validateStringData(name, CAT_NAME_NULL_OR_EMPTY);
+        DataValidator.validateString(name, CAT_NAME_NULL_OR_EMPTY);
         this.name = name;
     }
 
     private void setBreed(String breed) {
-        DataValidator.validateStringData(breed, CAT_BREED_CANNOT_BE_NULL_OR_EMPTY);
+        DataValidator.validateString(breed, CAT_BREED_CANNOT_BE_NULL_OR_EMPTY);
         this.breed = breed;
     }
 

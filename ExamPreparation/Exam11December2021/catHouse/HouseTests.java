@@ -9,10 +9,6 @@ public class HouseTests {
 
 
 
-    private static final int HOUSE_CAPACITY = 2;
-    private static final int HOUSE_COUNT = 1;
-    private static final int ZERO_COUNT = 0;
-    private static final int INVALID_HOUSE_CAPACITY = -10;
 
     @Before
     public void setUp() {

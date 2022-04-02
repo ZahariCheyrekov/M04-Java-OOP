@@ -8,12 +8,6 @@ import static org.junit.Assert.*;
 public class HouseTests {
 
 
-
-    @Test(expected = NullPointerException.class)
-    public void testShouldThrowExceptionForInvalidNameWithValueNull() {
-        new House(null, HOUSE_CAPACITY);
-    }
-
     @Test
     public void testShouldGetHouseNameCorrectly() {
         assertEquals(HOUSE_NAME, house.getName());

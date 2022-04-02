@@ -9,11 +9,6 @@ public class HouseTests {
 
 
 
-    @Test(expected = IllegalArgumentException.class)
-    public void testShouldThrowExceptionForFullHouseCapacity() {
-        house.addCat(cat);
-        house.addCat(cat);
-    }
 
     @Test
     public void testShouldRemoveCatCorrectlyFromTheCatHouse() {

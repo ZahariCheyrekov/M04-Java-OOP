@@ -20,17 +20,14 @@ public class ToyRepository implements Repository {
 
     @Override
     public boolean removeToy(Toy toy) {
-        return this.toys.remove(toy);
+        return toys.remove(toy);
     }
 
     @Override
     public Toy findFirst(String type) {
         return this.toys
                 .stream()
-                .filter(toy -> toy
-                        .getClass()
-                        .getSimpleName()
-                        .equals(type))
+                .filter(toy -> toy.getClass().getSimpleName().equals(type))
                 .findFirst()
                 .orElse(null);
     }

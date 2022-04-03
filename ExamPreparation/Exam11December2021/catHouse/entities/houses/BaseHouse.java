@@ -1,11 +1,6 @@
 package catHouse.entities.houses;
 
         if (cats.size() == 0) {
-            stats.append("Cats: none").append(System.lineSeparator());
-        } else {
-            stats.append("Cats:");
-
-            for (Cat cat : cats) {
                 stats.append(CATS_NAMES_DELIMITER).append(cat.getName());
             }
 

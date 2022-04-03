@@ -1,11 +1,6 @@
 package catHouse.entities.houses;
 
     @Override
-    public void removeCat(Cat cat) {
-        this.cats.remove(cat);
-    }
-
-    @Override
     public void buyToy(Toy toy) {
         this.toys.add(toy);
     }

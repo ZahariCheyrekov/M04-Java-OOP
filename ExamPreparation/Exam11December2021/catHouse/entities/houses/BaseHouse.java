@@ -4,8 +4,6 @@ import catHouse.common.DataValidator;
 import catHouse.entities.cat.Cat;
 import catHouse.entities.toys.Toy;
 
-import java.util.ArrayList;
-import java.util.Collection;
 
 import static catHouse.common.ConstantMessages.*;
 import static catHouse.common.ExceptionMessages.*;

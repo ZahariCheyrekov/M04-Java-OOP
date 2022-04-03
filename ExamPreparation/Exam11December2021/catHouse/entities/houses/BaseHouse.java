@@ -1,9 +1,5 @@
 package catHouse.entities.houses;
 
-    @Override
-    public void buyToy(Toy toy) {
-        this.toys.add(toy);
-    }
 
     @Override
     public void feeding() {

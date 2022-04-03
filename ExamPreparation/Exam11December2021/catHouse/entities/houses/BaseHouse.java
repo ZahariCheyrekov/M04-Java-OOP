@@ -1,8 +1,5 @@
 package catHouse.entities.houses;
 
-import catHouse.common.DataValidator;
-import catHouse.entities.cat.Cat;
-import catHouse.entities.toys.Toy;
 
 
 import static catHouse.common.ConstantMessages.*;

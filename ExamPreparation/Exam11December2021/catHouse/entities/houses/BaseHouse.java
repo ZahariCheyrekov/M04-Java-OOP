@@ -1,15 +1,5 @@
 package catHouse.entities.houses;
 
-
-
-    @Override
-    public int sumSoftness() {
-        return this.toys
-                .stream()
-                .mapToInt(Toy::getSoftness)
-                .sum();
-    }
-
     @Override
     public void addCat(Cat cat) {
         if (this.capacity <= this.cats.size()) {

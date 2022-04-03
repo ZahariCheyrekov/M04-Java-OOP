@@ -1,13 +1,5 @@
 package catHouse.entities.houses;
 
-    @Override
-    public String getStatistics() {
-        StringBuilder stats = new StringBuilder();
-
-        stats.append(String.format(CAT_HOUSE_TO_STRING, this.name,
-                        this.getClass().getSimpleName()))
-                .append(System.lineSeparator());
-
         if (cats.size() == 0) {
             stats.append("Cats: none").append(System.lineSeparator());
         } else {

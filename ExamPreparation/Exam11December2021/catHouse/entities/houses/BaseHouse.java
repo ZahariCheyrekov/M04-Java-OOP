@@ -2,8 +2,6 @@ package catHouse.entities.houses;
 
 
 
-import static catHouse.common.ConstantMessages.*;
-import static catHouse.common.ExceptionMessages.*;
 
 public abstract class BaseHouse implements House {
 

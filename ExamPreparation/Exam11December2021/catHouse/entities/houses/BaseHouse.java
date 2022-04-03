@@ -3,12 +3,6 @@ package catHouse.entities.houses;
 
 
 
-public abstract class BaseHouse implements House {
-
-    private String name;
-    private int capacity;
-    private Collection<Toy> toys;
-    private Collection<Cat> cats;
 
     protected BaseHouse(String name, int capacity) {
         this.name = name;

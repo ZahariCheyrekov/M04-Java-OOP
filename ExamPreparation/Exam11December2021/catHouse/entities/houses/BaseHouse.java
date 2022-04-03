@@ -4,12 +4,6 @@ package catHouse.entities.houses;
 
 
 
-    protected BaseHouse(String name, int capacity) {
-        this.name = name;
-        this.capacity = capacity;
-        this.toys = new ArrayList<>();
-        this.cats = new ArrayList<>();
-    }
 
     @Override
     public void setName(String name) {

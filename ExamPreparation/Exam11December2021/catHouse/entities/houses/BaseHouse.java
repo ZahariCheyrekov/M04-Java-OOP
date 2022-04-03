@@ -1,11 +1,5 @@
 package catHouse.entities.houses;
 
-
-    @Override
-    public void feeding() {
-        this.cats.forEach(Cat::eating);
-    }
-
     @Override
     public String getStatistics() {
         StringBuilder stats = new StringBuilder();

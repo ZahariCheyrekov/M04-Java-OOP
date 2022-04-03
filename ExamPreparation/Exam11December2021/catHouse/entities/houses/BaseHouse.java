@@ -1,11 +1,6 @@
 package catHouse.entities.houses;
 
 
-
-
-
-
-    @Override
     public void setName(String name) {
         DataValidator.validateString(name, HOUSE_NAME_CANNOT_BE_NULL_OR_EMPTY);
         this.name = name;

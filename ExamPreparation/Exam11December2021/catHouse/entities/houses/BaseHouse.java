@@ -1,4 +1,1 @@
 package catHouse.entities.houses;
-
-
-}

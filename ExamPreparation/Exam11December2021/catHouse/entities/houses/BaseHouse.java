@@ -1,14 +1,6 @@
 package catHouse.entities.houses;
 
     @Override
-    public void addCat(Cat cat) {
-        if (this.capacity <= this.cats.size()) {
-            throw new IllegalStateException(NOT_ENOUGH_CAPACITY_FOR_CAT);
-        }
-        this.cats.add(cat);
-    }
-
-    @Override
     public void removeCat(Cat cat) {
         this.cats.remove(cat);
     }

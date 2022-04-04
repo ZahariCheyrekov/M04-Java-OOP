@@ -4,12 +4,6 @@ package farmville;
 
 public class FarmvilleTests {
 
-
-    private static final String DOG_TYPE = "Dog";
-    private static final String COW_TYPE = "Cow";
-    private static final String SHEEP_TYPE = "Sheep";
-    private static final double ANIMAL_ENERGY = 100;
-
     private static final Animal cow = new Animal(COW_TYPE, ANIMAL_ENERGY);
     private static final Animal sheep = new Animal(SHEEP_TYPE, ANIMAL_ENERGY);
 

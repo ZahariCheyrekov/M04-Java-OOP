@@ -34,4 +34,8 @@ public class FarmvilleTests {
   }
   
   
+  @Test(expected = IllegalArgumentException.class)
+  public void testShouldThrowExceptionForAlreadyExistingAnimalInTheFarm() {
+      farm.add(dog);
+  }
 }

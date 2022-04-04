@@ -4,11 +4,6 @@ package farmville;
 
 public class FarmvilleTests {
 
-    @Test(expected = NullPointerException.class)
-    public void testShouldThrowExceptionForFarmNameWithValueNull() {
-        new Farm(NULL_NAME, FARM_CAPACITY);
-    }
-
     @Test
     public void testShouldGetAnimalsCountFromFarmCorrectly() {
         int actualCount = farm.getCount();

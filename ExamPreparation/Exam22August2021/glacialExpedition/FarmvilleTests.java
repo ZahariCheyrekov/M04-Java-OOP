@@ -22,20 +22,30 @@ public class FarmvilleTests {
 
   @Before
   public void setUp() {
-      farm = new Farm(FARM_NAME, FARM_CAPACITY);
-      dog = new Animal(DOG_TYPE, ANIMAL_ENERGY);
-      farm.add(dog);
+    farm = new Farm(FARM_NAME, FARM_CAPACITY);
+    dog = new Animal(DOG_TYPE, ANIMAL_ENERGY);
+    farm.add(dog);
   }
   
   @Test(expected = IllegalArgumentException.class)
   public void testShouldThrowExceptionForNoMoreSpaceInTheAnimalFarm() {
-      farm.add(cow);
-      farm.add(sheep);
+    farm.add(cow);
+    farm.add(sheep);
   }
   
   
   @Test(expected = IllegalArgumentException.class)
   public void testShouldThrowExceptionForAlreadyExistingAnimalInTheFarm() {
-      farm.add(dog);
+    farm.add(dog);
   }
+  
+  
+  @Test
+  public void testShouldRemoveAnimalByGivenNameFromTheFarm() {
+    boolean isRemoved = farm.remove(DOG_TYPE);
+    assertTrue(isRemoved);
+  }
+  
+  
+  
 }

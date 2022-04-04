@@ -12,5 +12,8 @@ public class FarmvilleTests {
   private static final int INVALID_CAPACITY = -10;
   private static final int FARM_ANIMALS_COUNT = 1;
   
-  
+  private static final String DOG_TYPE = "Dog";
+  private static final String COW_TYPE = "Cow";
+  private static final String SHEEP_TYPE = "Sheep";
+  private static final double ANIMAL_ENERGY = 100;
 }

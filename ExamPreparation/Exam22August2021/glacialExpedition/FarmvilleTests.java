@@ -4,12 +4,6 @@ package farmville;
 
 public class FarmvilleTests {
 
-    @Test
-    public void testShouldRemoveAnimalByGivenNameFromTheFarm() {
-        boolean isRemoved = farm.remove(DOG_TYPE);
-        assertTrue(isRemoved);
-    }
-
     @Test(expected = IllegalArgumentException.class)
     public void testShouldThrowExceptionForInvalidFarmCapacity() {
         new Farm(FARM_NAME, INVALID_CAPACITY);

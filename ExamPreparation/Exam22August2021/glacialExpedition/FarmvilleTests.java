@@ -4,11 +4,6 @@ package farmville;
 
 public class FarmvilleTests {
 
-    @Test(expected = IllegalArgumentException.class)
-    public void testShouldThrowExceptionForAlreadyExistingAnimalInTheFarm() {
-        farm.add(dog);
-    }
-
     @Test
     public void testShouldRemoveAnimalByGivenNameFromTheFarm() {
         boolean isRemoved = farm.remove(DOG_TYPE);

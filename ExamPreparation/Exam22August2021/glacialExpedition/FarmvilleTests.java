@@ -4,11 +4,6 @@ package farmville;
 
 public class FarmvilleTests {
 
-    @Test(expected = IllegalArgumentException.class)
-    public void testShouldThrowExceptionForInvalidFarmCapacity() {
-        new Farm(FARM_NAME, INVALID_CAPACITY);
-    }
-
     @Test(expected = NullPointerException.class)
     public void testShouldThrowExceptionForFarmNameWithValueNull() {
         new Farm(NULL_NAME, FARM_CAPACITY);

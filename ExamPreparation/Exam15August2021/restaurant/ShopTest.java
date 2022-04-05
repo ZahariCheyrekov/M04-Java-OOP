@@ -1,10 +1,5 @@
 package shopAndGoods;
 
-import org.junit.Test;
-
-import static org.junit.Assert.*;
-
-import javax.naming.OperationNotSupportedException;
 
 public class ShopTest {
 

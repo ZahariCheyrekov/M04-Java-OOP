@@ -3,10 +3,6 @@ package shopAndGoods;
 
 public class ShopTest {
 
-        Goods nonExistingGood = new Goods("nonExistingGood", "nonExistingCode");
-        shop.removeGoods("Shelves1", nonExistingGood);
-    }
-
     @Test
     public void testShouldRemoveGoodsFromTheShop() throws OperationNotSupportedException {
         shop.addGoods("Shelves1", goods);

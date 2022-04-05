@@ -4,12 +4,6 @@ package shopAndGoods;
 public class ShopTest {
 
 
-    public void testShouldThrowExceptionForAlreadyTakenShelf() throws OperationNotSupportedException {
-        shop.addGoods("Shelves1", goods);
-        Goods goodsSame = new Goods("testGood", "testCode");
-        shop.addGoods("Shelves1", goodsSame);
-    }
-
     @Test(expected = OperationNotSupportedException.class)
     public void testShouldThrowExceptionForAlreadyExistingGoods() throws OperationNotSupportedException {
         shop.addGoods("Shelves1", goods);

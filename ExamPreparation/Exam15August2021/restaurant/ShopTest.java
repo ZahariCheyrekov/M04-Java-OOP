@@ -3,12 +3,6 @@ package shopAndGoods;
 
 public class ShopTest {
 
-    private static Shop shop;
-
-    @Test(expected = UnsupportedOperationException.class)
-    public void testShouldReturnUnmodifiableCollection() {
-        shop.getShelves().clear();
-    }
 
     @Test(expected = IllegalArgumentException.class)
     public void testShouldThrowExceptionForNoneExistingShelf() {

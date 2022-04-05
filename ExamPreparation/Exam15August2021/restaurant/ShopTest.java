@@ -5,13 +5,6 @@ public class ShopTest {
 
 
 
-    public void testShouldPassForPlacedGoodsSuccessfully() throws OperationNotSupportedException {
-        String expected = "Goods: 1001 is placed successfully!";
-        String actual = shop.addGoods("Shelves1", goods);
-
-        assertEquals(expected, actual);
-    }
-
     @Test
     public void testRemoveGoodsShouldSetTheShelveValueToNull() throws OperationNotSupportedException {
         Goods goods = new Goods("testGood", "testCode");

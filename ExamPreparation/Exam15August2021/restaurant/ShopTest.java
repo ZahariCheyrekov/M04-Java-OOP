@@ -3,14 +3,6 @@ package shopAndGoods;
 
 public class ShopTest {
 
-    @Test
-    public void testShouldRemoveGoodsFromTheShop() throws OperationNotSupportedException {
-        shop.addGoods("Shelves1", goods);
-
-        String removed = shop.removeGoods("Shelves1", goods);
-        String actual = "Goods: 1001 is removed successfully!";
-        assertEquals(removed, actual);
-    }
 
     @Test(expected = IllegalArgumentException.class)
     public void testShouldThrowExceptionForNoneExistingShelfInShop() throws OperationNotSupportedException {

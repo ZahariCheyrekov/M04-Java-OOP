@@ -4,12 +4,6 @@ package shopAndGoods;
 public class ShopTest {
 
 
-    @Test(expected = IllegalArgumentException.class)
-    public void testShouldThrowExceptionForNoneExistingShelfInShop() throws OperationNotSupportedException {
-        shop.addGoods("none", goods);
-    }
-
-    @Test(expected = IllegalArgumentException.class)
     public void testShouldThrowExceptionForAlreadyTakenShelf() throws OperationNotSupportedException {
         shop.addGoods("Shelves1", goods);
         Goods goodsSame = new Goods("testGood", "testCode");

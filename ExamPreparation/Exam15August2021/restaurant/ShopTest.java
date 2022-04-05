@@ -5,7 +5,6 @@ public class ShopTest {
 
 
 
-    @Test
     public void testShouldPassForPlacedGoodsSuccessfully() throws OperationNotSupportedException {
         String expected = "Goods: 1001 is placed successfully!";
         String actual = shop.addGoods("Shelves1", goods);

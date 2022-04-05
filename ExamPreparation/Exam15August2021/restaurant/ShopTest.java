@@ -3,10 +3,6 @@ package shopAndGoods;
 
 public class ShopTest {
 
-    @Test(expected = IllegalArgumentException.class)
-    public void testShouldThrowExceptionForNoneExistingGoodOnTheShelf() throws OperationNotSupportedException {
-        shop.addGoods("Shelves1", goods);
-
         Goods nonExistingGood = new Goods("nonExistingGood", "nonExistingCode");
         shop.removeGoods("Shelves1", nonExistingGood);
     }

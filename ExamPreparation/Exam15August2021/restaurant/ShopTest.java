@@ -27,7 +27,6 @@ public class ShopTest {
     public void testShouldThrowExceptionForNoneExistingShelf() {
         shop.removeGoods("noneExisting", goods);
     }
-
     @Test(expected = IllegalArgumentException.class)
     public void testShouldThrowExceptionForNoneExistingGoodOnTheShelf() throws OperationNotSupportedException {
         shop.addGoods("Shelves1", goods);

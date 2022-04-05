@@ -4,11 +4,6 @@ package shopAndGoods;
 public class ShopTest {
 
 
-    @Test(expected = OperationNotSupportedException.class)
-    public void testShouldThrowExceptionForAlreadyExistingGoods() throws OperationNotSupportedException {
-        shop.addGoods("Shelves1", goods);
-        shop.addGoods("Shelves2", goods);
-    }
 
     @Test
     public void testShouldPassForPlacedGoodsSuccessfully() throws OperationNotSupportedException {

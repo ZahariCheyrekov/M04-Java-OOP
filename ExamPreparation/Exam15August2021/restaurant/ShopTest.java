@@ -4,13 +4,6 @@ package shopAndGoods;
 public class ShopTest {
 
     private static Shop shop;
-    private static Goods goods;
-
-    @Before
-    public void setUp() {
-        shop = new Shop();
-        goods = new Goods("Pizza", "1001");
-    }
 
     @Test(expected = UnsupportedOperationException.class)
     public void testShouldReturnUnmodifiableCollection() {

@@ -3,7 +3,6 @@ package heroRepository;
 public class HeroRepositoryTests {
 
 
-    @Test(expected = NullPointerException.class)
     public void testShouldThrowExceptionFoTryingToCreateHeroWithValueNull() {
         heroRepository.create(NULL_HERO);
     }

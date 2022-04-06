@@ -2,8 +2,6 @@ package heroRepository;
 
 public class HeroRepositoryTests {
     public void testShouldRemoveHeroFromTheRepositoryByTheGivenName() {
-        boolean isRemoved = heroRepository.remove(HERO_NAME_HULK);
-        assertTrue(isRemoved);
     }
 
     @Test

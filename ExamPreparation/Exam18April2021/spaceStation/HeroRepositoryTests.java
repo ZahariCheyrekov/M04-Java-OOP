@@ -2,7 +2,6 @@ package heroRepository;
 
 public class HeroRepositoryTests {
 
-    @Test
     public void testShouldGetTheHeroWithTheHighestLevel() {
         heroRepository.create(BATMAN);
 

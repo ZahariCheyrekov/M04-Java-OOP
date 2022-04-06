@@ -1,13 +1,6 @@
 package heroRepository;
 
 public class HeroRepositoryTests {
-
-
-
-
-        assertEquals(expectedMessage, actualMessage);
-    }
-
     @Test(expected = NullPointerException.class)
     public void testShouldThrowExceptionForNameWithValueNull() {
         heroRepository.remove(HERO_NAME_NULL);

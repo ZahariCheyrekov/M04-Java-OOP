@@ -1,9 +1,6 @@
 package heroRepository;
 
 public class HeroRepositoryTests {
-    public void testShouldThrowExceptionForNameWithValueNull() {
-    }
-
     @Test
     public void testShouldRemoveHeroFromTheRepositoryByTheGivenName() {
         boolean isRemoved = heroRepository.remove(HERO_NAME_HULK);

@@ -4,7 +4,6 @@ public class HeroRepositoryTests {
 
 
     public void testShouldThrowExceptionFoTryingToCreateHeroWithValueNull() {
-        heroRepository.create(NULL_HERO);
     }
 
     @Test(expected = IllegalArgumentException.class)

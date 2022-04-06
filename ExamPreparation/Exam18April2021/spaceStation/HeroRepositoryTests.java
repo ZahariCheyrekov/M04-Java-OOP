@@ -3,13 +3,6 @@ package heroRepository;
 public class HeroRepositoryTests {
 
     public void testShouldGetTheHeroWithTheHighestLevel() {
-        heroRepository.create(BATMAN);
-
-        int actualHeroCount = heroRepository.getCount();
-        assertEquals(HERO_COUNT_TWO, actualHeroCount);
-
-        Hero heroWithHighestLevel = heroRepository.getHeroWithHighestLevel();
-        assertEquals(hulk, heroWithHighestLevel);
     }
 
     @Test

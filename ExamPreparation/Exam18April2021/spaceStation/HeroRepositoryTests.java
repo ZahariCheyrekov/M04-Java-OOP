@@ -4,10 +4,6 @@ public class HeroRepositoryTests {
 
 
 
-    @Test
-    public void testShouldCreateHeroCorrectlyAndReturnTheInformationAboutCreation() {
-        String expectedMessage = String.format(SUCCESSFULLY_CREATED_HERO, HERO_NAME_BATMAN, HERO_LEVEL_FIFTY);
-        String actualMessage = heroRepository.create(BATMAN);
 
         assertEquals(expectedMessage, actualMessage);
     }

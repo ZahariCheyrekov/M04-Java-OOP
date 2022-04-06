@@ -7,7 +7,23 @@ import org.junit.Test;
 
 public class HeroRepositoryTests {
 
-   
+    private HeroRepository heroRepository;
+    private Hero hulk;
+
+    private static final String HERO_NAME_NULL = null;
+    private static final String HERO_NAME_HULK = "Hulk";
+    private static final String HERO_NAME_BATMAN = "Batman";
+
+    private static final int HERO_LEVEL_HUNDRED = 100;
+    private static final int HERO_LEVEL_FIFTY = 50;
+
+    private static final int HERO_COUNT_TWO = 2;
+
+    private static final Hero BATMAN = new Hero(HERO_NAME_BATMAN, HERO_LEVEL_FIFTY);
+    private static final Hero NULL_HERO = null;
+    private static final Hero HERO_WITH_EXISTING_NAME = new Hero(HERO_NAME_HULK, HERO_LEVEL_FIFTY);
+
+    private static final String SUCCESSFULLY_CREATED_HERO = "Successfully added hero %s with level %d";
 
     @Before
     public void setUp() {

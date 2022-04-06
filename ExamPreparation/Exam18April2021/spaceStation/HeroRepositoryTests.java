@@ -8,10 +8,6 @@ import org.junit.Test;
 public class HeroRepositoryTests {
 
 
-    private static final String HERO_NAME_NULL = null;
-    private static final String HERO_NAME_HULK = "Hulk";
-    private static final String HERO_NAME_BATMAN = "Batman";
-
     private static final int HERO_LEVEL_HUNDRED = 100;
     private static final int HERO_LEVEL_FIFTY = 50;
 

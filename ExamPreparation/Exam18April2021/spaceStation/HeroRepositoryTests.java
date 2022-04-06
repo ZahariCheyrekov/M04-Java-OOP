@@ -7,8 +7,6 @@ import org.junit.Test;
 
 public class HeroRepositoryTests {
 
-    private static final int HERO_COUNT_TWO = 2;
-
     private static final Hero BATMAN = new Hero(HERO_NAME_BATMAN, HERO_LEVEL_FIFTY);
     private static final Hero NULL_HERO = null;
     private static final Hero HERO_WITH_EXISTING_NAME = new Hero(HERO_NAME_HULK, HERO_LEVEL_FIFTY);

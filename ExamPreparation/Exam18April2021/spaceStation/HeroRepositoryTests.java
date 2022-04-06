@@ -7,7 +7,6 @@ import org.junit.Test;
 
 public class HeroRepositoryTests {
 
-    private Hero hulk;
 
     private static final String HERO_NAME_NULL = null;
     private static final String HERO_NAME_HULK = "Hulk";

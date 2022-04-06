@@ -7,8 +7,5 @@ public class HeroRepositoryTests {
 
   
 
-    @Test(expected = UnsupportedOperationException.class)
-    public void testShouldThrowExceptionForTryingToModifyUnmodifiableCollection() {
-        heroRepository.getHeroes().clear();
-    }
+   
 }

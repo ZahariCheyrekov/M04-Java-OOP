@@ -1,8 +1,6 @@
 package heroRepository;
 
 public class HeroRepositoryTests {
-    public void testShouldRemoveHeroFromTheRepositoryByTheGivenName() {
-    }
 
     @Test
     public void testShouldGetTheHeroWithTheHighestLevel() {

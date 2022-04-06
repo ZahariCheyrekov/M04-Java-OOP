@@ -2,7 +2,6 @@ package heroRepository;
 
 public class HeroRepositoryTests {
     public void testShouldThrowExceptionForNameWithValueNull() {
-        heroRepository.remove(HERO_NAME_NULL);
     }
 
     @Test

@@ -3,9 +3,6 @@ package heroRepository;
 public class HeroRepositoryTests {
 
 
-    public void testShouldThrowExceptionFoTryingToCreateHeroWithValueNull() {
-    }
-
     @Test(expected = IllegalArgumentException.class)
     public void testShouldThrowExceptionForAlreadyExistingHeroWithThatName() {
         heroRepository.create(HERO_WITH_EXISTING_NAME);

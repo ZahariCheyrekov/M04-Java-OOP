@@ -8,13 +8,6 @@ import org.junit.Test;
 public class HeroRepositoryTests {
 
 
-
-    public void setUp() {
-        heroRepository = new HeroRepository();
-        hulk = new Hero(HERO_NAME_HULK, HERO_LEVEL_HUNDRED);
-        heroRepository.create(hulk);
-    }
-
     @Test(expected = NullPointerException.class)
     public void testShouldThrowExceptionFoTryingToCreateHeroWithValueNull() {
         heroRepository.create(NULL_HERO);

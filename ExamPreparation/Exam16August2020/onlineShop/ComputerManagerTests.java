@@ -1,7 +1,4 @@
 public class ComputerManagerTests {
-    public void testShouldTrowExceptionForNoneExistingManufacturerAndModelInComputerManger() {
-    }
-
     @Test
     public void testShouldGetComputerByManufacturerAndModel() {
         Computer computerByManufacturerAndModel = computerManager.getComputer(COMPUTER_MANUFACTURER, COMPUTER_MODEL);

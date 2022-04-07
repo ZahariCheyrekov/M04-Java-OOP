@@ -1,8 +1,4 @@
 public class ComputerManagerTests {
-    public void testShouldRemoveComputerByGivenManufacturerAndModel() {
-    }
-
-    @Test(expected = IllegalArgumentException.class)
     public void testShouldTrowExceptionForNoneExistingManufacturerAndModelInComputerManger() {
         computerManager.getComputer(NONE_EXISTING_MANUFACTURER, NONE_EXISTING_MODEL);
     }

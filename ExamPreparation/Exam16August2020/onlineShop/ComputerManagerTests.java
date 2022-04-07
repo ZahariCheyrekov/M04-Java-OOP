@@ -1,6 +1,5 @@
 public class ComputerManagerTests {
     public void testShouldThrowExceptionForTryingToModifyUnmodifiableCollection() {
-        computerManager.getComputers().clear();
     }
 
     @Test(expected = IllegalArgumentException.class)

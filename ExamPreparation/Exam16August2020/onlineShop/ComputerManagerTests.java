@@ -1,5 +1,4 @@
 public class ComputerManagerTests {
-    @Test(expected = UnsupportedOperationException.class)
     public void testShouldThrowExceptionForTryingToModifyUnmodifiableCollection() {
         computerManager.getComputers().clear();
     }

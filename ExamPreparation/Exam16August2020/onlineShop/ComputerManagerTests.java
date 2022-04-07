@@ -1,6 +1,5 @@
 public class ComputerManagerTests {
     public void testShouldTrowExceptionForNoneExistingManufacturerAndModelInComputerManger() {
-        computerManager.getComputer(NONE_EXISTING_MANUFACTURER, NONE_EXISTING_MODEL);
     }
 
     @Test

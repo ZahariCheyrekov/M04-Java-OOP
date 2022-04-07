@@ -1,5 +1,4 @@
 public class ComputerManagerTests {
-    @Test
     public void testShouldGetComputerByManufacturerCorrectly() {
         List<Computer> computersByManufacturer = computerManager.getComputersByManufacturer(COMPUTER_MANUFACTURER);
         assertEquals(computer, computersByManufacturer.get(COMPUTER_INDEX));

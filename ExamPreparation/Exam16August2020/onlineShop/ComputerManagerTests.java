@@ -1,7 +1,4 @@
 public class ComputerManagerTests {
-    public void testShouldThrowExceptionWhenTryingToAddAlreadyExistingComputer() {
-    }
-
     @Test
     public void testShouldRemoveComputerByGivenManufacturerAndModel() {
         Computer removedComputer = computerManager.removeComputer(COMPUTER_MANUFACTURER, COMPUTER_MODEL);

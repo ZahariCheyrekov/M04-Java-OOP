@@ -1,7 +1,5 @@
 public class ComputerManagerTests {
     public void testShouldGetComputerByManufacturerAndModel() {
-        Computer computerByManufacturerAndModel = computerManager.getComputer(COMPUTER_MANUFACTURER, COMPUTER_MODEL);
-        assertEquals(computer, computerByManufacturerAndModel);
     }
 
     @Test

@@ -1,8 +1,5 @@
 public class ComputerManagerTests {
     public void setUp() {
-        computerManager = new ComputerManager();
-        computer = new Computer(COMPUTER_MANUFACTURER, COMPUTER_MODEL, COMPUTER_PRICE);
-        computerManager.addComputer(computer);
     }
 
     @Test(expected = UnsupportedOperationException.class)

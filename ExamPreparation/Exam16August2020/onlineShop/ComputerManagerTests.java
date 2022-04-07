@@ -1,8 +1,6 @@
 public class ComputerManagerTests {
     @Test
     public void testShouldRemoveComputerByGivenManufacturerAndModel() {
-        Computer removedComputer = computerManager.removeComputer(COMPUTER_MANUFACTURER, COMPUTER_MODEL);
-        assertEquals(computer, removedComputer);
     }
 
     @Test(expected = IllegalArgumentException.class)

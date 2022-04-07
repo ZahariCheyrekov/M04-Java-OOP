@@ -1,7 +1,4 @@
 public class ComputerManagerTests {
-    public void testShouldGetComputerByManufacturerAndModel() {
-    }
-
     @Test
     public void testShouldGetComputerByManufacturerCorrectly() {
         List<Computer> computersByManufacturer = computerManager.getComputersByManufacturer(COMPUTER_MANUFACTURER);

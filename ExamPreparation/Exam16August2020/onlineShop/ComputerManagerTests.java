@@ -1,6 +1,5 @@
 public class ComputerManagerTests {
     public void testShouldThrowExceptionWhenTryingToAddAlreadyExistingComputer() {
-        computerManager.addComputer(computer);
     }
 
     @Test

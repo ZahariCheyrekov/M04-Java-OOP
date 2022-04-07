@@ -1,8 +1,5 @@
 public class ComputerManagerTests {
 
-    private ComputerManager computerManager;
-    private Computer computer;
-    private static final Computer NULL_COMPUTER = null;
 
     private static final String COMPUTER_MANUFACTURER = "IGS";
     private static final String COMPUTER_MODEL = "KL-012";

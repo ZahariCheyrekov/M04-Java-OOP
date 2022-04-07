@@ -1,7 +1,4 @@
 public class ComputerManagerTests {
-    public void testShouldThrowExceptionForTryingToAddComputerWithValueNull() {
-    }
-
     @Test(expected = IllegalArgumentException.class)
     public void testShouldThrowExceptionWhenTryingToAddAlreadyExistingComputer() {
         computerManager.addComputer(computer);

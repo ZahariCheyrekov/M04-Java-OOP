@@ -1,7 +1,4 @@
 public class ComputerManagerTests {
-    private static final int COMPUTER_INDEX = 0;
-    private static final int COMPUTERS_COUNT = 1;
-
     @Before
     public void setUp() {
         computerManager = new ComputerManager();

@@ -1,8 +1,3 @@
-
-
-
-import java.util.List;
-
 public class ComputerManagerTests {
 
     private ComputerManager computerManager;

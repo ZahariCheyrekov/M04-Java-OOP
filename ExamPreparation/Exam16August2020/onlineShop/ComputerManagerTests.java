@@ -1,6 +1,4 @@
 public class ComputerManagerTests {
-    public void testShouldThrowExceptionForTryingToModifyUnmodifiableCollection() {
-    }
 
     @Test(expected = IllegalArgumentException.class)
     public void testShouldThrowExceptionForTryingToAddComputerWithValueNull() {

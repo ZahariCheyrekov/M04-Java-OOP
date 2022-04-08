@@ -3,8 +3,6 @@
 
 public class AquariumTests {
 
-    private Aquarium aquarium;
-    private Fish fish;
 
     private static final String AQUARIUM_NAME = "DeepWater";
     private static final int AQUARIUM_CAPACITY = 2;

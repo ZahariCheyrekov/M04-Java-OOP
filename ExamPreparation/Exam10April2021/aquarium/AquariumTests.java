@@ -3,13 +3,6 @@
 
 public class AquariumTests {
 
-
-
-    private static final String FISH_NAME = "Jeffry";
-    private static final String BREAM_NAME = "Bri";
-    private static final String CLOWNFISH_NAME = "Downfall";
-    private static final String NULL_AQUARIUM_NAME = null;
-
     private static final Fish BREAM = new Fish(BREAM_NAME);
     private static final Fish CLOWNFISH = new Fish(CLOWNFISH_NAME);
     private static final String REPORT_MESSAGE = "Fish available at %s: %s";

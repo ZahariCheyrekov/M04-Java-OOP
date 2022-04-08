@@ -3,11 +3,6 @@
 
 public class AquariumTests {
 
-        aquarium = new Aquarium(AQUARIUM_NAME, AQUARIUM_CAPACITY);
-        fish = new Fish(FISH_NAME);
-        aquarium.add(fish);
-    }
-
     @Test(expected = NullPointerException.class)
     public void testShouldThrowExceptionForTryingToSetNullAquariumName() {
         new Aquarium(NULL_AQUARIUM_NAME, AQUARIUM_CAPACITY);

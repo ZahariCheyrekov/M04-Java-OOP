@@ -2,10 +2,6 @@
 
 
 public class AquariumTests {
-    public void testShouldThrowExceptionForNoMoreSpaceInTheAquarium() {
-        aquarium.add(BREAM);
-        aquarium.add(CLOWNFISH);
-    }
 
     @Test(expected = IllegalArgumentException.class)
     public void testShouldTrowExceptionWhenTryingToRemoveNoneExistingFish() {

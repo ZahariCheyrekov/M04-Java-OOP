@@ -2,9 +2,6 @@
 
 
 public class AquariumTests {
-    public void testShouldThrowExceptionForTryingToRemoveFishWithNoSuchNameFromTheAquarium() {
-    }
-
     @Test
     public void testShouldSellFishFromTheAquariumByTheGivenName() {
         Fish soldFish = aquarium.sellFish(FISH_NAME);

@@ -1,4 +1,3 @@
-package aquarium;
 
 import static org.junit.Assert.*;
 

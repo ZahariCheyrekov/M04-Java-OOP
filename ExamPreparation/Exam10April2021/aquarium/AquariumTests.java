@@ -2,7 +2,6 @@
 
 
 public class AquariumTests {
-    @Test
     public void testShouldRemoveFishFromTheAquariumCorrectly() {
         aquarium.remove(FISH_NAME);
         assertEquals(ZERO_FISH_COUNT, aquarium.getCount());

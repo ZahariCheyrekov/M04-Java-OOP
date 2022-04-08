@@ -3,7 +3,6 @@
 
 public class AquariumTests {
 
-    @Test(expected = IllegalArgumentException.class)
     public void testShouldThrowExceptionForTryingToSetInvalidAquariumCapacity() {
         new Aquarium(AQUARIUM_NAME, INVALID_AQUARIUM_CAPACITY);
     }

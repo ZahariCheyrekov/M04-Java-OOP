@@ -3,8 +3,6 @@
 
 public class AquariumTests {
 
-    @Before
-    public void setUp() {
         aquarium = new Aquarium(AQUARIUM_NAME, AQUARIUM_CAPACITY);
         fish = new Fish(FISH_NAME);
         aquarium.add(fish);

@@ -3,7 +3,6 @@
 
 public class AquariumTests {
 
-    @Test(expected = NullPointerException.class)
     public void testShouldThrowExceptionForTryingToSetNullAquariumName() {
         new Aquarium(NULL_AQUARIUM_NAME, AQUARIUM_CAPACITY);
     }

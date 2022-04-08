@@ -3,7 +3,6 @@
 
 public class AquariumTests {
     public void testShouldThrowExceptionForTryingToRemoveFishWithNoSuchNameFromTheAquarium() {
-        aquarium.sellFish(CLOWNFISH_NAME);
     }
 
     @Test

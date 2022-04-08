@@ -2,9 +2,6 @@
 
 
 public class AquariumTests {
-    public void testShouldRemoveFishFromTheAquariumCorrectly() {
-    }
-
     @Test(expected = IllegalArgumentException.class)
     public void testShouldThrowExceptionForTryingToRemoveFishWithNoSuchNameFromTheAquarium() {
         aquarium.sellFish(CLOWNFISH_NAME);

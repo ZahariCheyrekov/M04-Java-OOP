@@ -2,7 +2,6 @@
 
 
 public class AquariumTests {
-    @Test
     public void testShouldSellFishFromTheAquariumByTheGivenName() {
         Fish soldFish = aquarium.sellFish(FISH_NAME);
         assertEquals(fish, soldFish);

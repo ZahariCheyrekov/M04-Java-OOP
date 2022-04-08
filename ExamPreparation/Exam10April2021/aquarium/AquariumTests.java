@@ -3,7 +3,6 @@
 
 public class AquariumTests {
 
-    @Test(expected = IllegalArgumentException.class)
     public void testShouldTrowExceptionWhenTryingToRemoveNoneExistingFish() {
         aquarium.add(BREAM);
         aquarium.remove(CLOWNFISH_NAME);

@@ -2,10 +2,6 @@
 
 
 public class AquariumTests {
-
-    public void testShouldTrowExceptionWhenTryingToRemoveNoneExistingFish() {
-    }
-
     @Test
     public void testShouldRemoveFishFromTheAquariumCorrectly() {
         aquarium.remove(FISH_NAME);

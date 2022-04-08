@@ -2,11 +2,6 @@
 
 
 public class AquariumTests {
-
-    public void testShouldThrowExceptionForTryingToSetInvalidAquariumCapacity() {
-        new Aquarium(AQUARIUM_NAME, INVALID_AQUARIUM_CAPACITY);
-    }
-
     @Test(expected = IllegalArgumentException.class)
     public void testShouldThrowExceptionForNoMoreSpaceInTheAquarium() {
         aquarium.add(BREAM);

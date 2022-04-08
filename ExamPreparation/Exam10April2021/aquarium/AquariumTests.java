@@ -4,8 +4,6 @@
 public class AquariumTests {
 
     public void testShouldTrowExceptionWhenTryingToRemoveNoneExistingFish() {
-        aquarium.add(BREAM);
-        aquarium.remove(CLOWNFISH_NAME);
     }
 
     @Test

@@ -1,5 +1,4 @@
 
-import fairyShop.models.presents.Present;
 import fairyShop.models.presents.PresentImpl;
 import fairyShop.models.shops.Shop;
 import fairyShop.models.shops.ShopImpl;

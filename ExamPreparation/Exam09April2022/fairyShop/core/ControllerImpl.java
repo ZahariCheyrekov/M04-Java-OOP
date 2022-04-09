@@ -3,7 +3,6 @@
 
 public class ControllerImpl implements Controller {
 
-    private Repository<Helper> helperRepository;
     private Repository<Present> presentRepository;
     private Shop shop;
     private int craftedPresents;

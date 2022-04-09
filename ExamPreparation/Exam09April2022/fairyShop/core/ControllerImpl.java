@@ -5,7 +5,6 @@ public class ControllerImpl implements Controller {
 
 
     public ControllerImpl() {
-        this.shop = new ShopImpl();
     }
 
     @Override

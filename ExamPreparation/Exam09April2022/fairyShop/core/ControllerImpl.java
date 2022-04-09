@@ -3,7 +3,6 @@
 
 public class ControllerImpl implements Controller {
 
-    private Shop shop;
     private int craftedPresents;
 
     public ControllerImpl() {

@@ -10,10 +10,6 @@ public class ControllerImpl implements Controller {
     @Override
     public String addInstrumentToHelper(String helperName, int power) {
 
-        Instrument instrument = new InstrumentImpl(power);
-        helper.addInstrument(instrument);
-
-        return String.format(SUCCESSFULLY_ADDED_INSTRUMENT_TO_HELPER, power, helper.getName());
     }
 
     @Override

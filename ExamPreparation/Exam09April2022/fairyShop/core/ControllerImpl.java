@@ -9,11 +9,6 @@ public class ControllerImpl implements Controller {
 
     @Override
     public String addInstrumentToHelper(String helperName, int power) {
-        Helper helper = this.helperRepository.findByName(helperName);
-
-        if (helper == null) {
-            throw new IllegalArgumentException(HELPER_DOESNT_EXIST);
-        }
 
         Instrument instrument = new InstrumentImpl(power);
         helper.addInstrument(instrument);

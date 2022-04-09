@@ -10,12 +10,6 @@ public class ControllerImpl implements Controller {
     @Override
     public String addHelper(String type, String helperName) {
 
-            case "Sleepy":
-                helper = new Sleepy(helperName);
-                break;
-            default:
-                throw new IllegalArgumentException(HELPER_TYPE_DOESNT_EXIST);
-        }
 
         this.helperRepository.add(helper);
         return String.format(ADDED_HELPER, type, helperName);

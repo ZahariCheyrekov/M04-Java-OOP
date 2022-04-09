@@ -8,10 +8,6 @@ public class ControllerImpl implements Controller {
     }
 
     @Override
-    public String addHelper(String type, String helperName) {
-
-
-    @Override
     public String addInstrumentToHelper(String helperName, int power) {
         Helper helper = this.helperRepository.findByName(helperName);
 

@@ -10,7 +10,6 @@ public class ControllerImpl implements Controller {
     @Override
     public String addHelper(String type, String helperName) {
 
-        switch (type) {
             case "Happy":
                 helper = new Happy(helperName);
                 break;

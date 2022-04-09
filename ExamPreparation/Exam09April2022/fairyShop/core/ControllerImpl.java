@@ -5,10 +5,7 @@ public class ControllerImpl implements Controller {
 
 
     public ControllerImpl() {
-    }
-
-    @Override
-    public String addInstrumentToHelper(String helperName, int power) {
+   c String addInstrumentToHelper(String helperName, int power) {
 
     }
 

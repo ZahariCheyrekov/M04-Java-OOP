@@ -1,5 +1,4 @@
 
-import fairyShop.repositories.interfaces.Repository;
 
 import static fairyShop.common.ConstantMessages.*;
 import static fairyShop.common.ExceptionMessages.*;

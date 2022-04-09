@@ -1,12 +1,66 @@
+package fairyShop.core;
 
+import fairyShop.core.interfaces.Controller;
+import fairyShop.models.helpers.Happy;
+import fairyShop.models.helpers.Helper;
+import fairyShop.models.helpers.Sleepy;
+import fairyShop.models.instruments.Instrument;
+import fairyShop.models.instruments.InstrumentImpl;
+import fairyShop.models.presents.Present;
+import fairyShop.models.presents.PresentImpl;
+import fairyShop.models.shops.Shop;
+import fairyShop.models.shops.ShopImpl;
+import fairyShop.repositories.HelperRepository;
+import fairyShop.repositories.PresentRepository;
+import fairyShop.repositories.interfaces.Repository;
 
+import static fairyShop.common.ConstantMessages.*;
+import static fairyShop.common.ExceptionMessages.*;
 
 public class ControllerImpl implements Controller {
 
+    private Repository<Helper> helperRepository;
+    private Repository<Present> presentRepository;
+    private Shop shop;
+    private int craftedPresents;
 
     public ControllerImpl() {
-   c String addInstrumentToHelper(String helperName, int power) {
+        this.helperRepository = new HelperRepository();
+        this.presentRepository = new PresentRepository();
+        this.shop = new ShopImpl();
+    }
 
+    @Override
+    public String addHelper(String type, String helperName) {
+        Helper helper;
+
+        switch (type) {
+            case "Happy":
+                helper = new Happy(helperName);
+                break;
+            case "Sleepy":
+                helper = new Sleepy(helperName);
+                break;
+            default:
+                throw new IllegalArgumentException(HELPER_TYPE_DOESNT_EXIST);
+        }
+
+        this.helperRepository.add(helper);
+        return String.format(ADDED_HELPER, type, helperName);
+    }
+
+    @Override
+    public String addInstrumentToHelper(String helperName, int power) {
+        Helper helper = this.helperRepository.findByName(helperName);
+
+        if (helper == null) {
+            throw new IllegalArgumentException(HELPER_DOESNT_EXIST);
+        }
+
+        Instrument instrument = new InstrumentImpl(power);
+        helper.addInstrument(instrument);
+
+        return String.format(SUCCESSFULLY_ADDED_INSTRUMENT_TO_HELPER, power, helper.getName());
     }
 
     @Override

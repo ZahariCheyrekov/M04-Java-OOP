@@ -11,10 +11,6 @@ public class ControllerImpl implements Controller {
     public String addHelper(String type, String helperName) {
 
 
-        this.helperRepository.add(helper);
-        return String.format(ADDED_HELPER, type, helperName);
-    }
-
     @Override
     public String addInstrumentToHelper(String helperName, int power) {
         Helper helper = this.helperRepository.findByName(helperName);

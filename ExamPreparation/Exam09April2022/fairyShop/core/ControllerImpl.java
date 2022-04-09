@@ -1,4 +1,3 @@
-package fairyShop.core;
 
 import fairyShop.core.interfaces.Controller;
 import fairyShop.models.helpers.Happy;

@@ -1,5 +1,4 @@
 
-import fairyShop.models.shops.ShopImpl;
 import fairyShop.repositories.HelperRepository;
 import fairyShop.repositories.PresentRepository;
 import fairyShop.repositories.interfaces.Repository;

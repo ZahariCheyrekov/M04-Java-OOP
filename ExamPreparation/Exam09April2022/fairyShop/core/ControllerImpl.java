@@ -5,7 +5,6 @@ public class ControllerImpl implements Controller {
 
 
     public ControllerImpl() {
-        this.helperRepository = new HelperRepository();
         this.presentRepository = new PresentRepository();
         this.shop = new ShopImpl();
     }

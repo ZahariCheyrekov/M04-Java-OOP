@@ -1,10 +1,4 @@
 
-import fairyShop.core.interfaces.Controller;
-import fairyShop.models.helpers.Happy;
-import fairyShop.models.helpers.Helper;
-import fairyShop.models.helpers.Sleepy;
-import fairyShop.models.instruments.Instrument;
-import fairyShop.models.instruments.InstrumentImpl;
 import fairyShop.models.presents.Present;
 import fairyShop.models.presents.PresentImpl;
 import fairyShop.models.shops.Shop;

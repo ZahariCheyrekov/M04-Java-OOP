@@ -5,7 +5,6 @@ public class PlayerTests {
 
     public void setUp() {
         player = new Player(PLAYER_USERNAME, PLAYER_HEALTH);
-        gun = new Gun(GUN_NAME, GUN_BULLETS);
         player.addGun(gun);
     }
 

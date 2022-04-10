@@ -3,9 +3,6 @@
 
 public class PlayerTests {
 
-    private static final int ZERO_HEALTH = 0;
-    private static final int FIFTY_HEALTH = 50;
-
     @Before
     public void setUp() {
         player = new Player(PLAYER_USERNAME, PLAYER_HEALTH);

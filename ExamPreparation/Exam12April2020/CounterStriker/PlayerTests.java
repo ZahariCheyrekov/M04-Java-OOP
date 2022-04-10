@@ -4,13 +4,6 @@
 public class PlayerTests {
 
     public void testShouldTakeDamageFromPlayerCorrectly() {
-        player.takeDamage(FIFTY_DAMAGE);
-        assertEquals(FIFTY_HEALTH, player.getHealth());
-
-        player.takeDamage(TWO_HUNDRED_DAMAGE);
-        int actualHealth = player.getHealth();
-        assertEquals(ZERO_HEALTH, actualHealth);
-    }
 
     @Test(expected = NullPointerException.class)
     public void testShouldThrowExceptionForTryingToAddNullGunToPlayer() {

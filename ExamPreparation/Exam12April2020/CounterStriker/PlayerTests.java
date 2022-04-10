@@ -3,8 +3,6 @@
 
 public class PlayerTests {
 
-    private Player player;
-    private Gun gun;
 
     private static final String PLAYER_USERNAME = "Neo";
     private static final int PLAYER_HEALTH = 100;

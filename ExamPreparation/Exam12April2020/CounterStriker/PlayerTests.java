@@ -2,7 +2,6 @@
 
 
 public class PlayerTests {
-    @Test(expected = UnsupportedOperationException.class)
     public void testShouldThrowExceptionForTryingToModifyUnmodifiableCollection() {
         player.getGuns().clear();
     }

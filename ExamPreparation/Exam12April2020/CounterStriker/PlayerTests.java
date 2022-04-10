@@ -3,10 +3,6 @@
 
 public class PlayerTests {
 
-    private static final Gun NULL_GUN = null;
-    private static final String NULL_NAME = null;
-    private static final int INVALID_HEALTH = -100;
-
     private static final int FIFTY_DAMAGE = 50;
     private static final int HUNDRED_DAMAGE = 100;
     private static final int TWO_HUNDRED_DAMAGE = 200;

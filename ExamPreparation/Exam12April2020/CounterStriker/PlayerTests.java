@@ -3,7 +3,6 @@
 
 public class PlayerTests {
 
-    @Test(expected = IllegalArgumentException.class)
     public void testShouldThrowExceptionForTryingToSetInvalidHealthToPlayer() {
         new Player(PLAYER_USERNAME, INVALID_HEALTH);
     }

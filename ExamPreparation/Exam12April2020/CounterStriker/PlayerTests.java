@@ -4,7 +4,6 @@
 public class PlayerTests {
 
     public void testShouldThrowExceptionForTryingToSetNullNameToPlayer() {
-        new Player(NULL_NAME, PLAYER_HEALTH);
     }
 
     @Test(expected = IllegalArgumentException.class)

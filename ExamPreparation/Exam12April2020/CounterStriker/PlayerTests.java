@@ -3,10 +3,6 @@
 
 public class PlayerTests {
 
-    private static final int FIFTY_DAMAGE = 50;
-    private static final int HUNDRED_DAMAGE = 100;
-    private static final int TWO_HUNDRED_DAMAGE = 200;
-
     private static final int ZERO_HEALTH = 0;
     private static final int FIFTY_HEALTH = 50;
 

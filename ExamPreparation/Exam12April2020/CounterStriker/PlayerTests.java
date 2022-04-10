@@ -1,4 +1,3 @@
-package halfLife;
 
 import static org.junit.Assert.*;
 

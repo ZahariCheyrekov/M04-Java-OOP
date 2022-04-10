@@ -2,8 +2,6 @@
 
 
 public class PlayerTests {
-    public void testShouldThrowExceptionWhenTryingToTakeDamageFromAlreadyDeadPlayer() {
-    }
 
     @Test
     public void testShouldTakeDamageFromPlayerCorrectly() {

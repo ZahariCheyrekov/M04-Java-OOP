@@ -3,10 +3,6 @@
 
 public class PlayerTests {
 
-
-    private static final String GUN_NAME = "Rifle";
-    private static final int GUN_BULLETS = 50;
-
     private static final Gun NULL_GUN = null;
     private static final String NULL_NAME = null;
     private static final int INVALID_HEALTH = -100;

@@ -2,9 +2,6 @@
 
 
 public class PlayerTests {
-    public void testShouldThrowExceptionForTryingToModifyUnmodifiableCollection() {
-    }
-
     @Test(expected = IllegalStateException.class)
     public void testShouldThrowExceptionWhenTryingToTakeDamageFromAlreadyDeadPlayer() {
         player.takeDamage(HUNDRED_DAMAGE);

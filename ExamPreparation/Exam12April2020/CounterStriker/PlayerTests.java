@@ -2,7 +2,6 @@
 
 
 public class PlayerTests {
-    @Test(expected = IllegalStateException.class)
     public void testShouldThrowExceptionWhenTryingToTakeDamageFromAlreadyDeadPlayer() {
         player.takeDamage(HUNDRED_DAMAGE);
         player.takeDamage(HUNDRED_DAMAGE);

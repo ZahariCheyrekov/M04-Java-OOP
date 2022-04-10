@@ -3,7 +3,6 @@
 
 public class PlayerTests {
 
-    @Test
     public void testShouldTakeDamageFromPlayerCorrectly() {
         player.takeDamage(FIFTY_DAMAGE);
         assertEquals(FIFTY_HEALTH, player.getHealth());

@@ -4,8 +4,6 @@
 public class PlayerTests {
 
     public void setUp() {
-        player = new Player(PLAYER_USERNAME, PLAYER_HEALTH);
-        player.addGun(gun);
     }
 
     @Test(expected = NullPointerException.class)

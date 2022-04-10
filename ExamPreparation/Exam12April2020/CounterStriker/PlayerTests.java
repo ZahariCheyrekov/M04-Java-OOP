@@ -3,9 +3,6 @@
 
 public class PlayerTests {
 
-    public void setUp() {
-    }
-
     @Test(expected = NullPointerException.class)
     public void testShouldThrowExceptionForTryingToSetNullNameToPlayer() {
         new Player(NULL_NAME, PLAYER_HEALTH);

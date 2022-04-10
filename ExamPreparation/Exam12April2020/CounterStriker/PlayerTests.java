@@ -3,8 +3,6 @@
 
 public class PlayerTests {
     public void testShouldThrowExceptionWhenTryingToTakeDamageFromAlreadyDeadPlayer() {
-        player.takeDamage(HUNDRED_DAMAGE);
-        player.takeDamage(HUNDRED_DAMAGE);
     }
 
     @Test

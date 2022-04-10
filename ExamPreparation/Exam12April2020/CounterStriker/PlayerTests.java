@@ -4,9 +4,6 @@
 public class PlayerTests {
 
 
-    private static final String PLAYER_USERNAME = "Neo";
-    private static final int PLAYER_HEALTH = 100;
-
     private static final String GUN_NAME = "Rifle";
     private static final int GUN_BULLETS = 50;
 

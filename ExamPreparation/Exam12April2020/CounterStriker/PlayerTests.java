@@ -3,7 +3,6 @@
 
 public class PlayerTests {
 
-    public void testShouldTakeDamageFromPlayerCorrectly() {
 
     @Test(expected = NullPointerException.class)
     public void testShouldThrowExceptionForTryingToAddNullGunToPlayer() {

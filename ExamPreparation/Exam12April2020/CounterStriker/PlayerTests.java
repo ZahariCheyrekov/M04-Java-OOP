@@ -2,10 +2,6 @@
 
 
 public class PlayerTests {
-
-    public void testShouldThrowExceptionForTryingToSetInvalidHealthToPlayer() {
-    }
-
     @Test(expected = UnsupportedOperationException.class)
     public void testShouldThrowExceptionForTryingToModifyUnmodifiableCollection() {
         player.getGuns().clear();

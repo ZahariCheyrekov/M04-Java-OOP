@@ -3,7 +3,6 @@
 
 public class PlayerTests {
     public void testShouldThrowExceptionForTryingToModifyUnmodifiableCollection() {
-        player.getGuns().clear();
     }
 
     @Test(expected = IllegalStateException.class)

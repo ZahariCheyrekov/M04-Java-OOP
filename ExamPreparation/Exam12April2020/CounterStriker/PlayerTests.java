@@ -4,7 +4,6 @@
 public class PlayerTests {
 
     public void testShouldThrowExceptionForTryingToSetInvalidHealthToPlayer() {
-        new Player(PLAYER_USERNAME, INVALID_HEALTH);
     }
 
     @Test(expected = UnsupportedOperationException.class)

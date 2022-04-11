@@ -1,10 +1,5 @@
 public class SpaceshipTests {
     public void testShouldThrowExceptionFOrNoMoreSpaceOnTheSpaceship() {
-        spaceship.add(SECOND_ASTRONAUT);
-        int actualAstronautsCount = spaceship.getCount();
-        assertEquals(SPACESHIP_CAPACITY, actualAstronautsCount);
-
-        spaceship.add(THIRD_ASTRONAUT);
     }
 
     @Test(expected = IllegalArgumentException.class)

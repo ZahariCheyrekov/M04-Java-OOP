@@ -1,5 +1,4 @@
 public class SpaceshipTests {
-    @Test(expected = IllegalArgumentException.class)
     public void testShouldThrowExceptionForAlreadyExistingAstronautOnTheSpaceship() {
         spaceship.add(astronaut);
     }

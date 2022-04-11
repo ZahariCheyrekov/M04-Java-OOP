@@ -1,7 +1,4 @@
 public class SpaceshipTests {
-    private static final String ASTRONAUT_NAME = "Spaceman";
-    private static final double ASTRONAUT_OXYGEN = 100;
-
     @Before
     public void setUp() {
         spaceship = new Spaceship(SPACESHIP_NAME, SPACESHIP_CAPACITY);

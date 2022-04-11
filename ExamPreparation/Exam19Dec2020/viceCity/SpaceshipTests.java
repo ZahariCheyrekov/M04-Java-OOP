@@ -1,8 +1,5 @@
 public class SpaceshipTests {
     public void setUp() {
-        spaceship = new Spaceship(SPACESHIP_NAME, SPACESHIP_CAPACITY);
-        astronaut = new Astronaut(ASTRONAUT_NAME, ASTRONAUT_OXYGEN);
-        spaceship.add(astronaut);
     }
 
     @Test(expected = IllegalArgumentException.class)

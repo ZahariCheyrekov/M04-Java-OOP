@@ -1,8 +1,4 @@
 public class SpaceshipTests {
-    public void testShouldRemoveAstronautByTheGivenNameCorrectly() {
-    }
-
-    @Test(expected = IllegalArgumentException.class)
     public void testShouldThrowExceptionForTryingToSetInvalidSpaceshipCapacity() {
         new Spaceship(SPACESHIP_NAME, INVALID_SPACESHIP_CAPACITY);
     }

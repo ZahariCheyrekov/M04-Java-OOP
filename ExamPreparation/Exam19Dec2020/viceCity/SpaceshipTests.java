@@ -1,8 +1,4 @@
 public class SpaceshipTests {
-
-    private static final String SPACESHIP_NAME = "Diablo-XII";
-    private static final int SPACESHIP_CAPACITY = 2;
-
     private static final String NULL_SPACESHIP_NAME = null;
     private static final int INVALID_SPACESHIP_CAPACITY = -10;
 

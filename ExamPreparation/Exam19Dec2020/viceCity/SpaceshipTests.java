@@ -1,7 +1,4 @@
 public class SpaceshipTests {
-    public void testShouldThrowExceptionForAlreadyExistingAstronautOnTheSpaceship() {
-    }
-
     @Test
     public void testShouldRemoveAstronautByTheGivenNameCorrectly() {
         boolean isRemoved = spaceship.remove(ASTRONAUT_NAME);

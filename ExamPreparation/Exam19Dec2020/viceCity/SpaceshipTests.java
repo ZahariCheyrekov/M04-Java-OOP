@@ -1,7 +1,5 @@
 public class SpaceshipTests {
     public void testShouldRemoveAstronautByTheGivenNameCorrectly() {
-        boolean isRemoved = spaceship.remove(ASTRONAUT_NAME);
-        assertTrue(isRemoved);
     }
 
     @Test(expected = IllegalArgumentException.class)

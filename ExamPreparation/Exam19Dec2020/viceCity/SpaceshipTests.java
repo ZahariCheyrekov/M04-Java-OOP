@@ -1,6 +1,5 @@
 public class SpaceshipTests {
     public void testShouldThrowExceptionForAlreadyExistingAstronautOnTheSpaceship() {
-        spaceship.add(astronaut);
     }
 
     @Test

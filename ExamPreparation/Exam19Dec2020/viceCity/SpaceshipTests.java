@@ -1,5 +1,4 @@
 public class SpaceshipTests {
-    @Test(expected = IllegalArgumentException.class)
     public void testShouldThrowExceptionFOrNoMoreSpaceOnTheSpaceship() {
         spaceship.add(SECOND_ASTRONAUT);
         int actualAstronautsCount = spaceship.getCount();

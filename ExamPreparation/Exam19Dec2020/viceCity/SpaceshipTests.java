@@ -1,6 +1,5 @@
 public class SpaceshipTests {
     public void testShouldThrowExceptionForTryingToSetNullNameToTheSpaceship() {
-        new Spaceship(NULL_SPACESHIP_NAME, SPACESHIP_CAPACITY);
     }
 
     @Test

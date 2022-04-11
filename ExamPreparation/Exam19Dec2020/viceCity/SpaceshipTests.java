@@ -1,5 +1,4 @@
 public class SpaceshipTests {
-    @Test
     public void testShouldRemoveAstronautByTheGivenNameCorrectly() {
         boolean isRemoved = spaceship.remove(ASTRONAUT_NAME);
         assertTrue(isRemoved);

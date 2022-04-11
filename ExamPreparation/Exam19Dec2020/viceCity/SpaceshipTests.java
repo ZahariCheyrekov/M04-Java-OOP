@@ -1,6 +1,5 @@
 public class SpaceshipTests {
     public void testShouldThrowExceptionForTryingToSetInvalidSpaceshipCapacity() {
-        new Spaceship(SPACESHIP_NAME, INVALID_SPACESHIP_CAPACITY);
     }
 
     @Test(expected = NullPointerException.class)

@@ -1,7 +1,4 @@
 public class SpaceshipTests {
-    private static final String NULL_SPACESHIP_NAME = null;
-    private static final int INVALID_SPACESHIP_CAPACITY = -10;
-
     private static final String ASTRONAUT_NAME = "Spaceman";
     private static final double ASTRONAUT_OXYGEN = 100;
 

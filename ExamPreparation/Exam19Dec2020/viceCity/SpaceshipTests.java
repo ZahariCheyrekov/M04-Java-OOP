@@ -1,7 +1,4 @@
 public class SpaceshipTests {
-    public void setUp() {
-    }
-
     @Test(expected = IllegalArgumentException.class)
     public void testShouldThrowExceptionFOrNoMoreSpaceOnTheSpaceship() {
         spaceship.add(SECOND_ASTRONAUT);

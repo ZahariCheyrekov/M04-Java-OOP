@@ -1,7 +1,5 @@
 public class SpaceshipTests {
 
-    private Spaceship spaceship;
-    private Astronaut astronaut;
     private static final Astronaut SECOND_ASTRONAUT = new Astronaut("Second", 99);
     private static final Astronaut THIRD_ASTRONAUT = new Astronaut("Third", 98);
 

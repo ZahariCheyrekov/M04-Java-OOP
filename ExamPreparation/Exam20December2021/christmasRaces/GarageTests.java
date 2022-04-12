@@ -1,9 +1,6 @@
 public class GarageTests {
     @Test
     public void testShouldFindTheMostExpensiveCarByTheGivenPrice() {
-        Car mostExpensiveCar = garage.getTheMostExpensiveCar();
-        assertEquals(car, mostExpensiveCar);
-        assertEquals(CARS_IN_GARAGE, garage.getCount());
     }
 
     @Test

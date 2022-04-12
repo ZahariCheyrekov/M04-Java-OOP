@@ -1,5 +1,4 @@
 public class GarageTests {
-    @Before
     public void setUp() {
         garage = new Garage();
         car = new Car(CAR_BRAND, MAX_SPEED_LAMBORGHINI, PRICE_LAMBORGHINI);

@@ -1,6 +1,5 @@
 public class GarageTests {
     public void testShouldThrowExceptionForTryingToModifyUnmodifiableCollection() {
-        garage.getCars().clear();
     }
 
     @Test(expected = IllegalArgumentException.class)

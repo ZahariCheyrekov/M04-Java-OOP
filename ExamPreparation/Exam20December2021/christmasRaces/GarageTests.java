@@ -13,7 +13,6 @@ public class GarageTests {
     private Car car;
 
     private static final String CAR_BRAND = "Lamborghini";
-    
     private static final int MAX_SPEED_LAMBORGHINI = 350;
     private static final double PRICE_LAMBORGHINI = 100_000;
 

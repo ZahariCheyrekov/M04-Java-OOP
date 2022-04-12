@@ -1,6 +1,4 @@
 public class GarageTests {
-    private static final int CAR_LIST_INDEX = 0;
-
     @Before
     public void setUp() {
         garage = new Garage();

@@ -1,7 +1,4 @@
 public class GarageTests {
-    public void testShouldFindTheMostExpensiveCarByTheGivenPrice() {
-    }
-
     @Test
     public void testShouldFindAllCarsByTheGivenCarBrand() {
         List<Car> allCarsByBrand = garage.findAllCarsByBrand(CAR_BRAND);

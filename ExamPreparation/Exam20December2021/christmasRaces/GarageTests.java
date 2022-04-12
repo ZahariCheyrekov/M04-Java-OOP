@@ -1,6 +1,4 @@
 public class GarageTests {
-    public void setUp() {
-    }
 
     @Test(expected = UnsupportedOperationException.class)
     public void testShouldThrowExceptionForTryingToModifyUnmodifiableCollection() {

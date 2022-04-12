@@ -1,8 +1,4 @@
 public class GarageTests {
-
-    private static final int CARS_IN_GARAGE = 1;
-    private static final int CAR_SPEED = 200;
-
     private static final int CAR_LIST_INDEX = 0;
 
     @Before

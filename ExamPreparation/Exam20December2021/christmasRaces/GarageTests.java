@@ -1,7 +1,4 @@
 public class GarageTests {
-    private static final String CAR_BRAND = "Lamborghini";
-    private static final int MAX_SPEED_LAMBORGHINI = 350;
-    private static final double PRICE_LAMBORGHINI = 100_000;
 
     private static final int CARS_IN_GARAGE = 1;
     private static final int CAR_SPEED = 200;

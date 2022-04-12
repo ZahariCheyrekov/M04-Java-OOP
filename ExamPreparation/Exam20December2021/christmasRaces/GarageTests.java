@@ -1,8 +1,5 @@
 public class GarageTests {
     public void setUp() {
-        garage = new Garage();
-        car = new Car(CAR_BRAND, MAX_SPEED_LAMBORGHINI, PRICE_LAMBORGHINI);
-        garage.addCar(car);
     }
 
     @Test(expected = UnsupportedOperationException.class)

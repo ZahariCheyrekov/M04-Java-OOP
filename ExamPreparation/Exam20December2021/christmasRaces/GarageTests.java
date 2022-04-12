@@ -1,5 +1,4 @@
 public class GarageTests {
-    @Test
     public void testShouldFindTheMostExpensiveCarByTheGivenPrice() {
     }
 

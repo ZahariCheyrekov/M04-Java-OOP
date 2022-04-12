@@ -1,7 +1,4 @@
 public class GarageTests {
-    public void testShouldThrowExceptionForTryingToAddNullCarInTheGarage() {
-    }
-
     @Test
     public void testShouldFindTheMostExpensiveCarByTheGivenPrice() {
         Car mostExpensiveCar = garage.getTheMostExpensiveCar();

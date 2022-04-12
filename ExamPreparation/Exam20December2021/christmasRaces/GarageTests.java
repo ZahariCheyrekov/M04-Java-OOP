@@ -1,6 +1,4 @@
 public class GarageTests {
-
-    @Test(expected = UnsupportedOperationException.class)
     public void testShouldThrowExceptionForTryingToModifyUnmodifiableCollection() {
         garage.getCars().clear();
     }

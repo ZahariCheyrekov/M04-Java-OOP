@@ -1,7 +1,6 @@
 public class GarageTests {
     @Test(expected = IllegalArgumentException.class)
     public void testShouldThrowExceptionForTryingToAddNullCarInTheGarage() {
-        garage.addCar(null);
     }
 
     @Test

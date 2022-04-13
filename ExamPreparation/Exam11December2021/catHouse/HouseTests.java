@@ -1,8 +1,5 @@
 
 public class HouseTests {
-    public void testShouldGetHouseCapacityCorrectly() {
-    }
-
     @Test(expected = IllegalArgumentException.class)
     public void testShouldThrowExceptionForInvalidCapacityBelowZero() {
         new House(HOUSE_NAME, INVALID_HOUSE_CAPACITY);

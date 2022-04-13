@@ -2,8 +2,6 @@
 public class HouseTests {
 
     public void testShouldThrowExceptionForFullHouseCapacity() {
-        house.addCat(cat);
-        house.addCat(cat);
     }
 
     @Test

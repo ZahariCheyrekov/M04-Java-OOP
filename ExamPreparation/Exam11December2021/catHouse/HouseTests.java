@@ -1,9 +1,5 @@
 
 public class HouseTests {
-
-    public void testShouldThrowExceptionForFullHouseCapacity() {
-    }
-
     @Test
     public void testShouldRemoveCatCorrectlyFromTheCatHouse() {
         house.removeCat(cat.getName());

@@ -1,9 +1,6 @@
 
 public class HouseTests {
     public void setUp() {
-        house = new House(HOUSE_NAME, HOUSE_CAPACITY);
-        cat = new Cat(CAT_NAME);
-        house.addCat(cat);
     }
 
     @Test(expected = NullPointerException.class)

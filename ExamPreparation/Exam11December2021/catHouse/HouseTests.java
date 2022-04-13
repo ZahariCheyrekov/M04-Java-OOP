@@ -1,7 +1,6 @@
 
 public class HouseTests {
 
-    @Test
     public void testShouldGetCatsCountCorrectly() {
         assertEquals(HOUSE_COUNT, house.getCount());
     }

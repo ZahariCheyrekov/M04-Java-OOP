@@ -1,7 +1,5 @@
 
 public class HouseTests {
-    private static final int INVALID_HOUSE_CAPACITY = -10;
-
     @Before
     public void setUp() {
         house = new House(HOUSE_NAME, HOUSE_CAPACITY);

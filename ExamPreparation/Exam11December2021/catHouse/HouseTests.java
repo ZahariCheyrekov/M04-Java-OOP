@@ -1,7 +1,4 @@
 
-
-import static org.junit.Assert.*;
-
 public class HouseTests {
 
     private static House house;

@@ -1,6 +1,5 @@
 
 public class HouseTests {
-    @Test
     public void testShouldGetHouseNameCorrectly() {
         assertEquals(HOUSE_NAME, house.getName());
     }

@@ -1,7 +1,5 @@
 
 public class HouseTests {
-    private static final String HOUSE_NAME = "Big House";
-    private static final String CAT_NAME = "Garfield";
     private static final String NONE_EXISTING_CAT = "Tom";
     private static final String STATISTICS_MESSAGE = "The cat Garfield is in the house Big House!";
 

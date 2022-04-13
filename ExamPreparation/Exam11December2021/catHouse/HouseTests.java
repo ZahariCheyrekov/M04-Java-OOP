@@ -1,8 +1,5 @@
 
 public class HouseTests {
-    public void setUp() {
-    }
-
     @Test(expected = NullPointerException.class)
     public void testShouldThrowExceptionForInvalidNameWithValueNull() {
         new House(null, HOUSE_CAPACITY);

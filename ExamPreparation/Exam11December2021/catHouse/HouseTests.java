@@ -1,7 +1,6 @@
 
 public class HouseTests {
     public void testShouldThrowExceptionForInvalidCapacityBelowZero() {
-        new House(HOUSE_NAME, INVALID_HOUSE_CAPACITY);
     }
 
     @Test

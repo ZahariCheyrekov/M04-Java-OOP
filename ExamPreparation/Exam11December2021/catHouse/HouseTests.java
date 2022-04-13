@@ -1,10 +1,6 @@
 
 public class HouseTests {
 
-    public void testShouldGetCatsCountCorrectly() {
-    }
-
-    @Test(expected = IllegalArgumentException.class)
     public void testShouldThrowExceptionForFullHouseCapacity() {
         house.addCat(cat);
         house.addCat(cat);

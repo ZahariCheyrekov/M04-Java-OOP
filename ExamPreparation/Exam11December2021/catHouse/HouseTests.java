@@ -1,8 +1,5 @@
 
 public class HouseTests {
-    public void testShouldGetHouseNameCorrectly() {
-    }
-
     @Test
     public void testShouldGetHouseCapacityCorrectly() {
         assertEquals(HOUSE_CAPACITY, house.getCapacity());

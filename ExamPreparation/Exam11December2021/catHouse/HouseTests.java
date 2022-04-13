@@ -1,8 +1,5 @@
 
 public class HouseTests {
-    public void testShouldThrowExceptionForInvalidNameWithValueNull() {
-    }
-
     @Test
     public void testShouldGetHouseNameCorrectly() {
         assertEquals(HOUSE_NAME, house.getName());

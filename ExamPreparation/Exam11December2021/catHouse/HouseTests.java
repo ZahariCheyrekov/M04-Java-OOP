@@ -1,7 +1,6 @@
 
 public class HouseTests {
     public void testShouldGetHouseCapacityCorrectly() {
-        assertEquals(HOUSE_CAPACITY, house.getCapacity());
     }
 
     @Test(expected = IllegalArgumentException.class)

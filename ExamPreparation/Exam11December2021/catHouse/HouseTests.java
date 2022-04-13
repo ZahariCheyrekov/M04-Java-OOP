@@ -1,7 +1,5 @@
 
 public class HouseTests {
-    public void testShouldThrowExceptionForInvalidCapacityBelowZero() {
-    }
 
     @Test
     public void testShouldGetCatsCountCorrectly() {

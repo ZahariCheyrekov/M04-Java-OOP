@@ -1,7 +1,6 @@
 
 public class HouseTests {
     public void testShouldThrowExceptionForInvalidNameWithValueNull() {
-        new House(null, HOUSE_CAPACITY);
     }
 
     @Test

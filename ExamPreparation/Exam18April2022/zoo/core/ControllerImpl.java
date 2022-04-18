@@ -45,7 +45,6 @@ public class ControllerImpl implements Controller {
         return String.format(SUCCESSFULLY_ADDED_ANIMAL_IN_AREA, animalType, areaName);
     }
 
-    @Override
     public String feedAnimal(String areaName) {
         Area area = this.areas.get(areaName);
         area.feed();

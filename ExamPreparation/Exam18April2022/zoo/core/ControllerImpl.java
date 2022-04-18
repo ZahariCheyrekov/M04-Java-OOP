@@ -1,4 +1,3 @@
-package zoo.core;
 
 import zoo.entities.animals.Animal;
 import zoo.entities.animals.AquaticAnimal;

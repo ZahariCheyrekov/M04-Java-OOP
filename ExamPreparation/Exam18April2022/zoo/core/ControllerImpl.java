@@ -4,9 +4,6 @@ public class ControllerImpl implements Controller {
 
 
     public String buyFood(String type) {
-
-        this.foodRepository.add(food);
-        return String.format(SUCCESSFULLY_ADDED_FOOD_TYPE, type);
     }
 
     @Override

@@ -6,16 +6,6 @@ public class ControllerImpl implements Controller {
     @Override
     public String addArea(String areaType, String areaName) {
 
-        switch (areaType) {
-            case "WaterArea":
-                area = new WaterArea(areaName);
-                break;
-            case "LandArea":
-                area = new LandArea(areaName);
-                break;
-            default:
-                throw new NullPointerException(INVALID_AREA_TYPE);
-        }
 
         this.areas.put(areaName, area);
         return String.format(SUCCESSFULLY_ADDED_AREA_TYPE, areaType);

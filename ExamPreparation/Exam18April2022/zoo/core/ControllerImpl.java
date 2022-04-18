@@ -5,11 +5,6 @@ public class ControllerImpl implements Controller {
 
     public String buyFood(String type) {
 
-        switch (type) {
-            default:
-                throw new IllegalArgumentException(INVALID_FOOD_TYPE);
-        }
-
         this.foodRepository.add(food);
         return String.format(SUCCESSFULLY_ADDED_FOOD_TYPE, type);
     }

@@ -6,9 +6,6 @@ public class ControllerImpl implements Controller {
     public String addArea(String areaType, String areaName) {
 
 
-        this.areas.put(areaName, area);
-        return String.format(SUCCESSFULLY_ADDED_AREA_TYPE, areaType);
-    }
 
     @Override
     public String buyFood(String type) {

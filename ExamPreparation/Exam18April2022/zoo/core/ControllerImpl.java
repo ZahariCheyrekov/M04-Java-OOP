@@ -6,9 +6,6 @@ public class ControllerImpl implements Controller {
     public String buyFood(String type) {
 
         switch (type) {
-            case "Meat":
-                food = new Meat();
-                break;
             default:
                 throw new IllegalArgumentException(INVALID_FOOD_TYPE);
         }

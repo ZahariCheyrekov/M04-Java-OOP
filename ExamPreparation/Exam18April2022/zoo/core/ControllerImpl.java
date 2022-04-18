@@ -6,9 +6,6 @@ public class ControllerImpl implements Controller {
     public String buyFood(String type) {
 
         switch (type) {
-            case "Vegetable":
-                food = new Vegetable();
-                break;
             case "Meat":
                 food = new Meat();
                 break;

@@ -2,10 +2,6 @@
 
 public class ControllerImpl implements Controller {
 
-
-    public String buyFood(String type) {
-    }
-
     @Override
     public String foodForArea(String areaName, String foodType) {
         Food food = this.foodRepository.findByType(foodType);

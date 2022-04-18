@@ -2,8 +2,6 @@
 
 public class ControllerImpl implements Controller {
 
-    private FoodRepository foodRepository;
-    private Map<String, Area> areas;
 
     public ControllerImpl() {
         this.foodRepository = new FoodRepositoryImpl();

@@ -4,8 +4,6 @@ public class ControllerImpl implements Controller {
 
 
     public ControllerImpl() {
-        this.foodRepository = new FoodRepositoryImpl();
-        this.areas = new LinkedHashMap<>();
     }
 
     @Override

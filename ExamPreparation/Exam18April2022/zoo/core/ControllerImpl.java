@@ -1,4 +1,3 @@
-
 import zoo.entities.animals.Animal;
 import zoo.entities.animals.AquaticAnimal;
 import zoo.entities.animals.TerrestrialAnimal;

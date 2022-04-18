@@ -3,9 +3,6 @@
 public class ControllerImpl implements Controller {
 
 
-
-
-
     public String buyFood(String type) {
         Food food;
 

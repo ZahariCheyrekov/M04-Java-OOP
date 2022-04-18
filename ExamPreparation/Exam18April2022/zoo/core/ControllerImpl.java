@@ -1,9 +1,4 @@
 
-import zoo.entities.foods.Food;
-import zoo.entities.foods.Meat;
-import zoo.entities.foods.Vegetable;
-import zoo.repositories.FoodRepository;
-import zoo.repositories.FoodRepositoryImpl;
 
 import java.util.LinkedHashMap;
 import java.util.Map;

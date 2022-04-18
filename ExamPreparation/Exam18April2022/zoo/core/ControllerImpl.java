@@ -1,7 +1,4 @@
-import zoo.entities.animals.AquaticAnimal;
-import zoo.entities.areas.Area;
-import zoo.entities.areas.LandArea;
-import zoo.entities.areas.WaterArea;
+
 import zoo.entities.foods.Food;
 import zoo.entities.foods.Meat;
 import zoo.entities.foods.Vegetable;

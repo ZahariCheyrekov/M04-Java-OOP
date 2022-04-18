@@ -5,9 +5,6 @@ public class ControllerImpl implements Controller {
     public String foodForArea(String areaName, String foodType) {
         Food food = this.foodRepository.findByType(foodType);
 
-        if (food == null) {
-            throw new IllegalArgumentException(String.format(NO_FOOD_FOUND, foodType));
-        }
 
         Area area = this.areas.get(areaName);
         area.addFood(food);

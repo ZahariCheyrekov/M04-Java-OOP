@@ -3,7 +3,6 @@
 public class ControllerImpl implements Controller {
 
 
-    public String addArea(String areaType, String areaName) {
 
 
 

@@ -6,7 +6,6 @@ public class ControllerImpl implements Controller {
 
 
 
-    @Override
     public String buyFood(String type) {
         Food food;
 

@@ -5,7 +5,6 @@ public class ControllerImpl implements Controller {
 
     @Override
     public String addArea(String areaType, String areaName) {
-        Area area;
 
         switch (areaType) {
             case "WaterArea":

@@ -1,5 +1,4 @@
 import zoo.entities.animals.AquaticAnimal;
-import zoo.entities.animals.TerrestrialAnimal;
 import zoo.entities.areas.Area;
 import zoo.entities.areas.LandArea;
 import zoo.entities.areas.WaterArea;

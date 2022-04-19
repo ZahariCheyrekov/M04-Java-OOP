@@ -1,5 +1,4 @@
 public class FarmvilleTests {
-  private static final String SHEEP_TYPE = "Sheep";
   private static final double ANIMAL_ENERGY = 100;
   
   private static final Animal cow = new Animal(COW_TYPE, ANIMAL_ENERGY);

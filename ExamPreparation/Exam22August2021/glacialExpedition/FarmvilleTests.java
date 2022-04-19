@@ -2,8 +2,6 @@ public class FarmvilleTests {
 
   
   public void testShouldThrowExceptionForNoMoreSpaceInTheAnimalFarm() {
-    farm.add(cow);
-    farm.add(sheep);
   }
   
   @Test(expected = IllegalArgumentException.class)

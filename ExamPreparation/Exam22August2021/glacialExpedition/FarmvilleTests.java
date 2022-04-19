@@ -2,7 +2,6 @@
 
 public class FarmvilleTests {
 
-  private Farm farm;
   private Animal dog;
 
   private static final String FARM_NAME = "HappyFarm";

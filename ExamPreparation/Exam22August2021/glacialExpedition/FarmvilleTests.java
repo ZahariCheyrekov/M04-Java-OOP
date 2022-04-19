@@ -1,5 +1,4 @@
 public class FarmvilleTests {
-  private static final int FARM_ANIMALS_COUNT = 1;
   
   private static final String DOG_TYPE = "Dog";
   private static final String COW_TYPE = "Cow";

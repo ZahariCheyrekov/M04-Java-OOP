@@ -1,6 +1,5 @@
 public class FarmvilleTests {
 
-  @Before
   public void setUp() {
     farm = new Farm(FARM_NAME, FARM_CAPACITY);
     dog = new Animal(DOG_TYPE, ANIMAL_ENERGY);

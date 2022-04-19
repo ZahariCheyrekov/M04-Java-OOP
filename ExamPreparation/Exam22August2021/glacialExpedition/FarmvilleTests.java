@@ -1,7 +1,5 @@
 public class FarmvilleTests {
 
-  public void setUp() {
-  }
   
   @Test(expected = IllegalArgumentException.class)
   public void testShouldThrowExceptionForNoMoreSpaceInTheAnimalFarm() {

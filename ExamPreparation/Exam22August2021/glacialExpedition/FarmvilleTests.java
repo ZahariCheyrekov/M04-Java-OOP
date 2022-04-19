@@ -1,9 +1,6 @@
 public class FarmvilleTests {
 
   public void setUp() {
-    farm = new Farm(FARM_NAME, FARM_CAPACITY);
-    dog = new Animal(DOG_TYPE, ANIMAL_ENERGY);
-    farm.add(dog);
   }
   
   @Test(expected = IllegalArgumentException.class)

@@ -1,5 +1,4 @@
 public class FarmvilleTests {
-  private static final Animal sheep = new Animal(SHEEP_TYPE, ANIMAL_ENERGY);
 
   @Before
   public void setUp() {

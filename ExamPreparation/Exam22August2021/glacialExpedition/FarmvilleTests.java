@@ -1,5 +1,4 @@
 public class FarmvilleTests {
-
   private static final String FARM_NAME = "HappyFarm";
   private static final String NULL_NAME = null;
   private static final int FARM_CAPACITY = 2;

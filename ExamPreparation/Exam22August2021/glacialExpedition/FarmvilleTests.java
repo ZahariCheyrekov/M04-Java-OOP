@@ -1,5 +1,4 @@
 public class FarmvilleTests {
-  private static final String NULL_NAME = null;
   private static final int FARM_CAPACITY = 2;
   private static final int INVALID_CAPACITY = -10;
   private static final int FARM_ANIMALS_COUNT = 1;

@@ -27,5 +27,5 @@ public class Main {
         ConsoleWriter writer = new ConsoleWriter();
         EngineImpl engine = new EngineImpl(reader, writer, controller);
         engine.run();
-    }
-}
+    } 
+} 

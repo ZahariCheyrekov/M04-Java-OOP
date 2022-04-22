@@ -1,5 +1,4 @@
 public class HeroRepositoryTests {
-    private static final String SUCCESSFULLY_CREATED_HERO = "Successfully added hero %s with level %d";
 
     @Before
     public void setUp() {

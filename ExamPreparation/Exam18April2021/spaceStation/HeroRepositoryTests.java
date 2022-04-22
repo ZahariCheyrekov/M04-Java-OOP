@@ -1,5 +1,4 @@
 public class HeroRepositoryTests {
-
     private static final int HERO_LEVEL_HUNDRED = 100;
     private static final int HERO_LEVEL_FIFTY = 50;
 

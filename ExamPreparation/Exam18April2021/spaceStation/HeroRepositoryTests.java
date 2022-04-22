@@ -1,7 +1,4 @@
 public class HeroRepositoryTests {
-
-    private static final Hero HERO_WITH_EXISTING_NAME = new Hero(HERO_NAME_HULK, HERO_LEVEL_FIFTY);
-
     private static final String SUCCESSFULLY_CREATED_HERO = "Successfully added hero %s with level %d";
 
     @Before

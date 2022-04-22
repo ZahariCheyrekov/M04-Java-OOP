@@ -1,7 +1,4 @@
-
 public class HeroRepositoryTests {
-
-    private static final String HERO_NAME_NULL = null;
     private static final String HERO_NAME_HULK = "Hulk";
     private static final String HERO_NAME_BATMAN = "Batman";
 

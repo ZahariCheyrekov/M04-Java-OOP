@@ -1,5 +1,4 @@
 public class HeroRepositoryTests {
-    private static final String HERO_NAME_HULK = "Hulk";
     private static final String HERO_NAME_BATMAN = "Batman";
 
     private static final int HERO_LEVEL_HUNDRED = 100;

@@ -1,6 +1,5 @@
 public class HeroRepositoryTests {
 
-    @Before
     public void setUp() {
         heroRepository = new HeroRepository();
         hulk = new Hero(HERO_NAME_HULK, HERO_LEVEL_HUNDRED);

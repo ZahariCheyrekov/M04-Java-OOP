@@ -1,4 +1,3 @@
-package computers;
 
 import static org.junit.Assert.*;
 

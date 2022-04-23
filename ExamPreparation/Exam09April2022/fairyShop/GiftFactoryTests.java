@@ -30,7 +30,7 @@ public class GiftFactoryTests {
         giftFactory = new GiftFactory();
         gift = new Gift(GIFT_TYPE, GIFT_MAGIC);
         giftFactory.createGift(gift);
-    }
+    } 
 
     @Test
     public void testShouldGetGiftsCount() {

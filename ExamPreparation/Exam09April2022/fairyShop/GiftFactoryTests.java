@@ -20,7 +20,7 @@ public class GiftFactoryTests {
     private static final double GIFT_MAGIC_TWO = 200;
 
     private static final int ZERO_COUNT_GIFTS = 0; 
-    private static final int GIFTS_COUNT = 1;
+    private static final int GIFTS_COUNT = 1; 
     private static final int GIFTS_COUNT_TWO = 2;
 
     private static final String SUCCESSFULLY_ADDED_GIFT = "Successfully added gift Ball with magic 200.00.";

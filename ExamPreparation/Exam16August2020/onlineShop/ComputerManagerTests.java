@@ -1,5 +1,4 @@
 public class ComputerManagerTests {
-    private static final String COMPUTER_MODEL = "KL-012";
     private static final double COMPUTER_PRICE = 100_000;
 
     private static final String NONE_EXISTING_MANUFACTURER = "MGB";

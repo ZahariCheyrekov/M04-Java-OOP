@@ -1,6 +1,5 @@
 public class ComputerManagerTests {
 
-    @Before
     public void setUp() {
         computerManager = new ComputerManager();
         computer = new Computer(COMPUTER_MANUFACTURER, COMPUTER_MODEL, COMPUTER_PRICE);

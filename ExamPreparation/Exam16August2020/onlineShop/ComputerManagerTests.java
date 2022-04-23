@@ -2,7 +2,6 @@
 
 public class ComputerManagerTests {
 
-    private Computer computer;
     private static final Computer NULL_COMPUTER = null;
 
     private static final String COMPUTER_MANUFACTURER = "IGS";

@@ -2,8 +2,6 @@
 
 public class ComputerManagerTests {
 
-    private static final Computer NULL_COMPUTER = null;
-
     private static final String COMPUTER_MANUFACTURER = "IGS";
     private static final String COMPUTER_MODEL = "KL-012";
     private static final double COMPUTER_PRICE = 100_000;

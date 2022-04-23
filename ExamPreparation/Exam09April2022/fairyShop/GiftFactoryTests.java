@@ -38,7 +38,7 @@ public class GiftFactoryTests {
         assertEquals(giftFactoryCount, GIFTS_COUNT);
     }
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test(expected = IllegalArgumentException.class) 
     public void testShouldThrowExceptionForAlreadyExistingType() {
         giftFactory.createGift(new Gift(GIFT_TYPE, GIFT_MAGIC));
     }

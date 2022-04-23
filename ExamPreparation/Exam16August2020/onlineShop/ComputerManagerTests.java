@@ -2,7 +2,6 @@
 
 public class ComputerManagerTests {
 
-    private ComputerManager computerManager;
     private Computer computer;
     private static final Computer NULL_COMPUTER = null;
 

@@ -1,5 +1,4 @@
 public class ComputerManagerTests {
-
     private static final String NONE_EXISTING_MANUFACTURER = "MGB";
     private static final String NONE_EXISTING_MODEL = "AVOCADO-10";
 

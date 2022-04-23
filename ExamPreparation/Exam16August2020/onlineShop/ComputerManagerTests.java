@@ -1,5 +1,4 @@
 public class ComputerManagerTests {
-
     private static final int COMPUTERS_COUNT = 1;
 
     @Before

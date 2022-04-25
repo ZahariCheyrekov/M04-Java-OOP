@@ -1,7 +1,4 @@
 
-
-import org.junit.Test;
-
 public class AquariumTests {
 
     private Aquarium aquarium;

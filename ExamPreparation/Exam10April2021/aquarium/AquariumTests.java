@@ -1,4 +1,19 @@
+package aquarium;
+
+import static org.junit.Assert.*;
+
+import org.junit.Before;
+import org.junit.Test;
+
 public class AquariumTests {
+
+    private Aquarium aquarium;
+    private Fish fish;
+
+    private static final String AQUARIUM_NAME = "DeepWater";
+    private static final int AQUARIUM_CAPACITY = 2;
+    private static final int INVALID_AQUARIUM_CAPACITY = -10;
+    private static final int ZERO_FISH_COUNT = 0;
 
     private static final String FISH_NAME = "Jeffry";
     private static final String BREAM_NAME = "Bri";

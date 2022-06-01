@@ -114,5 +114,4 @@ public class GiftFactoryTests {
         Gift presentWithLeastMagic = giftFactory.getPresentWithLeastMagic();
         assertNull(presentWithLeastMagic);
    } 
-}   
- 
+}
